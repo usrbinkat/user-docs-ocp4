@@ -1,6 +1,6 @@
 # user-docs-ocp4    
+### [Get Started Here](MANUAL.md)
 ### Home of user facing guides and documentation for consuming LevelUP IaC    
-[Get Started Here](MANUAL.md)
 ###### Current docs layout
 ```
 .
