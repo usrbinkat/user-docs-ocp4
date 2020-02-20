@@ -14,7 +14,9 @@
   6. Set Enable DNS hostnames: `yes`
   8. Click `Create VPC`
 
-#### 00\. Second Task Step
+#### 02\. Configure Tagging on Public & Private Subnets
+  + Navigate: [AWS Console] > [VPC Service] > [Subnets]
+  
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [03 Next Task Name]
@@ -23,3 +25,10 @@
 [03 Next Task Name]:/manual/00_NextTaskName.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home?region=us-gov-west-1#
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1
+[Subnets]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#dashboard:
+
+```
+Refrence
+https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#subnets:
+https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#dashboard:
+```
