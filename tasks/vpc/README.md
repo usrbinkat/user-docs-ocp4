@@ -45,10 +45,4 @@
 [03 Configure Route53 DNS]:../manual/03_Route53DNS.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home?region=us-gov-west-1#
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1
-[Subnets]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#dashboard:
-
-```
-Refrence
-https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#subnets:
-https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#dashboard:
-```
+[Subnets]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#subnets:
