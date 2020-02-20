@@ -19,4 +19,4 @@
 --------------------------------------------------------------------------------
 [01 Previous Task Name]:/manual/00_PreviousTaskName.md
 [03 Next Task Name]:/manual/00_NextTaskName.md
-[VPC Dashboard](https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#vpcs:sort=VpcId)
+[VPC Dashboard]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#vpcs:sort=VpcId
