@@ -15,7 +15,25 @@
   8. Click `Create VPC`
 
 #### 02\. Configure Tagging on Public & Private Subnets
-  + Navigate: [AWS Console] > [VPC Service] > [Subnets]
+  + Navigate: [AWS Console] > [VPC Service] > [Subnets] 
+  1. Navigate: Public Subnet > Tags
+  1. Click `Add/Edit Tags`
+  2. Create the following
+  TODO: make table
+    ```
+    Name ocp4io-public-us-gov-west-1a
+    kubernetes.io/cluster/ocp4io owned
+    ```
+  3. Click `Save`
+  4. Navigate: Private Subnet > Tags
+  5. Click `Add/Edit Tags`
+  6. Create the following
+  TODO: make table
+    ```
+    Name ocp4io-private-us-gov-west-1a
+    kubernetes.io/cluster/ocp4io owned
+    ```
+  7. Click `Save`
   
 ---------------------------------------------------------------------------------
 ### Next Steps:
