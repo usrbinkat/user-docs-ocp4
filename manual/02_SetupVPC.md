@@ -26,11 +26,10 @@
   4. Navigate: Private Subnet > Tags
   5. Click `Add/Edit Tags`
   6. Create the following    
-  TODO: make table    
-    | Key                         | Value |
-    |:----------------------------|------:|
-    |Name  | ocp4io-private-us-gov-west-1a|    
-    |kubernetes.io/cluster/ocp4io | owned |
+| Key                         | Value |
+|:----------------------------|------:|
+|Name  | ocp4io-private-us-gov-west-1a|
+|kubernetes.io/cluster/ocp4io | owned |
   7. Click `Save`
   
 ---------------------------------------------------------------------------------
