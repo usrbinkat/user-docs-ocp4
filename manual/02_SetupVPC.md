@@ -12,5 +12,5 @@
 --------------------------------------------------------------------------------
 [01 Prerequisites]:/manual/01_Prerequisites.md
 [03 Next Task Name]:/manual/00_NextTaskName.md
-[AWS Console](https://console.amazonaws-us-gov.com/console/home?region=us-gov-west-1#)
-[VPC Service](https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1)
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home?region=us-gov-west-1#
+[VPC Service]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1
