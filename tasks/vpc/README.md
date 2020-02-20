@@ -4,7 +4,7 @@
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
 #### 01\. Create VPC
-  + Navigate: [AWS Console] > [VPC Service] > [Start VPC Wizard]
+  + Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
 #### 00\. Second Task Step
 ---------------------------------------------------------------------------------
 ### Next Steps:
