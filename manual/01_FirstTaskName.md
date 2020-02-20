@@ -11,8 +11,7 @@
   3. create
 
 #### 02\. Second Task Step
-```sh
-```
+  + Navigate [AWS] > [Console] > [VPC Dashboard] > [Enable DNS]
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [03 Next Task Name]
