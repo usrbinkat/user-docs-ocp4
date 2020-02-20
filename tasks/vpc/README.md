@@ -1,5 +1,5 @@
 # Part 02 - Setup AWS VPC
-[Task Module](../task/name/)
+[Task Module](../task/vpc/)
 ### Prerequisites:
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
