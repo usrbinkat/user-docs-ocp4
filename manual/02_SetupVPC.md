@@ -3,6 +3,11 @@
 ### Prerequisites:
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
+#### NOTICE
+```
+Variables:
+  {vpc_name} = This is your arbitrary VPC name
+```
 #### 01\. Create VPC
   + Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
@@ -14,10 +19,6 @@
   6. Set Enable DNS hostnames: `yes`
   8. Click `Create VPC`
 
-```
-Variables:
-  {vpc_name} = This is your arbitrary VPC name
-```
 #### 02\. Configure Tagging on Public & Private Subnets
   + Navigate: [AWS Console] > [VPC Service] > [Subnets] 
   1. Navigate: Public Subnet > Tags
