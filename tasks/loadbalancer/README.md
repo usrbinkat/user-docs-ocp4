@@ -27,6 +27,8 @@
   | VPC               | {match your VPC Name} |
     
 ######  - You should now have 3 new Target Groups
+    
+#### 02\. Create 2 Load Balancers
   + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
 ###### For both Load Balancers {vpc_name}-ext & {vpc_name}-int do the following:
   1. Click: | Create Load Balancer |
