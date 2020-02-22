@@ -28,10 +28,9 @@
     
 ###### You should now have 3 new Target Groups
     
-#### 02\. Create 2 Load Balancers
+#### 02\. Create External Load Balancer
   + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
-###### For both Load Balancers {vpc_name}-ext & {vpc_name}-int do the following:
-  1. Click: | Create Load Balancer |
+  1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
     
@@ -48,16 +47,18 @@
   |---------------------------------:|:-------|
   | kubernetes.io/cluster/{vpc_name} | shared |
     
-  4. Continue click: - Next: Configure Security Settings - 
-  5. Confirm Security Warning; Click: - Next: Configure Routing -
+  4. Continue click: [Next: Configure Security Settings]
+  5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
     
   | Option            | Value                 |
   |------------------:|:----------------------|
-  | Target Group      | {vpc_name}-aint       |
-  | Scheme            | internal              |
-  | Protocol          | TCP                   |
+  | Target Group      | Existing target group |
+  | Name              | {vpc_name}-aint       |
 
+  7. Click: [Next: Register Targets]
+  8. Click: [Next: Review]
+  9. Click: [Create]
 
 #### 02\. Create 2 Load Balancers
 #### 00\. Second Task Step
