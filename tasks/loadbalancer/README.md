@@ -34,6 +34,7 @@
   1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
+  - (Example shown with vpc_name & 6443)    
 
     | Option            | Value                 |
     |------------------:|:----------------------|
