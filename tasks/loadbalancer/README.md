@@ -34,7 +34,7 @@
   1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
-  - (Example shown with vpc_name & 6443)    
+  - (Example shown creating with {AZ public}, {vpc_name}, Port 6443)    
 
     | Option            | Value                 |
     |------------------:|:----------------------|
@@ -43,11 +43,11 @@
     | Protocol          | TCP                   |
     | Port              | 6443                  |
     | VPC               | {vpc_name}            |
-    | AZ {your_az}      | {your public_zone}    |
+    | AZ {your_az}      | {your_public_zone}    |
 
-| Tags: Key                        | Value  |
-|---------------------------------:|:-------|
-| kubernetes.io/cluster/{vpc_name} | shared |
+    | Tags: Key                        | Value  |
+    |---------------------------------:|:-------|
+    | kubernetes.io/cluster/{vpc_name} | shared |
     
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
