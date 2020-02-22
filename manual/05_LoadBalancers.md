@@ -72,6 +72,17 @@
   9. Click: [Create]
 
 ---------------------------------------------------------------------------------
+### Step 03\. Add Listener to Internal Load Balancer 
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab 'Listeners'
+  1. Click: [Add listener]
+  1. Fill in the following:
+> Example:
+>   
+>   | Protocol | Port   |
+>   |---------:|:-------|
+>   | TCP      | 22623  |
+
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 06 Setup]
 --------------------------------------------------------------------------------
