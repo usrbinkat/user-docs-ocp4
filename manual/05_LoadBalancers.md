@@ -4,9 +4,9 @@
 ---------------------------------------------------------------------------------
 ### Step 01\. Create External Load Balancer
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
-###### 1. Click: [Create Load Balancer]
-###### 2. Select Type: 'Network Load Balancer'
-###### 3. Fill in the following values:    
+ 1. Click: [Create Load Balancer]
+ 2. Select Type: 'Network Load Balancer'
+ 3. Fill in the following values:    
 > (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
 >
 >   | Option            | Value                 |
