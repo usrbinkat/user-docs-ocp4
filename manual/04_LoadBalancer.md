@@ -15,15 +15,15 @@
     
   1. Click: - Create Target Group -
   2. Fill in the following values: 
-  - (Example shown with vpc_name-aint & 6443)    
-     
-    | Option            | Value                 |
-    |------------------:|:----------------------|
-    | Target Group Name | {vpc_name}-aint       |
-    | Target Type       | IP                    |
-    | Protocol          | TCP                   |
-    | Port              | 6443                  |
-    | VPC               | {match your VPC Name} |
+> (Example shown with vpc_name-aint & 6443)    
+>    
+>   | Option            | Value                 |
+>   |------------------:|:----------------------|
+>   | Target Group Name | {vpc_name}-aint       |
+>   | Target Type       | IP                    |
+>   | Protocol          | TCP                   |
+>   | Port              | 6443                  |
+>   | VPC               | {match your VPC Name} |
     
 ###### You should now have 3 new Target Groups
     
