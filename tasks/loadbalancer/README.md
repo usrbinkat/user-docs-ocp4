@@ -12,11 +12,11 @@
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
 >   | Name              | {vpc_name}-ext        |
->   | Scheme            | internal              |
+>   | Scheme            | internet facing       |
 >   | Protocol          | TCP                   |
 >   | Port              | 6443                  |
 >   | VPC               | {vpc_name}            |
->   | AZ {your_az}      | {your_public_zone}    |
+>   | AZ: {your_az}     | {your_public_zone}    |
 >
 >   | Tags: Key                        | Value  |
 >   |---------------------------------:|:-------|
@@ -30,7 +30,7 @@
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
 >   | Target Group      | Existing target group |
->   | Name              | {vpc_name}-aint       |
+>   | Name              | {vpc_name}-aext       |
 
   7. Click: [Next: Register Targets]
   8. Click: [Next: Review]
@@ -60,12 +60,12 @@
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
-  - (Example shown creating with {vpc_name})    
-    
-    | Option            | Value                 |
-    |------------------:|:----------------------|
-    | Target Group      | Existing target group |
-    | Name              | {vpc_name}-aint       |
+> Example shown creating with {vpc_name}
+>   
+>   | Option            | Value                 |
+>   |------------------:|:----------------------|
+>   | Target Group      | Existing target group |
+>   | Name              | {vpc_name}-aint       |
 
   7. Click: [Next: Register Targets]
   8. Click: [Next: Review]
