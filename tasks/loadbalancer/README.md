@@ -1,6 +1,6 @@
 # [Task 05](../tasks/loadbalancer/) - Setup Load Balancers
 ### Prerequisites:
-  + [Task 06 ]
+  + [Task 04 ]
 ---------------------------------------------------------------------------------
 ### Step 01\. Create External Load Balancer
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
@@ -73,10 +73,10 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 05 Setup Load Balancers]
+  + [Task 06 Setup]
 --------------------------------------------------------------------------------
-[Task 03 Setup Route 53 DNS]:../manual/03_Route53DNS.md
-[Task 05 Setup Load Balancers]:../manual/05_LoadBalancer.md
+[Task 05 Setup Target Groups]:../manual/04_TargetGroups.md
+[Task 06 Setup ]:../manual/06_.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
