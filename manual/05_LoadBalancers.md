@@ -25,7 +25,7 @@
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
-> Example shown creating with {vpc_name}
+> Example:
 >
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
@@ -46,12 +46,12 @@
 >
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
->   | Name              | {vpc_name}-int        |
+>   | Name              | {vpc_name}-aint       |
 >   | Scheme            | internal              |
 >   | Protocol          | TCP                   |
 >   | Port              | 6443                  |
 >   | VPC               | {vpc_name}            |
->   | AZ {your_az}      | {your_private_zone}   |
+>   | AZ: {your_az}     | {your_private_zone}   |
 >
 >   | Tags: Key                        | Value  |
 >   |---------------------------------:|:-------|
@@ -60,7 +60,7 @@
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
-> Example shown creating with {vpc_name}
+> Example:
 >   
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
