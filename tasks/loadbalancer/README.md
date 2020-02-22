@@ -26,7 +26,7 @@
   | Port              | 6443                  |
   | VPC               | {match your VPC Name} |
     
-######  - You should now have 3 new Target Groups
+###### You should now have 3 new Target Groups
     
 #### 02\. Create 2 Load Balancers
   + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
