@@ -34,7 +34,7 @@
   1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
-    
+
     | Option            | Value                 |
     |------------------:|:----------------------|
     | Name              | {vpc_name}-ext        |
@@ -43,7 +43,7 @@
     | Port              | 6443                  |
     | VPC               | {vpc_name}            |
     | AZ {your_az}      | {your public_zone}    |
-    
+
 | Tags: Key                        | Value  |
 |---------------------------------:|:-------|
 | kubernetes.io/cluster/{vpc_name} | shared |
