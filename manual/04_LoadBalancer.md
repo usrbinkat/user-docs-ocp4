@@ -34,7 +34,7 @@
   1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
-  - (Example shown creating with {AZ public}, {vpc_name}, Port 6443)    
+  - (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
 
     | Option            | Value                 |
     |------------------:|:----------------------|
@@ -52,11 +52,12 @@
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
-    
-| Option            | Value                 |
-|------------------:|:----------------------|
-| Target Group      | Existing target group |
-| Name              | {vpc_name}-aint       |
+  - (Example shown creating with {vpc_name})    
+
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Target Group      | Existing target group |
+    | Name              | {vpc_name}-aint       |
 
   7. Click: [Next: Register Targets]
   8. Click: [Next: Review]
