@@ -1,5 +1,4 @@
-# Part 04 - Setup Target Groups & Load Balancers
-[Task Module](../task/loadbalancer/)
+# [Task 04](../tasks/loadbalancer/) - Setup Target Groups & Load Balancers
 ### Prerequisites:
   + [03 Route 53 DNS]
 --------------------------------------------------------------------------------
