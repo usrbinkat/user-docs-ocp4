@@ -16,7 +16,7 @@
     
   1. Click: | Create Target Group |
   2. Fill in the following values: 
-    -   (Example shown with vpc_name-aint & 6443)    
+  - (Example shown with vpc_name-aint & 6443)    
      
   | Option            | Value                 |
   |------------------:|:----------------------|
