@@ -18,13 +18,13 @@
   2. Fill in the following values: 
   - (Example shown with vpc_name-aint & 6443)    
      
-  | Option            | Value                 |
-  |------------------:|:----------------------|
-  | Target Group Name | {vpc_name}-aint       |
-  | Target Type       | IP                    |
-  | Protocol          | TCP                   |
-  | Port              | 6443                  |
-  | VPC               | {match your VPC Name} |
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Target Group Name | {vpc_name}-aint       |
+    | Target Type       | IP                    |
+    | Protocol          | TCP                   |
+    | Port              | 6443                  |
+    | VPC               | {match your VPC Name} |
     
 ###### You should now have 3 new Target Groups
     
@@ -35,27 +35,27 @@
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
     
-  | Option            | Value                 |
-  |------------------:|:----------------------|
-  | Name              | {vpc_name}-ext        |
-  | Scheme            | internal              |
-  | Protocol          | TCP                   |
-  | Port              | 6443                  |
-  | VPC               | {vpc_name}            |
-  | AZ {your_az}      | {your public_zone}    |
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Name              | {vpc_name}-ext        |
+    | Scheme            | internal              |
+    | Protocol          | TCP                   |
+    | Port              | 6443                  |
+    | VPC               | {vpc_name}            |
+    | AZ {your_az}      | {your public_zone}    |
     
-  | Tags: Key                        | Value  |
-  |---------------------------------:|:-------|
-  | kubernetes.io/cluster/{vpc_name} | shared |
+    | Tags: Key                        | Value  |
+    |---------------------------------:|:-------|
+    | kubernetes.io/cluster/{vpc_name} | shared |
     
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
     
-  | Option            | Value                 |
-  |------------------:|:----------------------|
-  | Target Group      | Existing target group |
-  | Name              | {vpc_name}-aint       |
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Target Group      | Existing target group |
+    | Name              | {vpc_name}-aint       |
 
   7. Click: [Next: Register Targets]
   8. Click: [Next: Review]
@@ -68,27 +68,27 @@
   2. Select Type: 'Network Load Balancer'
   3. Fill in the following values:    
     
-  | Option            | Value                 |
-  |------------------:|:----------------------|
-  | Name              | {vpc_name}-int        |
-  | Scheme            | internal              |
-  | Protocol          | TCP                   |
-  | Port              | 6443                  |
-  | VPC               | {vpc_name}            |
-  | AZ {your_az}      | {your private_zone}   |
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Name              | {vpc_name}-int        |
+    | Scheme            | internal              |
+    | Protocol          | TCP                   |
+    | Port              | 6443                  |
+    | VPC               | {vpc_name}            |
+    | AZ {your_az}      | {your private_zone}   |
     
-  | Tags: Key                        | Value  |
-  |---------------------------------:|:-------|
-  | kubernetes.io/cluster/{vpc_name} | shared |
+    | Tags: Key                        | Value  |
+    |---------------------------------:|:-------|
+    | kubernetes.io/cluster/{vpc_name} | shared |
     
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
   6. Fill in Target Group values per the following:
     
-  | Option            | Value                 |
-  |------------------:|:----------------------|
-  | Target Group      | Existing target group |
-  | Name              | {vpc_name}-aint       |
+    | Option            | Value                 |
+    |------------------:|:----------------------|
+    | Target Group      | Existing target group |
+    | Name              | {vpc_name}-aint       |
 
   7. Click: [Next: Register Targets]
   8. Click: [Next: Review]
