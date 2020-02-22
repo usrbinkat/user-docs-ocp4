@@ -7,7 +7,7 @@
  1. Click: [Create Load Balancer]
  2. Select Type: 'Network Load Balancer'
  3. Fill in the following values:    
-> (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
+> Example shown creating with {az_public}, {vpc_name}, Port: 6443
 >
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
@@ -37,7 +37,7 @@
   9. Click: [Create]
 
 ---------------------------------------------------------------------------------
-#### 03\. Create Internal Load Balancer
+### Step 02\. Create Internal Load Balancer
   + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
   1. Click: [Create Load Balancer]
   2. Select Type: 'Network Load Balancer'
