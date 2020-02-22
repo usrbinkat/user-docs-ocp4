@@ -6,7 +6,6 @@
 ######    Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
 ###### For each of the 3 record/port sets do the following:
 > Record & Port Sets
-    
 >   | Name            | Port  |
 >   |----------------:|:------|
 >   | {vpc_name}-aint |  6443 |
