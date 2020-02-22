@@ -45,6 +45,7 @@
   4. Continue click: - Next: Configure Security Settings - 
   5. Confirm Security Warning; Click: - Next: Configure Routing -
   6. Fill in Target Group values per the following:
+    
   | Option            | Value                 |
   |------------------:|:----------------------|
   | Target Group      | {vpc_name}-aint       |
