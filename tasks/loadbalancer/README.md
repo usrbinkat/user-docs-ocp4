@@ -1,5 +1,5 @@
 # [Task 05](../tasks/loadbalancer/) - Setup Load Balancers
-### Prerequisites:
+### Prerequisite:
   + [Task 04 Setup Target Groups]
 ---------------------------------------------------------------------------------
 ### Step 01\. Create External Load Balancer
@@ -8,19 +8,19 @@
 ###### 2. Select Type: 'Network Load Balancer'
 ###### 3. Fill in the following values:    
 > (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
-
-    | Option            | Value                 |
-    |------------------:|:----------------------|
-    | Name              | {vpc_name}-ext        |
-    | Scheme            | internal              |
-    | Protocol          | TCP                   |
-    | Port              | 6443                  |
-    | VPC               | {vpc_name}            |
-    | AZ {your_az}      | {your_public_zone}    |
-
-    | Tags: Key                        | Value  |
-    |---------------------------------:|:-------|
-    | kubernetes.io/cluster/{vpc_name} | shared |
+>
+>   | Option            | Value                 |
+>   |------------------:|:----------------------|
+>   | Name              | {vpc_name}-ext        |
+>   | Scheme            | internal              |
+>   | Protocol          | TCP                   |
+>   | Port              | 6443                  |
+>   | VPC               | {vpc_name}            |
+>   | AZ {your_az}      | {your_public_zone}    |
+>
+>   | Tags: Key                        | Value  |
+>   |---------------------------------:|:-------|
+>   | kubernetes.io/cluster/{vpc_name} | shared |
     
   4. Continue click: [Next: Configure Security Settings]
   5. Confirm Security Warning; Click: [Next: Configure Routing]
