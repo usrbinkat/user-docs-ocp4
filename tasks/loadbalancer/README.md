@@ -1,34 +1,8 @@
-# [Task 04](../tasks/loadbalancer/) - Setup Target Groups & Load Balancers
+# [Task 05](../tasks/loadbalancer/) - Setup Load Balancers
 ### Prerequisites:
-  + [Task 03 Setup Route 53 DNS]
---------------------------------------------------------------------------------
-### 01\. Configure Target Groups
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
-###### For each of the 3 record/port sets do the following:
-> Record & Port Sets
->    
->   | Name            | Port  |
->   |----------------:|:------|
->   | {vpc_name}-aint |  6443 |
->   | {vpc_name}-aent |  6443 |
->   | {vpc_name}-sint | 22623 |
-    
-###### 1. Click: [Create Target Group]
-###### 2. Fill in the following values: 
-> (Example shown with vpc_name-aint & 6443)    
->    
->   | Option            | Value                 |
->   |------------------:|:----------------------|
->   | Target Group Name | {vpc_name}-aint       |
->   | Target Type       | IP                    |
->   | Protocol          | TCP                   |
->   | Port              | 6443                  |
->   | VPC               | {match your VPC Name} |
-    
-###### Verify: You should now have 3 new Target Groups
-    
+  + [Task 06 ]
 ---------------------------------------------------------------------------------
-### 02\. Create External Load Balancer
+### Step 01\. Create External Load Balancer
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
 ###### 1. Click: [Create Load Balancer]
 ###### 2. Select Type: 'Network Load Balancer'
