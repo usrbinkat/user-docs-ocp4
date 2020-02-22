@@ -3,7 +3,7 @@
   + [03 Route 53 DNS]
 --------------------------------------------------------------------------------
 #### 01\. Configure Target Groups
-  + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
+######  + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
 ###### For each of the 3 record/port sets do the following:
   - Record & Port Sets
     
