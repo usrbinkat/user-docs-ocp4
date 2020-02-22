@@ -5,7 +5,7 @@
 ### 01\. Configure Target Groups
 ######    Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
 ###### For each of the 3 record/port sets do the following:
-  - Record & Port Sets
+>>  Record & Port Sets
     
     | Name            | Port  |
     |----------------:|:------|
