@@ -44,8 +44,6 @@
   | VPC               | {vpc_name}            |
   | AZ {your_az}      | {your public_zone}    |
     
-  - Tags    
-    
   | Key                              | Value  |
   |---------------------------------:|:-------|
   | kubernetes.io/cluster/{vpc_name} | shared |
