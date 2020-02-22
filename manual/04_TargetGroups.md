@@ -1,9 +1,9 @@
 # [Task 04](../tasks/loadbalancer/) - Setup Target Groups & Load Balancers
 ### Prerequisites:
-  + [03 Route 53 DNS]
+  + [Task 03 Setup Route 53 DNS]
 --------------------------------------------------------------------------------
 ### 01\. Configure Target Groups
-######    Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
 ###### For each of the 3 record/port sets do the following:
 > Record & Port Sets
 >    
@@ -13,8 +13,8 @@
 >   | {vpc_name}-aent |  6443 |
 >   | {vpc_name}-sint | 22623 |
     
-######  1. Click: [Create Target Group]
-######  2. Fill in the following values: 
+###### 1. Click: [Create Target Group]
+###### 2. Fill in the following values: 
 > (Example shown with vpc_name-aint & 6443)    
 >    
 >   | Option            | Value                 |
@@ -25,15 +25,15 @@
 >   | Port              | 6443                  |
 >   | VPC               | {match your VPC Name} |
     
-###### You should now have 3 new Target Groups
+###### Verify: You should now have 3 new Target Groups
     
 ---------------------------------------------------------------------------------
-#### 02\. Create External Load Balancer
-  + Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
-  1. Click: [Create Load Balancer]
-  2. Select Type: 'Network Load Balancer'
-  3. Fill in the following values:    
-  - (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
+### 02\. Create External Load Balancer
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers]
+###### 1. Click: [Create Load Balancer]
+###### 2. Select Type: 'Network Load Balancer'
+###### 3. Fill in the following values:    
+> (Example shown creating with {az_public}, {vpc_name}, Port: 6443)    
 
     | Option            | Value                 |
     |------------------:|:----------------------|
@@ -99,10 +99,10 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [03 Next Task Name]
+  + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
-[03 Route 53 DNS]:/manual/03_Route53DNS.md
-[03 Next Task Name]:/manual/00_NextTaskName.md
+[Task 03 Setup Route 53 DNS]:../manual/03_Route53DNS.md
+[Task 05 Setup Load Balancers]:../manual/05_LoadBalancer.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
