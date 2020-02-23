@@ -75,12 +75,28 @@
 ### Step 03\. Add Listener to Internal Load Balancer 
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab 'Listeners'
   1. Click: [Add listener]
-  1. Fill in the following:
+  2. Fill in the following:
 > Example:
 >   
 >   | Protocol | Port   |
 >   |---------:|:-------|
 >   | TCP      | 22623  |
+  3. Click: [Save]
+
+---------------------------------------------------------------------------------
+### Step 03\. Add Listener to Internal Load Balancer 
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab 'Description'
+  1. Copy 'DNS Name' value 
+###### Navigate: [AWS Console] > [Route 53] > Domain Name ocp.{domain_name} > api-int.ocp.{domain_name}
+  2. Paste {vpc_name}-int 'DNS Name' value into api-int.ocp.{domain_name} > CNAME > Value field
+###### Navigate: [AWS Console] > [Route 53] > Domain Name ocp.{domain_name} > api-int.ocp.{domain_name}
+  2. Fill in the following:
+> Example:
+>   
+>   | Protocol | Port   |
+>   |---------:|:-------|
+>   | TCP      | 22623  |
+  3. Click: [Save]
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
@@ -90,5 +106,6 @@
 [Task 06 Setup ]:../manual/06_.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
+[Route 53]:https://console.amazonaws-us-gov.com/route53/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
 [Load Balancers]:https://console.amazonaws-us-gov.com/ec2/v2/home#LoadBalancers
