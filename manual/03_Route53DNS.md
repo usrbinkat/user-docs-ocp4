@@ -65,7 +65,7 @@
 ### Next Steps:
   + [04 Create Load Balancers]
 --------------------------------------------------------------------------------
-[02 Previous Task Name]:../manual/02_SetupVPC.md
+[02 Setup AWS VPC]:../manual/02_SetupVPC.md
 [04 Create Load Balancers]:../manual/04_LoadBalancer.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Route 53]:https://console.amazonaws-us-gov.com/route53/home
