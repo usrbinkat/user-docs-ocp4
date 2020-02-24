@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
-#### 01\. Create VPC
+### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
   2. Configure with the following value types:
@@ -20,7 +20,7 @@
   3. Click `Create VPC` to complete
 
 ---------------------------------------------------------------------------------
-#### 02\. Configure Tagging on Public & Private Subnets
+### Step 02\. Configure Tagging on Public & Private Subnets
 ###### Navigate: [AWS Console] > [VPC Service] > [Subnets] 
   1. Navigate: Public Subnet > Tags
   2. Click `Add/Edit Tags`
