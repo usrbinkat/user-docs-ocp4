@@ -25,21 +25,23 @@
   1. Navigate: Public Subnet > Tags
   2. Click `Add/Edit Tags`
   3. Create the following    
-
-| Key                             | Value                             |
-|:--------------------------------|----------------------------------:|
-|Name                             | {vpc_name}-public-us-gov-west-1a  |
-|kubernetes.io/cluster/{vpc_name} | owned                             |
+> Example values:
+>
+>   | Key                             | Value                             |
+>   |:--------------------------------|----------------------------------:|
+>   |Name                             | {vpc_name}-public-us-gov-west-1a  |
+>   |kubernetes.io/cluster/{vpc_name} | owned                             |
 
   3. Click `Save`
   4. Navigate: Private Subnet > Tags
   5. Click `Add/Edit Tags`
   6. Create the following    
-
-| Key                             | Value                             |
-|:--------------------------------|----------------------------------:|
-|Name                             | {vpc_name}-private-us-gov-west-1a |
-|kubernetes.io/cluster/{vpc_name} | owned                             |
+> Example values:
+>
+>   | Key                             | Value                             |
+>   |:--------------------------------|----------------------------------:|
+>   |Name                             | {vpc_name}-private-us-gov-west-1a |
+>   |kubernetes.io/cluster/{vpc_name} | owned                             |
 
   7. Click `Save`
   
