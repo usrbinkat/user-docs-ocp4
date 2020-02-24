@@ -1,29 +1,29 @@
-# Part 02 - Setup AWS VPC
-[Task Module](../task/vpc/)
-### Prerequisites:
+# [Task 02](../tasks/vpc/) - Setup AWS VPC
+### Prerequisite:
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
-#### NOTICE
-```
-Variables:
-  {vpc_name} = This is your arbitrary VPC name
-```
 #### 01\. Create VPC
-  + Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
+###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
-  2. Confirm IPv4 CIDR block: (Example `10.0.0.0/16`)
-  3. Confirm IPv6 CIDR block: (Example `No IPv6 CIDR Block`)
-  4. Provide VPC Name (This is arbitrary and not important for OCP4 Deploy)
-  5. Select Elastic IP Allocation: (Use Dropdown)
-  5. Set Availability Zone (Example `us-gov-west-1a`)
-  6. Set Enable DNS hostnames: `yes`
-  8. Click `Create VPC`
+  2. Configure with the following value types:
+> Example values:
+>
+>   | Option               | Value                 |
+>   |---------------------:|:----------------------|
+>   | IPv4                 | '10.0.0.0/16'         |
+>   | IPv6                 | No IPv6 CIDR Block    |
+>   | VPC Name             | '{vpc_name}'          |
+>   | IP Allocation        | Select from available |
+>   | Availability Zone    | 'us-gov-west-1a'      |
+>   | Enable DNS Hostnames | 'yes'                 |
+
+  3. Click `Create VPC` to complete
 
 #### 02\. Configure Tagging on Public & Private Subnets
-  + Navigate: [AWS Console] > [VPC Service] > [Subnets] 
+###### Navigate: [AWS Console] > [VPC Service] > [Subnets] 
   1. Navigate: Public Subnet > Tags
-  1. Click `Add/Edit Tags`
-  2. Create the following    
+  2. Click `Add/Edit Tags`
+  3. Create the following    
 
 | Key                             | Value                             |
 |:--------------------------------|----------------------------------:|
