@@ -19,6 +19,7 @@
 
   3. Click `Create VPC` to complete
 
+---------------------------------------------------------------------------------
 #### 02\. Configure Tagging on Public & Private Subnets
 ###### Navigate: [AWS Console] > [VPC Service] > [Subnets] 
   1. Navigate: Public Subnet > Tags
