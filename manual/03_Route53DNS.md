@@ -31,7 +31,7 @@
 >   |       |  0 10 2380 etcd-1.ocp.{domain_name} |
 >   |       |  0 10 2380 etcd-2.ocp.{domain_name} |
 
-   Field `Value`                          
+   `Value` Field:                          
 ```
 0 10 2380 etcd-0.ocp.{domain_name}
 0 10 2380 etcd-1.ocp.{domain_name}
