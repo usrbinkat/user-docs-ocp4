@@ -10,9 +10,9 @@
 >
 >   | Key          | Value               |
 >   |:-------------|--------------------:|
->   | Domain Name  | ocp.{domain_name}   |
+>   | Domain Name  | `ocp.{domain_name}` |
 >   | Type         | Private Hosted Zone |
->   | VPC ID       | {your_new_vpc}      |
+>   | VPC ID       | `{your_new_vpc}`    |
 
   3. Click: 'Create'
 
@@ -34,14 +34,21 @@
 0 10 2380 etcd-1.ocp.{domain_name}
 0 10 2380 etcd-2.ocp.{domain_name}
 ```
-  5. Click: 'Create'
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 03\. Create CNAME Record `api-int`
   1. Click `Create Record Set`
-  2. Name: ` api-int `
-  3. Type: ` CNAME - Canonical name `
-  4. Value: ` replaceme ` (this is a temporary value)
+  2. Fill in with the following values:
+>   Example:
+>
+>   | Key   | Value                   |
+>   |-------|-------------------------|
+>   | Name  | ` api-int `             |
+>   | Type  | CNAME - Canonical name  |
+>   | Value | ` replaceme `           |
+
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 04\. Create CNAME Record `api`
