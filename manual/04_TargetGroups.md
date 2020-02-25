@@ -54,7 +54,7 @@
   + [Task 07 Setup IAM Roles]
 --------------------------------------------------------------------------------
 [Task 05 Setup Load Balancers]:../manual/05_LoadBalancers.md
-[Task 07 Setup IAM Roles]:../manual/03_IAMRoles.md
+[Task 07 Setup IAM Roles]:../manual/07_IAMRoles.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
