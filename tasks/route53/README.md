@@ -14,15 +14,19 @@
 >   | Type         | Private Hosted Zone |
 >   | VPC ID       | {your_new_vpc}      |
 
-  2. Click: 'Create'
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 02\. Create SRV Records for etcd masters
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
-  2. Name: `_etcd-server-ssl._tcp`
-  3. Type: ` SRV - Service Locator `
-  4. Value:
+  2. Fill in with the following values:
+>  
+>   |-------|-------------------------|
+>   | Name: | `_etcd-server-ssl._tcp` |
+>   | Type: | `SRV - Service Locator` |
+
+   Value                          
 ```
 0 10 2380 etcd-0.ocp.{domain_name}
 0 10 2380 etcd-1.ocp.{domain_name}
