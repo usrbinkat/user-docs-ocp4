@@ -125,7 +125,7 @@
   + [Task 06 Setup Security Groups]
 --------------------------------------------------------------------------------
 [Task 04 Setup Target Groups]:../manual/04_TargetGroups.md
-[Task 06 Setup Setup Security Groups]:../manual/06_SecurityGroups.md
+[Task 06 Setup Security Groups]:../manual/06_SecurityGroups.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [Route 53]:https://console.amazonaws-us-gov.com/route53/home
