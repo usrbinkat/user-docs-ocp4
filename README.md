@@ -15,7 +15,6 @@
 │   └── README.md
 ├── MANUAL.md
 ├── README.md
-├── registry.tar
 └── tasks
     ├── artifacts
     ├── iam-roles
