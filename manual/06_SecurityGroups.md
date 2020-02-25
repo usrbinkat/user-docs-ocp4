@@ -9,8 +9,8 @@
 >    
 >   | Record Name     | Port  |
 >   |-----------------|-------|
+>   | {vpc_name}-aext |  6443 |
 >   | {vpc_name}-aint |  6443 |
->   | {vpc_name}-aent |  6443 |
 >   | {vpc_name}-sint | 22623 |
 >
 

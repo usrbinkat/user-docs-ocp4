@@ -105,7 +105,20 @@
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Add Upstream DNS Records
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab 'Description'
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-ext > Lower Tab 'Description'
+  1. Copy `DNS Name value` 
+
+###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
+  2. Create the following records values:
+> Example:
+>   
+>   | Record Type       | Name                   | Value                       |
+>   |------------------:|:----------------------:|-----------------------------|
+>   | CNAME             | ` *.apps.ocp `         | (Paste) `DNS Name Value`    |
+>
+
+  3. Confirm Resolution: `dig fake.apps.ocp.{domain_name}`
+  - Should resolve to your AWS `DNS Name` value from LB `{vpc_name}-ext`
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
