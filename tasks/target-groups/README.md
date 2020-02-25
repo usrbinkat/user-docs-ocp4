@@ -4,13 +4,13 @@
 --------------------------------------------------------------------------------
 ### Step 01\. Configure `Target Groups`
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
-######  > For both `{vpc_name}-master-sg` & {vpc_name}-worker-sg` do the following:
+######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` do the following:
 
   1. Click: `Create Security Group`
   2. Complete with an allow all rule in the following value format:
 > Record Record Name & Port Sets:
 >    
->   |                  | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
+>   |                  |  `{vpc_name}-master-sg` | `{vpc_name}-worker-sg`  |
 >   |------------------|------------------------:|:------------------------|
 >   | Name             | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
 >   | Description      | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
@@ -21,7 +21,7 @@
 >
 
   3. Click: `Create`
-###### Verify: You should now have 2 new Security Groups for both of `{vpc_name}-master-sg  {vpc_name}-worker-sg`
+###### Verify: You should now have 2 new Security Groups for both of `{vpc_name}-master-sg` & `{vpc_name}-worker-sg`
 
 --------------------------------------------------------------------------------
 ### Step 01\. Add Target Group `Tags`
@@ -33,14 +33,14 @@
 >   | {vpc_name}-master-sg | Name                    | {vpc_name}-master-sg |
 >   | {vpc_name}-worker-sg | Name                    | {vpc_name}-worker-sg | 
 
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups] > `{vpc_name}-master-sg` > Lower Panel > Tags
+###### Navigate: [AWS Console] > [EC2] > [Security Groups] > `{vpc_name}-master-sg` > Lower Panel > Tags
 
   1. Click: `Add/Edit Tags`
   2. Click: `Create Tag`
   3. Complete per the Security Group Tags table
   3. Click: `Save`
 
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups] > `{vpc_name}-worker-sg` > Lower Panel > Tags
+###### Navigate: [AWS Console] > [EC2] > [Security Groups] > `{vpc_name}-worker-sg` > Lower Panel > Tags
 
   1. Click: `Add/Edit Tags`
   2. Click: `Create Tag`
