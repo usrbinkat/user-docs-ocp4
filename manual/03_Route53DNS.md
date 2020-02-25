@@ -27,9 +27,9 @@
 >   |-------|-------------------------------------|
 >   | Name  | `_etcd-server-ssl._tcp`             |
 >   | Type  | `SRV - Service Locator`             |
->   | Value | ```                                 |
->   |       |  0 10 2380 etcd-0.ocp.{domain_name} |
->   |       | ```                                 |
+>   | Value |  0 10 2380 etcd-0.ocp.{domain_name} |
+>   |       |  0 10 2380 etcd-1.ocp.{domain_name} |
+>   |       |  0 10 2380 etcd-2.ocp.{domain_name} |
 
    Field `Value`                          
 ```
