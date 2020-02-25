@@ -6,5 +6,5 @@
 ### Next Steps:
   + [02 Setup VPC]
 --------------------------------------------------------------------------------
-[02 Setup VPC]:../manual/01_SetupVPC.md
+[02 Setup VPC]:../manual/02_SetupVPC.md
 
