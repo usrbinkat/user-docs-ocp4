@@ -23,10 +23,13 @@
   2. Fill in with the following values:
 >   Example:
 >
->   | Key  | Value                   |
->   |------|-------------------------|
->   | Name | `_etcd-server-ssl._tcp` |
->   | Type | `SRV - Service Locator` |
+>   | Key   | Value                               |
+>   |-------|-------------------------------------|
+>   | Name  | `_etcd-server-ssl._tcp`             |
+>   | Type  | `SRV - Service Locator`             |
+>   | Value | ```                                 |
+>   |       |  0 10 2380 etcd-0.ocp.{domain_name} |
+>   |       | ```                                 |
 
    Field `Value`                          
 ```
