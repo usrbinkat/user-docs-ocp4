@@ -17,7 +17,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 02\. Create etcd masters `SRV Records`
+### Step 02\. Create master etcd node `SRV Records`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
@@ -37,7 +37,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 03\. Create CNAME Record `api-int`
+### Step 03\. Create  api-int `CNAME Record`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
@@ -52,7 +52,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 04\. Create CNAME Record `api`
+### Step 04\. Create  api `CNAME Record`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
@@ -67,7 +67,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 05\. Create wildcard CNAME Record `*.apps`
+### Step 05\. Create wildcard  *.apps `CNAME Record`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
@@ -82,7 +82,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 06\. Create etcd Master Node(s) `A Records`
+### Step 06\. Create etcd Master Node `A Records`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
 ###### For each of the records {etcd-0,etcd-1,etcd-2} do the following:
   1. Click `Create Record Set`
