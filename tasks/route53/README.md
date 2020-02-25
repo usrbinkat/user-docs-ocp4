@@ -2,7 +2,7 @@
 ### Prerequisites:
   + [02 Setup AWS VPC]
 --------------------------------------------------------------------------------
-### Step 01\. Create Hosted Zone
+### Step 01\. Create `Hosted Zone`
 ###### Navigate: [AWS Console] > [Route 53] 
   1. Click: 'Create Hosted Zone'
   2. Complete with the following values format:
@@ -17,7 +17,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 02\. Create SRV Records for etcd masters
+### Step 02\. Create etcd masters `SRV Records`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
@@ -37,7 +37,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 03\. Create CNAME Record 'api-int'
+### Step 03\. Create CNAME Record `api-int`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
@@ -52,7 +52,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 04\. Create CNAME Record 'api'
+### Step 04\. Create CNAME Record `api`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
@@ -67,7 +67,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 05\. Create CNAME Record wildcard `*.apps`
+### Step 05\. Create wildcard CNAME Record `*.apps`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
@@ -82,7 +82,7 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-### Step 06\. Create A Records for etcd Master Nodes
+### Step 06\. Create etcd Master Node(s) `A Records`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
 ###### For each of the records {etcd-0,etcd-1,etcd-2} do the following:
   1. Click `Create Record Set`
@@ -99,7 +99,7 @@
   4. You should now have 3 records, one for each of ` etcd-0 etcd-1 etcd-2 `
 
 --------------------------------------------------------------------------------
-### Step 07\. Create A Record for registry
+### Step 07\. Create registry `A Record`
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
