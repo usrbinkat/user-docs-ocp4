@@ -92,6 +92,7 @@
 >   | Value | ` 192.168.1.100 `       |
 
   3. Click: 'Create'
+  4. You should now have 3 records, one for each of ` etcd-0 etcd-1 etcd-2 `
 
 --------------------------------------------------------------------------------
 #### Step 07\. Create A Record for registry
