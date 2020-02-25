@@ -5,22 +5,37 @@
 ```
 .
 ├── manual
-│   ├── 01_FirstTaskName.md
 │   ├── 01_Prerequisites.md
 │   ├── 02_SetupVPC.md
+│   ├── 03_Route53DNS.md
+│   ├── 04_TargetGroups.md
+│   ├── 05_LoadBalancers.md
+│   ├── 06_SecurityGroups.md
+│   ├── 07_IAMRoles.md
 │   └── README.md
 ├── MANUAL.md
 ├── README.md
+├── registry.tar
 └── tasks
     ├── artifacts
+    ├── iam-roles
+    │   └── README.md
     ├── install-config
+    ├── loadbalancer
+    │   └── README.md
     ├── manifests
     ├── prerequisites
     │   └── README.md
+    ├── route53
+    │   └── README.md
     ├── secrets
+    ├── security-groups
+    │   └── README.md
+    ├── target-groups
+    │   └── README.md
     ├── template
     │   └── README.md
     └── vpc
         └── README.md
-```
 
+```
