@@ -21,6 +21,7 @@
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
   1. Click `Create Record Set`
   2. Fill in with the following values:
+
 >   Example:
 >   | Key   | Value                   |
 >   |-------|-------------------------|
