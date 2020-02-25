@@ -24,7 +24,7 @@
 ###### Verify: You should now have 2 new Security Groups for both of `{vpc_name}-master-sg` & `{vpc_name}-worker-sg`
 
 --------------------------------------------------------------------------------
-### Step 01\. Add Target Group `Tags`
+### Step 02\. Add Target Group `Tags`
 ######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` create the coresponding tag:
 > Security Group Tags
 >    
