@@ -8,24 +8,24 @@
   2. Select "json" Tab 
   3. Erase default content
   4. Fill in with the following content
-    ```
-    Add this policy and click review
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "VisualEditor0",
-                "Effect": "Allow",
-                "Action": [
-                    "s3:*",
-                    "ec2:*",
-                    "elasticloadbalancing:*"
-                ],
-                "Resource": "*"
-            }
-        ]
-    }
-    ```
+```
+Add this policy and click review
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "ec2:*",
+                "elasticloadbalancing:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
 > Example
 >
 >   | Option            | Value                 |
