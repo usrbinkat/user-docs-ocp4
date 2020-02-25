@@ -94,13 +94,13 @@
 ### Step 04\. Add `Internal Listener` to DNS Name Records
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab `Description`
 
-  1. Copy 'DNS Name' value 
+  1. Copy `DNS Name value` 
 
 ###### Navigate: [AWS Console] > [Route 53] > Domain Name `ocp.{domain_name}` > `api-int.ocp.{domain_name}`
 
-  2. Paste {vpc_name}-int 'DNS Name' value into api-int.ocp.{domain_name} > CNAME > Value field
+  2. Paste {vpc\_name}-int `DNS Name value` into api-int.ocp.{domain\_name} > CNAME > Value field
 
-  3. Click: [Save Record Set]
+  3. Click: `Save Record Set`
 ###### Navigate: [AWS Console] > [Route 53] > Domain Name ocp.{domain_name} > api.ocp.{domain_name}
   4. Paste {vpc_name}-int 'DNS Name' value into api.ocp.{domain_name} > CNAME > Value field
   5. Click: [Save Record Set]
