@@ -19,22 +19,22 @@
 --------------------------------------------------------------------------------
 #### Step 02\. Create SRV Records for etcd masters
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
-  1. Click `Create Record Set`
+  1. Click 'Create Record Set'
   2. Fill in with the following values:
 >   Example:
 >
->   | Key   | Value                   |
->   |-------|-------------------------|
->   | Name: | `_etcd-server-ssl._tcp` |
->   | Type: | `SRV - Service Locator` |
+>   | Key  | Value                   |
+>   |------|-------------------------|
+>   | Name | `_etcd-server-ssl._tcp` |
+>   | Type | `SRV - Service Locator` |
 
-   Value                          
+   Field `Value`                          
 ```
 0 10 2380 etcd-0.ocp.{domain_name}
 0 10 2380 etcd-1.ocp.{domain_name}
 0 10 2380 etcd-2.ocp.{domain_name}
 ```
-  5. Click: `Create`
+  5. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 03\. Create CNAME Record `api-int`
