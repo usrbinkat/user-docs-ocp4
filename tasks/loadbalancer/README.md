@@ -91,7 +91,7 @@
   3. Click: `Save`
 
 ---------------------------------------------------------------------------------
-### Step 04\. Add `Internal Listener` to DNS Name Records
+### Step 04\. Add Internal Listener `DNS Name Record(s)`
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab `Description`
   1. Copy `DNS Name value` 
 
