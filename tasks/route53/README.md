@@ -37,8 +37,8 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-#### Step 03\. Create CNAME Record `api-int`
-  1. Click `Create Record Set`
+#### Step 03\. Create CNAME Record 'api-int'
+  1. Click 'Create Record Set'
   2. Fill in with the following values:
 >   Example:
 >
@@ -51,33 +51,61 @@
   3. Click: 'Create'
 
 --------------------------------------------------------------------------------
-#### Step 04\. Create CNAME Record `api`
+#### Step 04\. Create CNAME Record 'api'
   1. Click `Create Record Set`
-  2. Name: ` api `
-  3. Type: ` CNAME - Canonical name `
-  4. Value: ` replaceme ` (this is a temporary value)
+  2. Fill in with the following values:
+>   Example:
+>
+>   | Key   | Value                   |
+>   |-------|-------------------------|
+>   | Name  | ` api `                 |
+>   | Type  | CNAME - Canonical name  |
+>   | Value | ` replaceme `           |
+
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 05\. Create CNAME Record wildcard `*.apps`
   1. Click `Create Record Set`
-  2. Name: ` *.apps `
-  3. Type: ` CNAME - Canonical name `
-  4. Value: ` replaceme ` (this is a temporary value)
+  2. Fill in with the following values:
+>   Example:
+>
+>   | Key   | Value                   |
+>   |-------|-------------------------|
+>   | Name  | ` *.apps `              |
+>   | Type  | CNAME - Canonical name  |
+>   | Value | ` replaceme `           |
+
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 06\. Create A Records for etcd Master Nodes
 ###### For each of the records {etcd-0,etcd-1,etcd-2} do the following:
   1. Click `Create Record Set`
-  2. Name: ` etcd-0 `
-  3. Type: ` A - IPv4 Address `
-  4. Value: ` 192.168.1.100 ` 
+  2. Fill in with the following values:
+>   Example:
+>
+>   | Key   | Value                   |
+>   |-------|-------------------------|
+>   | Name  | ` etcd-0 `              |
+>   | Type  | A - IPv4 Address        |
+>   | Value | ` 192.168.1.100 `       |
+
+  3. Click: 'Create'
 
 --------------------------------------------------------------------------------
 #### Step 07\. Create A Record for registry
   1. Click `Create Record Set`
-  2. Name: ` registry `
-  3. Type: ` A - IPv4 Address `
-  4. Value: ` 192.168.1.100 ` 
+  2. Fill in with the following values:
+>   Example:
+>
+>   | Key   | Value                   |
+>   |-------|-------------------------|
+>   | Name  | ` registry `            |
+>   | Type  | A - IPv4 Address        |
+>   | Value | ` 192.168.1.100 `       |
+
+  3. Click: 'Create'
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
