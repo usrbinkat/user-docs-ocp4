@@ -3,14 +3,19 @@
   + [02 Setup AWS VPC]
 --------------------------------------------------------------------------------
 ### Step 01\. Create Hosted Zone
-###### Navigate: [AWS Console] > [Route 53] > Create Hosted Zone
+###### Navigate: [AWS Console] > [Route 53] 
 #### 01\. Create Hosted Zone
   Fill In:
-  1. Domain Name: ` ocp.{domain_name} `
-  2. Type: Private Hosted Zone
-  3. VPC ID: {your new vpc} (Use Drop down)
-  4. Click `Create`
+  1. Create Hosted Zone
+> Example values:
+>
+>   | Key          | Value               |
+>   |:-------------|--------------------:|
+>   | Domain Name  | ocp.{domain_name}   |
+>   | Type         | Private Hosted Zone |
+>   | VPC ID       | {your_new_vpc}      |
 
+  2. Click `Create`
 --------------------------------------------------------------------------------
 #### Step 02\. Create SRV Records for etcd masters
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
