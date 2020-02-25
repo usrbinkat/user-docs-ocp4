@@ -1,6 +1,6 @@
 # [Task 07](../tasks/iam-roles) - Setup IAM Roles
 ### Prerequisite:
-  + [00 Previous Task Name]
+  + [06 Setup Security Groups]
 --------------------------------------------------------------------------------
 ### Step 00\. First
 ###### Navigate: [AWS Console] > [EC2] 
@@ -17,9 +17,9 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [00 Next Task Name]
+  + [08 Create Image Registry]
 --------------------------------------------------------------------------------
-[00 Next Task Name]:../manual/00_NextTaskName.md
-[00 Previous Task Name]:../manual/00_PreviousTaskName.md
+[06 Setup Security Groups]:../manual/06_SecurityGroups.md
+[08 Create Image Registry]:../manual/08_ImageRegistry.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
