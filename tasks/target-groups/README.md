@@ -1,6 +1,6 @@
-# [Task 05](../tasks/security-groups/) - Setup Security Groups
+# [Task 06](../tasks/security-groups/) - Setup Security Groups
 ### Prerequisites:
-  + [Task 04 Setup Load Balancers]
+  + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
 ### Step 01\. Configure `Target Groups`
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
