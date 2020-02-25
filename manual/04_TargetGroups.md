@@ -25,7 +25,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 01\. Add Target Group `Tags`
-######  > For both `{vpc_name}-master-sg` & {vpc_name}-worker-sg` create the coresponding tag:
+######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` create the coresponding tag:
 > Security Group Tags
 >    
 >   | Security Group       | Key                     | Value                |
