@@ -4,9 +4,8 @@
 --------------------------------------------------------------------------------
 ### Step 01\. Create Hosted Zone
 ###### Navigate: [AWS Console] > [Route 53] 
-#### 01\. Create Hosted Zone
-  Fill In:
   1. Click: 'Create Hosted Zone'
+  2. Complete with the following values format:
 > Example values:
 >
 >   | Key          | Value               |
@@ -16,6 +15,7 @@
 >   | VPC ID       | {your_new_vpc}      |
 
   2. Click: 'Create'
+
 --------------------------------------------------------------------------------
 #### Step 02\. Create SRV Records for etcd masters
 ###### Navigate: [AWS Console] > [Route 53] > {domain_name}
