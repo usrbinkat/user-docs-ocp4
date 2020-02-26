@@ -29,7 +29,6 @@
 
 >   Image Regristy AMI Configure Instance Options Table
 >
->   |                |                     |       |
 >   |:--------------:|:-------------------:|:-----:|
 >   | Instance Type  | t2.xlarge           |       |
 >   | Network        | {vpc_name}          |       |
