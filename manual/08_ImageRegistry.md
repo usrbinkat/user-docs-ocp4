@@ -27,7 +27,7 @@
   4. Click: `Next: Configure Instance Details`
   5. Set values as per below
 
->   Image Regristy AMI Configure Instance Options Table
+>   Image Regristy AMI `Configure Instance` Options Table
 >
 >   |                |                     |
 >   |:--------------:|:-------------------:|
@@ -35,13 +35,25 @@
 >   | Network        | {vpc_name}          |
 >   | Subnet         | {vpc_name}-public-* |
 
-  6. Add 'Configure Instance' `Advance Details` User Data        
+  6. Add 'Configure Instance' `Advanced Details` User data        
   - Copy/Paste the following user data        
-  - Substitute 'YOUR\_PUBLIC\_SSH\_KEY' with your ssh pub key    
+  - Substitute 'YOUR\_PUBLIC\_SSH\_KEY' (eg: ssh-rsa string from ~/.ssh/id\_rsa.pub)   
 ```
 {"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["YOUR_PUBLIC_SSH_KEY"]}]},"storage":{},"systemd":{}}
 ```
 
+  7. Click: `Next: Add Storage`
+  8. Add 'Configure Instance' `Advanced Details` User data        
+>   Image Regristy AMI `Add Storage` Options Table
+>
+>   | Option         | Value (Minimum)     |
+>   |:--------------:|:-------------------:|
+>   | Device         | /dev/sda1           |
+>   | Size           | 30 GiB              |
+>   | Tags           | {vpc_name}-public-* |
+
+  9. Click: `Next: Add Tags`
+ 10. Add 'Configure Instance' `Advanced Details` User data        
 
 ```
 ```
