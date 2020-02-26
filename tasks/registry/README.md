@@ -19,7 +19,7 @@
 >   | registry.ocp   | A    | {elastic_ip_address} |
 
 ---------------------------------------------------------------------------------
-### Step 02\. Create Red Hat CoreOS Amazon Machine Image
+### Step 02\. Create Red Hat CoreOS AMI Instance
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
   2. Click: `Launch`
