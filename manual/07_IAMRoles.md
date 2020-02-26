@@ -69,25 +69,16 @@
 
   7. Click: `Next: Review`
   8. Fill in Role Name (eg: {vpc\_name}-master-profile)
+  7. Click: `Create Role`
 
 ---------------------------------------------------------------------------------
-### Step 03\. Create IAM Profile `worker`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
+### Step 04\. Create IAM User Role
+###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Users]
   1. Click: `Create Policy`
   2. Select "json" Tab 
   3. Erase default content
   4. Fill in with the following content
 ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "ec2:Describe*",
-            "Resource": "*"
-        }
-    ]
-}
 ```
   5. Provide `Name` value: `{vpc_name}-worker-profile`
   6. Click: `Create Policy`
@@ -103,6 +94,7 @@
 [08 Create Image Registry]:../manual/08_ImageRegistry.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [IAM]:https://console.amazonaws-us-gov.com/iam/home
+[Users]:https://console.amazonaws-us-gov.com/iam/home#/users
 [Roles]:https://console.amazonaws-us-gov.com/iam/home#/roles
 [Policies]:https://console.amazonaws-us-gov.com/iam/home#/policies
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
