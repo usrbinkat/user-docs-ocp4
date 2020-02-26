@@ -2,16 +2,15 @@
 ### Prerequisite:
   + [08 Build Image Registry Instance]
 --------------------------------------------------------------------------------
-### Step 01\. Create Elastic IP
-###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
-  1. Click: `Allocate new address`
-  2. Set IPv4 address pool option: `Amazon pool`
-  3. Click: `Allocate`
-  4. Copy new Elastic IP Addess
-  5. Click: `Close`
+### Step 01\. SSH to the registry instance
+>   NOTE:
+>   Continuing assumes you are able to use dig and or nslookup to resolve your
+>   registry instance hostname to the public facing elastic ip address and that
+>   ssh to that address works from your local machine as well.
 
-###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
-  6. Create new up stream DNS A Record
+  1. SSH to the registry instance
+  - Example: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
+
 >   DNS A Record Table
 >
 >   | Subdomain Name | Type | Value                |
