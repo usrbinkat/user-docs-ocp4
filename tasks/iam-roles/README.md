@@ -69,9 +69,10 @@
 
   7. Click: `Next: Review`
   8. Fill in Role Name (eg: {vpc\_name}-master-profile)
-  7. Click: `Create Role`
-
+  9. Click: `Create Role`
+    
 ---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Users]
   1. Click: `Create Policy`
