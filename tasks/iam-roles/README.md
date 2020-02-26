@@ -75,31 +75,15 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Users]
+###### Navigate: [AWS Console] > [EC2] > [IAM] > [Users] > Lower Pannel > Permissions
+###### - For each IAM User Role in the `IAM User Role Index` below, do the following:
+
   1. Filter for your aws administrator user name & click on user
 
-###### Navigate: Lower Pannel > Permissions
   2. Click: `Add inline policy`
   3. Click: `JSON` Tab
   4. Erase default content
-  5. Fill in with the following content
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "elasticloadbalancing:DescribeLoadBalancers",
-                "route53:ListHostedZones",
-                "route53:ChangeResourceRecordSets",
-                "tag:GetResources"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
-    ]
-}
-```
+  5. Fill in with associated Name & JSON content
   6. Click: `Create Policy`
   7. Provide `Name` value: `IngressPolicy`
   8. Click: `Create Policy`
@@ -129,10 +113,64 @@
 >   Name: MachineAPIPolicy    
 >   JSON:    
 ```    
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeImages",
+                "ec2:DescribeInstances",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:RunInstances",
+                "ec2:TerminateInstances",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeTargetGroups",
+                "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+                "elasticloadbalancing:RegisterTargets",
+                "iam:PassRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 ```    
 >   Name: ImageRegistryPolicy    
 >   JSON:    
 ```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:CreateBucket",
+                "s3:DeleteBucket",
+                "s3:PutBucketTagging",
+                "s3:GetBucketTagging",
+                "s3:PutBucketPublicAccessBlock",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:PutEncryptionConfiguration",
+                "s3:GetEncryptionConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetBucketLocation",
+                "s3:ListBucket",
+                "s3:HeadBucket",
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucketMultipartUploads",
+                "s3:AbortMultipartUpload"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
 ```    
 
 ---------------------------------------------------------------------------------
