@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [07 Setup IAM Roles]
 --------------------------------------------------------------------------------
-### Step 01\. Create EIP
+### Step 01\. Create Elastic IP
 ###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
   1. Click: `Allocate new address`
   2. Set IPv4 address pool option: `Amazon pool`
@@ -19,16 +19,40 @@
 >   | registry.ocp   | A    | {elastic_ip_address} |
 
 ---------------------------------------------------------------------------------
-### Step 02\. Create IAM Policy `worker`
+### Step 02\. Create Red Hat CoreOS Amazon Machine Image
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
-  2. Select "json" Tab 
-  3. Erase default content
-  4. Fill in with the following content
+  2. Click: `Launch`
+  3. Select Instance Type: minimum of `t2.xlarge`
+  4. Click: `Next: Configure Instance Details`
+  5. Set values as per below
+
+>   Image Regristy AMI Configure Instance Options Table
+>
+>   |                |                     |       |
+>   |:--------------:|:-------------------:|:-----:|
+>   | Instance Type  | t2.xlarge           |       |
+>   | Network        | {vpc_name}          |       |
+>   | Subnet         | {vpc_name}-public-* |       |
+
+  6. Add 'Configure Instance' `Advance Details` User Data 
+    - Copy/Paste the following user data
+```
+{"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["Your public Key"]}]},"storage":{},"systemd":{}}
+```
+
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+>   | Instance Type  |                     |       |
+
 ```
 ```
-  5. Provide `Name` value: `{vpc_name}-worker-profile`
-  6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Create IAM Roles `worker` & `master`
