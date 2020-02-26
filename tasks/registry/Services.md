@@ -11,7 +11,7 @@
   1. SSH to the registry instance
   - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
   - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
-  2. Execute: ` sudo -i `
+  2. Acquire root: ` sudo -i `
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create Red Hat CoreOS AMI Instance
