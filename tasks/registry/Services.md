@@ -1,6 +1,6 @@
 # [Task 09](../tasks/registry) - Setup Image Registry Artifacts & Services
 ### Prerequisite:
-  + [08 Build Image Registry Instance]
+  + [08 Build Image Registy Instance]
 --------------------------------------------------------------------------------
 ### Step 01\. SSH to the registry instance
 >   NOTE:
