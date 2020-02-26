@@ -2,7 +2,6 @@
 ### Prerequisite:
   + [07 Setup IAM Roles]
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 ### Step 01\. Create IAM Policies `master`
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
   1. Click: `Create Policies`
