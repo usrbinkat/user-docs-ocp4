@@ -2,16 +2,22 @@
 ### Prerequisite:
   + [07 Setup IAM Roles]
 --------------------------------------------------------------------------------
-### Step 01\. Create IAM Policies `master`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
-  1. Click: `Create Policies`
-  2. Select "json" Tab 
-  3. Erase default content
-  4. Fill in with the following content
-```
-```
-  5. Provide `Name` value: `{vpc_name}-master-profile`
-  6. Click: `Create Policy`
+### Step 01\. Create EIP
+###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
+  1. Click: `Allocate new address`
+  2. Set IPv4 address pool option: `Amazon pool`
+  3. Click: `Allocate`
+  4. Copy new Elastic IP Addess
+  4. Click: `Close`
+
+###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
+  1. Create new up stream DNS A Record
+>   DNS A Record Table
+>
+>   | DNS Record Name | Type | Value                |
+>   |:---------------:|:----:|:--------------------:|
+>   | registry.ocp    | A    | {elastic_ip_address} |
+
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create IAM Policy `worker`
@@ -71,8 +77,5 @@
 [07 Setup IAM Roles]:../manual/07_IAMRoles.md
 [09 Create Bootstrap Node]:../manual/09_Bootstrap.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
-[IAM]:https://console.amazonaws-us-gov.com/iam/home
-[Users]:https://console.amazonaws-us-gov.com/iam/home#/users
-[Roles]:https://console.amazonaws-us-gov.com/iam/home#/roles
-[Policies]:https://console.amazonaws-us-gov.com/iam/home#/policies
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
+[Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
