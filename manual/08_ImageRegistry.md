@@ -36,9 +36,10 @@
 >   | Subnet         | {vpc_name}-public-* |       |
 
   6. Add 'Configure Instance' `Advance Details` User Data    
-    - Copy/Paste the following user data
+    - Copy/Paste the following user data:
+    - Substitute 'YOUR\_PUBLIC\_SSH\_KEY' with your ssh pub key 
 ```
-{"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["Your public Key"]}]},"storage":{},"systemd":{}}
+{"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["YOUR_PUBLIC_SSH_KEY"]}]},"storage":{},"systemd":{}}
 ```
 
 
