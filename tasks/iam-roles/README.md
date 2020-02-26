@@ -2,14 +2,13 @@
 ### Prerequisite:
   + [06 Setup Security Groups]
 --------------------------------------------------------------------------------
-### Step 00\. First
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
-  1. Click: `Create Role`
+### Step 01\. Create IAM Policies
+###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policy]
+  1. Click: `Create Policies`
   2. Select "json" Tab 
   3. Erase default content
   4. Fill in with the following content
 ```
-Add this policy and click review
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -26,14 +25,31 @@ Add this policy and click review
     ]
 }
 ```
-> Example
->
->   | Option            | Value                 |
->   |------------------:|:----------------------|
->   | Name              | {vpc_name}-ext        |
+  5. Provide `Name` value: `{vpc\_name}-master-profile`
+  6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policy]
+### Step 02\. Create IAM Roles
+###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
+  1. Click: `Create Role`
+  2. Select "json" Tab 
+  3. Erase default content
+  4. Fill in with the following content
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ec2:Describe*",
+            "Resource": "*"
+        }
+    ]
+}
+```
+  5. Provide `Name` value: `{vpc\_name}-master-profile`
+  6. Click: `Create Policy`
+
 ---------------------------------------------------------------------------------
 ### Step 00\. Second
 ###### Navigate: [AWS Console] > [EC2] 
