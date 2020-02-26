@@ -2,6 +2,7 @@
 ### Prerequisite:
   + [06 Setup Security Groups]
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 ### Step 01\. Create IAM Policies `master`
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
   1. Click: `Create Policies`
