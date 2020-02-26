@@ -25,7 +25,7 @@
     ]
 }
 ```
-  5. Provide `Name` value: `{vpc\_name}-master-profile`
+  5. Provide `Name` value: `{vpc_name}-master-profile`
   6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
@@ -47,7 +47,7 @@
     ]
 }
 ```
-  5. Provide `Name` value: `{vpc\_name}-worker-profile`
+  5. Provide `Name` value: `{vpc_name}-worker-profile`
   6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
@@ -88,7 +88,7 @@
     ]
 }
 ```
-  5. Provide `Name` value: `{vpc\_name}-worker-profile`
+  5. Provide `Name` value: `{vpc_name}-worker-profile`
   6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
