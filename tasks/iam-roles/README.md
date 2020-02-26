@@ -74,7 +74,6 @@
     
         
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
 ###### Navigate: [AWS Console] > [EC2] > [IAM] > [Users] > Lower Pannel > Permissions
 ###### - For each of the 3 IAM User Roles in the `IAM User Role Index` below, do the following:
