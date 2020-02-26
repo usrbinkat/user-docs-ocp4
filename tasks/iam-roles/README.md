@@ -76,16 +76,15 @@
 --------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
 ###### Navigate: [AWS Console] > [EC2] > [IAM] > [Users] > Lower Pannel > Permissions
-###### - For each IAM User Role in the `IAM User Role Index` below, do the following:
+###### - For each of the 3 IAM User Roles in the `IAM User Role Index` below, do the following:
 
   1. Filter for your aws administrator user name & click on user
-
   2. Click: `Add inline policy`
   3. Click: `JSON` Tab
   4. Erase default content
-  5. Fill in with associated Name & JSON content
+  5. Fill in with associated JSON content
   6. Click: `Create Policy`
-  7. Provide `Name` value: `IngressPolicy`
+  7. Provide `Name` value
   8. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
