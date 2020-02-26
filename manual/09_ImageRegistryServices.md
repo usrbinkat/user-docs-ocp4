@@ -9,13 +9,8 @@
 >   ssh to that address works from your local machine as well.
 
   1. SSH to the registry instance
-  - Example: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
-
->   DNS A Record Table
->
->   | Subdomain Name | Type | Value                |
->   |:--------------:|:----:|:--------------------:|
->   | registry.ocp   | A    | {elastic_ip_address} |
+  - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
+  - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create Red Hat CoreOS AMI Instance
