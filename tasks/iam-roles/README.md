@@ -53,7 +53,7 @@
 ---------------------------------------------------------------------------------
 ### Step 03\. Create IAM Roles `worker` & `master`
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
-###### - For both profiles `{vpc\_name}-master-profile` & `{vpc\_name}-worker-profile` tag per the following
+###### - For both profiles `{vpc_name}-master-profile` & `{vpc_name}-worker-profile` tag per the following
   1. Click: `Create Role`
   2. Select "EC2" under heading "Choose a use case" 
   3. Click: `Next: Permissions`
