@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [08 Build Image Registy Instance]
 --------------------------------------------------------------------------------
-### Step 01\. SSH to the registry instance
+### Step 01\. SSH to the registry instance & Acquire root
 >   NOTE:
 >   Continuing assumes you are able to use dig and or nslookup to resolve your
 >   registry instance hostname to the public facing elastic ip address and that
@@ -11,6 +11,7 @@
   1. SSH to the registry instance
   - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
   - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
+  2. Execute: ` sudo -i `
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create Red Hat CoreOS AMI Instance
