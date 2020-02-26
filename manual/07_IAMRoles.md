@@ -108,7 +108,7 @@
 ### IAM User Role Index
     
 >   Name: IngressPolicy    
->   Role JSON:    
+>   JSON:    
 ```
 {
     "Version": "2012-10-17",
@@ -125,21 +125,15 @@
         }
     ]
 }
+```    
+>   Name: MachineAPIPolicy    
+>   JSON:    
+```    
+```    
+>   Name: ImageRegistryPolicy    
+>   JSON:    
 ```
->   Name: IngressPolicy    
->   Role JSON:    
-```
-{
-    "Version": "2012-10-17",
-}
-```
->   Name: IngressPolicy
->   Role JSON:
-```
-{
-    "Version": "2012-10-17",
-}
-```
+```    
 
 ---------------------------------------------------------------------------------
 ### Step 00\. Second
