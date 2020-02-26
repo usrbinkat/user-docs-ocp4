@@ -29,10 +29,11 @@
 
 >   Image Regristy AMI Configure Instance Options Table
 >
->   |:--------------:|:-------------------:|:-----:|
->   | Instance Type  | t2.xlarge           |       |
->   | Network        | {vpc_name}          |       |
->   | Subnet         | {vpc_name}-public-* |       |
+>   |                |                     |
+>   |:--------------:|:-------------------:|
+>   | Instance Type  | t2.xlarge           |
+>   | Network        | {vpc_name}          |
+>   | Subnet         | {vpc_name}-public-* |
 
   6. Add 'Configure Instance' `Advance Details` User Data        
   - Copy/Paste the following user data        
