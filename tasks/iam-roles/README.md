@@ -68,21 +68,64 @@
 >   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
 
   7. Click: `Next: Review`
-  8. Fill in Role Name (eg: {vpc\_name}-master-profile)
+  8. Fill in Role Name (eg: `{vpc\_name}-master-profile` )
   9. Click: `Create Role`
     
----------------------------------------------------------------------------------
+        
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Users]
-  1. Click: `Create Policy`
-  2. Select "json" Tab 
-  3. Erase default content
-  4. Fill in with the following content
+  1. Filter for your aws administrator user name & click on user
+
+###### Navigate: Lower Pannel > Permissions
+  2. Click: `Add inline policy`
+  3. Click: `JSON` Tab
+  4. Erase default content
+  5. Fill in with the following content
 ```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "route53:ListHostedZones",
+                "route53:ChangeResourceRecordSets",
+                "tag:GetResources"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
 ```
-  5. Provide `Name` value: `{vpc_name}-worker-profile`
   6. Click: `Create Policy`
+  7. Provide `Name` value: `IngressPolicy`
+  8. Click: `Create Policy`
+
+---------------------------------------------------------------------------------
+### IAM User Role Index
+  - Name: IngressPolicy
+>   Role JSON:
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "route53:ListHostedZones",
+                "route53:ChangeResourceRecordSets",
+                "tag:GetResources"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+```
+>   
 
 ---------------------------------------------------------------------------------
 ### Step 00\. Second
