@@ -53,49 +53,15 @@
 >   | Tags           | {vpc_name}-public-* |
 
   9. Click: `Next: Add Tags`
+  9. Click: `Add Tag`
  10. Add 'Configure Instance' `Advanced Details` User data        
-
-```
-```
-
----------------------------------------------------------------------------------
-### Step 03\. Create IAM Roles `worker` & `master`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
-###### - For both profiles `{vpc_name}-master-profile` & `{vpc_name}-worker-profile` tag per the following
-  1. Click: `Create Role`
-  2. Select "EC2" under heading "Choose a use case" 
-  3. Click: `Next: Permissions`
-  4. Filter for term `{vpc_name}-master-profile` & Check left selection box
-  5. Click: `Next: Tags`
-  6. Fill in with the following Key:Value format
->   Role Tags Table:
+>   Image Registry AMI `Add Tags` Table
 >
->   | Role                      | Key  | Value                       |
->   |---------------------------|-----:|:----------------------------|
->   | {vpc_name}-master-profile | Name | `{vpc_name}-master-profile` |
->   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
+>   | Key  | Value                    |
+>   |:----:|:------------------------:|
+>   | Name | {vpc_name}-registry-node |
 
-  7. Click: `Next: Review`
-  8. Fill in Role Name: eg `{vpc_name}-master-profile`
-  9. Click: `Create Role`
-    
-###### Verify: 'Lower Panel > Permissions > Policy Name > Expand all' should list all 3 new policies
-        
-
---------------------------------------------------------------------------------
-### Step 04\. Create IAM User Role
-###### Navigate: [AWS Console] > [EC2] > [IAM] > [Users] > Lower Pannel > Permissions
-###### - For each of the 3 IAM User Roles in the `IAM User Role Index` below, do the following:
-
-  1. Filter for your aws administrator user name & click on user
-  2. Click: `Add inline policy`
-  3. Click: `JSON` Tab
-  4. Erase default content
-  5. Fill in with associated JSON content
-  6. Click: `Create Policy`
-  7. Provide `Name` value
-  8. Click: `Create Policy`
-
+ 11. Click: `Next: Configure Security Groups`
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
