@@ -51,6 +51,25 @@
   6. Click: `Create Policy`
 
 ---------------------------------------------------------------------------------
+### Step 03\. Create IAM Roles `worker` & `master`
+###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
+###### - For both profiles `{vpc\_name}-master-profile` & `{vpc\_name}-worker-profile` tag per the following
+  1. Click: `Create Role`
+  2. Select "EC2" under heading "Choose a use case" 
+  3. Click: `Next: Permissions`
+  4. Filter for term `{vpc_name}-master-profile` & Check left selection box
+  5. Click: `Next: Tags`
+  6. Fill in with the following Key:Value format
+>   Role Tags Table:
+>
+>   | Role                      | Key  | Value                       |
+>   |---------------------------|-----:|:----------------------------|
+>   | {vpc_name}-master-profile | Name | `{vpc_name}-master-profile` |
+>   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
+
+  7. Fill in with the following content
+
+---------------------------------------------------------------------------------
 ### Step 03\. Create IAM Profile `worker`
 ###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
   1. Click: `Create Policy`
@@ -71,25 +90,6 @@
 ```
   5. Provide `Name` value: `{vpc\_name}-worker-profile`
   6. Click: `Create Policy`
-
----------------------------------------------------------------------------------
-### Step 02\. Create IAM Roles `worker` & `master`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
-###### - For both profiles `{vpc\_name}-master-profile` & `{vpc\_name}-worker-profile` tag per the following
-  1. Click: `Create Role`
-  2. Select "EC2" under heading "Choose a use case" 
-  3. Click: `Next: Permissions`
-  4. Filter for term `{vpc_name}-master-profile` & Check left selection box
-  5. Click: `Next: Tags`
-  6. Fill in with the following Key:Value format
->   Role Tags Table:
->
->   | Role                      | Key  | Value                       |
->   |---------------------------|-----:|:----------------------------|
->   | {vpc_name}-master-profile | Name | `{vpc_name}-master-profile` |
->   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
-
-  7. Fill in with the following content
 
 ---------------------------------------------------------------------------------
 ### Step 00\. Second
