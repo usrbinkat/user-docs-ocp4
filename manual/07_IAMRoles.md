@@ -69,7 +69,7 @@
 >   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
 
   7. Click: `Next: Review`
-  8. Fill in Role Name (eg: `{vpc\_name}-master-profile` )
+  8. Fill in Role Name (eg: `{vpc_name}-master-profile` )
   9. Click: `Create Role`
     
         
