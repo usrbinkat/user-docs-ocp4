@@ -8,16 +8,15 @@
   2. Set IPv4 address pool option: `Amazon pool`
   3. Click: `Allocate`
   4. Copy new Elastic IP Addess
-  4. Click: `Close`
+  5. Click: `Close`
 
 ###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
-  1. Create new up stream DNS A Record
+  6. Create new up stream DNS A Record
 >   DNS A Record Table
 >
 >   | DNS Record Name | Type | Value                |
 >   |:---------------:|:----:|:--------------------:|
 >   | registry.ocp    | A    | {elastic_ip_address} |
-
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create IAM Policy `worker`
@@ -77,5 +76,6 @@
 [07 Setup IAM Roles]:../manual/07_IAMRoles.md
 [09 Create Bootstrap Node]:../manual/09_Bootstrap.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
+[VPC]:https://console.amazonaws-us-gov.com/vpc/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
