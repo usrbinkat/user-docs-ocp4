@@ -175,10 +175,10 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [08 Create Image Registry]
+  + [08 Build Image Registry Instance]
 --------------------------------------------------------------------------------
 [06 Setup Security Groups]:../manual/06_SecurityGroups.md
-[08 Create Image Registry]:../manual/08_ImageRegistry.md
+[08 Build Image Registry Instance]:../manual/08_ImageRegistryInstance.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [IAM]:https://console.amazonaws-us-gov.com/iam/home
 [Users]:https://console.amazonaws-us-gov.com/iam/home#/users

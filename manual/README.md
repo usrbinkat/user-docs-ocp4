@@ -28,7 +28,7 @@ and here we go to continue ...
 [05 Setup Load Balancers]:manual/05_LoadBalancers.md
 [06 Setup Security Groups]:manual/06_SecurityGroups.md
 [07 Setup IAM Roles]:manual/07_IAMRoles.md
-[08 Image Registry Instance]:manual/08_ImageRegistry.md
-[09 Image Registry Mirror & Services]:manual/09_MirrorServices.md
+[08 Image Registry Instance]:manual/08_ImageRegistryInstance.md
+[09 Image Registry Mirror & Services]:manual/09_ImageRegistryServices.md
 
 

@@ -1,4 +1,4 @@
-# [Task 08](../tasks/registry) - Setup Image Registry
+# [Task 08](../tasks/registry) - Build Image Registry Instance
 ### Prerequisite:
   + [07 Setup IAM Roles]
 --------------------------------------------------------------------------------

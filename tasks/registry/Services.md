@@ -1,6 +1,6 @@
-# [Task 08](../tasks/registry) - Setup Image Registry
+# [Task 09](../tasks/registry) - Setup Image Registry Artifacts & Services
 ### Prerequisite:
-  + [07 Setup IAM Roles]
+  + [08 Build Image Registry Instance]
 --------------------------------------------------------------------------------
 ### Step 01\. Create Elastic IP
 ###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
@@ -82,10 +82,10 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [09 Create Bootstrap Node]
+  + [10 Create Bootstrap Node]
 --------------------------------------------------------------------------------
-[07 Setup IAM Roles]:../manual/07_IAMRoles.md
-[09 Create Bootstrap Node]:../manual/09_Bootstrap.md
+[08 Build Image Registy Instance]:../manual/08_ImageRegistryInstance.md
+[10 Create Bootstrap Node]:../manual/10_Bootstrap.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
 [AMIs]:https://console.amazonaws-us-gov.com/ec2/home#Images
