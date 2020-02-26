@@ -14,14 +14,14 @@
   6. Create new up stream DNS A Record
 >   DNS A Record Table
 >
->   | DNS Record Name | Type | Value                |
->   |:---------------:|:----:|:--------------------:|
->   | registry.ocp    | A    | {elastic_ip_address} |
+>   | Subdomain Name | Type | Value                |
+>   |:--------------:|:----:|:--------------------:|
+>   | registry.ocp   | A    | {elastic_ip_address} |
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create IAM Policy `worker`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
-  1. Click: `Create Policy`
+###### Navigate: [AWS Console] > [EC2] > [AMIs]
+  1. Select: `rhcos` image
   2. Select "json" Tab 
   3. Erase default content
   4. Fill in with the following content
@@ -77,5 +77,6 @@
 [09 Create Bootstrap Node]:../manual/09_Bootstrap.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
+[AMIs]:https://console.amazonaws-us-gov.com/ec2/home#Images
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
