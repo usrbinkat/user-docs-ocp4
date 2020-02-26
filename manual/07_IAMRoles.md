@@ -67,7 +67,8 @@
 >   | {vpc_name}-master-profile | Name | `{vpc_name}-master-profile` |
 >   | {vpc_name}-worker-profile | Name | `{vpc_name}-worker-profile` |
 
-  7. Fill in with the following content
+  7. Click: `Next: Review`
+  8. Fill in Role Name (eg: {vpc\_name}-master-profile)
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Create IAM Profile `worker`
