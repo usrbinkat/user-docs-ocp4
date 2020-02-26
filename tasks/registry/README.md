@@ -35,21 +35,12 @@
 >   | Network        | {vpc_name}          |       |
 >   | Subnet         | {vpc_name}-public-* |       |
 
-  6. Add 'Configure Instance' `Advance Details` User Data 
+  6. Add 'Configure Instance' `Advance Details` User Data    
     - Copy/Paste the following user data
 ```
 {"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["Your public Key"]}]},"storage":{},"systemd":{}}
 ```
 
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
->   | Instance Type  |                     |       |
 
 ```
 ```
