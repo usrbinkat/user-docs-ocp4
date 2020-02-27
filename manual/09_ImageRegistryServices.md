@@ -83,7 +83,10 @@ oc adm release mirror \
     --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
     --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
 ```
+  - [Example Success Message]
 
+
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
@@ -99,3 +102,4 @@ oc adm release mirror \
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
 [User-provisioned Infrastructure]:https://cloud.redhat.com/openshift/install/aws/user-provisioned
 [Red Hat OpenShift Cluster Manager]:https://cloud.redhat.com/openshift/
+[Example Success Message]:../tasks/registry/lib/oc_adm_success_example.txt
