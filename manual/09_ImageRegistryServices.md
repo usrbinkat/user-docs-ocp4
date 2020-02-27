@@ -117,7 +117,7 @@ mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}
 ```
 cat <<EOF >/root/${CLUSTER_DOMAIN}/install-config.yaml
 apiVersion: v1
-baseDomain: domain
+baseDomain: ${DOMAIN_NAME}
 imageContentSources:
 - mirrors:
   - registry.${CLUSTER_DOMAIN}/ocp/release
