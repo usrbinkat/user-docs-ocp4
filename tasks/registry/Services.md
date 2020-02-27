@@ -100,7 +100,10 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 
 ---------------------------------------------------------------------------------
 ### Step 11\. Write `install-config.yaml`
-  1. Prep directory - CMD: `mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}`
+  1. Prep directory - CMD: 
+```
+mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}
+```
   1. Write yaml - CMD: 
 ```
 cat <<EOF >/root/${CLUSTER_DOMAIN}/install-config.yaml
