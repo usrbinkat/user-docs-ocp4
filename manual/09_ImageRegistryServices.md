@@ -83,10 +83,7 @@ oc adm release mirror \
     --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
     --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
 ```
-  - [Example Success Message]
-
-
----------------------------------------------------------------------------------
+  + [Example Success Message]    
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
