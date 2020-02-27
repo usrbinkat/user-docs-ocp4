@@ -37,7 +37,7 @@
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
-  2. Run letsencrypt container to acquire certificates
+  2. Run letsencrypt container to acquire certificates    
   TODO: [Fix http port 80 enablement](https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/issues/2)
 ```
 podman run                                              \
@@ -88,10 +88,9 @@ oc adm release mirror \
 ### Step 09\. Save `oc adm mirror` success output for writing `install-config.yaml`
 ---------------------------------------------------------------------------------
 ### Step 10\. Pull Openshift Installer
-  1. CMD: `cd /root/`
-  2. CMD:    
+  1. CMD:    
 ```
-oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
+oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to='/root/'
 ```
 ---------------------------------------------------------------------------------
 ### Next Steps:
