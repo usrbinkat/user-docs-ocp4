@@ -45,6 +45,20 @@ podman run                                              \
   -m 'email_address' -d 'registry.{cluster_domain_name}'
 ```
 
+---------------------------------------------------------------------------------
+### Step 05\. Build Image Registry Service
+  1. Start registry container
+```
+podman run \
+    -d                                                                                       \
+    --restart=always                                                                         \
+    --name registry                                                                          \
+    --volume /etc/letsencrypt:/etc/letsencrypt                                               \
+    -e REGISTRY_HTTP_ADDR=0.0.0.0:443                                                        \
+    -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/letsencrypt/live/registry.ocp.domain/fullchain.pem \
+    -e REGISTRY_HTTP_TLS_KEY=/etc/letsencrypt/live/registry.ocp.domain/privkey.pem           \
+--net=host docker.io/library/registry:2
+```
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
