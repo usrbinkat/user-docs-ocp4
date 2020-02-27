@@ -77,9 +77,9 @@ docker.io/library/registry:2
   1. Pull ocp-release container image
 ```
 oc adm release mirror \
-    --from=quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64   \
-    --to=registry.ocp.domain/ocp/release                                 \
-    --to-release-image=registry.ocp.domain/ocp/release:4.3.0-rc.3-x86_64
+    --from=quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64          \
+    --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
+    --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
 ```
 
 ---------------------------------------------------------------------------------
