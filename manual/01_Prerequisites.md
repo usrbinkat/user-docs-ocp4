@@ -10,6 +10,8 @@
   - `DOMAIN_NAME`
   - `CLUSTER_NAME`
   - `CLUSTER_DOMAIN`
+  - AWS Access Key ID      (commercial)
+  - AWS Secret Access Key  (commercial)
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
