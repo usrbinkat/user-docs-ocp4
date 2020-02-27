@@ -28,6 +28,8 @@
 
 ---------------------------------------------------------------------------------
 ### Step 04\. Export required variables
+  1. Export AWS Region Variable
+  - Example: `export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION}`
   1. Export cluster name
   - Example: `export CLUSTER_NAME='ocp'; echo ${CLUSTER_NANE}`
   1. Export cluster domain
