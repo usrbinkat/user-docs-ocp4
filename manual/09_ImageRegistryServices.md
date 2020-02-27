@@ -33,7 +33,7 @@
   1. Export cluster domain
   - Example: `export DOMAIN_NAME='cluster.com'`
   1. Export cluster domain name
-  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NANE}"`
+  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"`
   2. Export letsencrypt certificate registry email address
   - Example: `export CERT_EMAIL='admin@${DOMAIN_NAME}'`
 
