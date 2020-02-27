@@ -56,14 +56,15 @@ podman run                                              \
   1. Start registry container
 ```
 podman run \
-    -d                                                                                       \
-    --restart=always                                                                         \
-    --name registry                                                                          \
-    --volume /etc/letsencrypt:/etc/letsencrypt                                               \
-    -e REGISTRY_HTTP_ADDR=0.0.0.0:443                                                        \
-    -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/letsencrypt/live/registry.ocp.domain/fullchain.pem \
-    -e REGISTRY_HTTP_TLS_KEY=/etc/letsencrypt/live/registry.ocp.domain/privkey.pem           \
---net=host docker.io/library/registry:2
+  -d                                                                                              \
+  --net=host                                                                                      \
+  --name registry                                                                                 \
+  --restart=always                                                                                \
+  --volume /etc/letsencrypt:/etc/letsencrypt                                                      \
+  -e REGISTRY_HTTP_ADDR=0.0.0.0:443                                                               \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/fullchain.pem \
+  -e REGISTRY_HTTP_TLS_KEY=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/privkey.pem           \
+docker.io/library/registry:2
 ```
 
 ---------------------------------------------------------------------------------
