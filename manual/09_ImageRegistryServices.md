@@ -104,7 +104,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}
 ```
-  1. Write yaml - CMD: 
+  2. Write yaml - CMD: 
 ```
 cat <<EOF >/root/${CLUSTER_DOMAIN}/install-config.yaml
 piVersion: v1
@@ -143,6 +143,10 @@ pullSecret: '`cat /root/.docker/config.json`'
 sshKey: '`cat /home/core/.ssh/authorized_keys`'
 publish: Internal
 EOF
+```
+  3. Backup install-config.yaml file - CMD: 
+```
+mkdir /root/bak ; cp -f /root/${CLUSTER_DOMAIN}/install-config.yaml /root/bak/
 ```
 ---------------------------------------------------------------------------------
 ### Next Steps:
