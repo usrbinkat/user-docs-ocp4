@@ -30,6 +30,7 @@
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
   2. Run letsencrypt container to acquire certificates
   - NOTE: Replace `email_address` & `cluster_domain_name` variables
+  TODO: [Fix http port 80 enablement](https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/issues/2)
 ```
 podman run                                              \
     --rm                                                \
