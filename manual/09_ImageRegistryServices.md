@@ -92,6 +92,11 @@ oc adm release mirror \
 ```
 oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to='/root/'
 ```
+
+---------------------------------------------------------------------------------
+### Step 11\. Write `install-config.yaml`
+  1. CMD:    
+
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
@@ -107,4 +112,4 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
 [User-provisioned Infrastructure]:https://cloud.redhat.com/openshift/install/aws/user-provisioned
 [Red Hat OpenShift Cluster Manager]:https://cloud.redhat.com/openshift/
-[Example Success Message]:../tasks/registry/lib/oc_adm_success_example.txt
+[Example Success Message]:../tasks/registry/lib/install-config/oc_adm_success_example.txt
