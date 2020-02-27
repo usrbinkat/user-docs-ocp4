@@ -32,7 +32,7 @@
   - Example: `export CERT_EMAIL='admin@cluster.com'`
 
 ---------------------------------------------------------------------------------
-### Step 04\. Provision ACME Lets Encrypt SSL Certificates
+### Step 05\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
   2. Run letsencrypt container to acquire certificates
@@ -52,7 +52,12 @@ podman run                                              \
 ```
 
 ---------------------------------------------------------------------------------
-### Step 05\. Build Image Registry Service
+### Step 06\. Test Quay.io image pull
+  1. Pull ocp-release container image
+    `podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64`
+
+---------------------------------------------------------------------------------
+### Step 07\. Build Image Registry Service
   1. Start registry container
 ```
 podman run \
@@ -65,6 +70,16 @@ podman run \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/fullchain.pem \
   -e REGISTRY_HTTP_TLS_KEY=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/privkey.pem           \
 docker.io/library/registry:2
+```
+
+---------------------------------------------------------------------------------
+### Step 08\. Load images into mirror
+  1. Pull ocp-release container image
+```
+oc adm release mirror \
+    --from=quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64   \
+    --to=registry.ocp.domain/ocp/release                                 \
+    --to-release-image=registry.ocp.domain/ocp/release:4.3.0-rc.3-x86_64
 ```
 
 ---------------------------------------------------------------------------------
