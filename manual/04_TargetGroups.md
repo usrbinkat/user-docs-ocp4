@@ -2,7 +2,7 @@
 ### Prerequisites:
   + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
-### Step 01\. Configure `Target Groups`
+### Step 01\. Configure `Security Groups`
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
 ######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` do the following:
 
