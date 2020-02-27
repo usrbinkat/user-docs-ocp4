@@ -28,10 +28,14 @@
 
 ---------------------------------------------------------------------------------
 ### Step 04\. Export required variables
+  1. Export cluster name
+  - Example: `export CLUSTER_NAME='ocp'`
+  1. Export cluster domain
+  - Example: `export DOMAIN_NAME='cluster.com'`
   1. Export cluster domain name
-  - Example: `export CLUSTER_DOMAIN='ocp.cluster.com'`
+  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NANE}"`
   2. Export letsencrypt certificate registry email address
-  - Example: `export CERT_EMAIL='admin@cluster.com'`
+  - Example: `export CERT_EMAIL='admin@${DOMAIN_NAME}'`
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
@@ -94,7 +98,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 
 ---------------------------------------------------------------------------------
 ### Step 11\. Write `install-config.yaml`
-  1. CMD:    
+  1. CMD: `mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}`
 
 ---------------------------------------------------------------------------------
 ### Next Steps:

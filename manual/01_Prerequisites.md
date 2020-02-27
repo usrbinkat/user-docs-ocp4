@@ -6,6 +6,10 @@
 # LIST
   - cloud variables
   - ssh-keygen
+  - `AWS_REGION`
+  - `DOMAIN_NAME`
+  - `CLUSTER_NAME`
+  - `CLUSTER_DOMAIN`
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
