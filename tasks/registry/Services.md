@@ -89,7 +89,7 @@ oc adm release mirror \
 ---------------------------------------------------------------------------------
 ### Step 10\. Pull Openshift Installer
   1. CMD: `cd /root/`
-  2. CMD:
+  2. CMD:    
     `oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64`
 ---------------------------------------------------------------------------------
 ### Next Steps:
