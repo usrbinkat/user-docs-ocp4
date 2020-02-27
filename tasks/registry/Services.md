@@ -29,13 +29,13 @@
 ---------------------------------------------------------------------------------
 ### Step 04\. Export required variables
   1. Export cluster name
-  - Example: `export CLUSTER_NAME='ocp'`
+  - Example: `export CLUSTER_NAME='ocp'; echo ${CLUSTER_NANE}`
   1. Export cluster domain
-  - Example: `export DOMAIN_NAME='cluster.com'`
+  - Example: `export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}`
   1. Export cluster domain name
-  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"`
+  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}`
   2. Export letsencrypt certificate registry email address
-  - Example: `export CERT_EMAIL='admin@${DOMAIN_NAME}'`
+  - Example: `export CERT_EMAIL='admin@${DOMAIN_NAME}'; echo ${CERT_EMAIL}`
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
