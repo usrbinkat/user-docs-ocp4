@@ -52,7 +52,7 @@ podman run                                              \
     --non-interactive                                   \
   -m "${CERT_EMAIL} -d "registry.${CLUSTER_DOMAIN}"
 ```
-
+  - [Example Success Message]:../tasks/registry/lib/
 ---------------------------------------------------------------------------------
 ### Step 06\. Test Quay.io image pull
   1. Pull ocp-release container image

@@ -1,0 +1,31 @@
+info: Mirroring completed in 3m52.32s (25.78MB/s)
+
+Success
+Update image:  registry.ocp.cluster.com/ocp/release:4.3.0-rc.3-x86_64
+Mirror prefix: registry.ocp.cluster.com/ocp/release
+
+To use the new mirrored repository to install, add the following section to the install-config.yaml:
+
+imageContentSources:
+- mirrors:
+  - registry.ocp.cluster.com/ocp/release
+  source: quay.io/openshift-release-dev/ocp-release
+- mirrors:
+  - registry.ocp.cluster.com/ocp/release
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+
+
+To use the new mirrored repository for upgrades, use the following to create an ImageContentSourcePolicy:
+
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: example
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - registry.ocp.cluster.com/ocp/release
+    source: quay.io/openshift-release-dev/ocp-release
+  - mirrors:
+    - registry.ocp.cluster.com/ocp/release
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
