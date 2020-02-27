@@ -27,15 +27,15 @@
 ---------------------------------------------------------------------------------
 ### Step 04\. Export required variables
   1. Export cluster domain name
-    `export CLUSTER_DOMAIN="{cluster_domain_name}`
-  - Example: export CLUSTER\_DOMAIN="ocp.cluster.com"
+  - Example: `export CLUSTER_DOMAIN='ocp.cluster.com'`
+  2. Export letsencrypt certificate registry email address
+  - Example: `export CERT_EMAIL='admin@cluster.com'`
 
 ---------------------------------------------------------------------------------
 ### Step 04\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
   2. Run letsencrypt container to acquire certificates
-  - NOTE: Replace `email_address` & `cluster_domain_name` variables
   TODO: [Fix http port 80 enablement](https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/issues/2)
 ```
 podman run                                              \
@@ -48,7 +48,7 @@ podman run                                              \
     --agree-tos                                         \
     --standalone                                        \
     --non-interactive                                   \
-  -m 'email_address' -d 'registry.{cluster_domain_name}'
+  -m "${CERT_EMAIL} -d "registry.${CLUSTER_DOMAIN}"
 ```
 
 ---------------------------------------------------------------------------------
