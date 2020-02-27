@@ -17,6 +17,8 @@
   - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
   - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
   2. Acquire root: ` sudo -i `
+  3. Start tmux session for safety
+    `tmux`
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Stage Pull Secret
