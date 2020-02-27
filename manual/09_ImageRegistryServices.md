@@ -25,6 +25,12 @@
   3. Paste Pull Secret from clipboard & save/close
 
 ---------------------------------------------------------------------------------
+### Step 04\. Export required variables
+  1. Export cluster domain name
+    `export CLUSTER_DOMAIN="{cluster_domain_name}`
+  - Example: export CLUSTER\_DOMAIN="ocp.cluster.com"
+
+---------------------------------------------------------------------------------
 ### Step 04\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
