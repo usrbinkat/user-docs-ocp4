@@ -2,7 +2,12 @@
 ### Prerequisite:
   + [08 Build Image Registy Instance]
 --------------------------------------------------------------------------------
-### Step 01\. SSH to the registry instance & Acquire root
+### Step 01\. Acquire Pull Secret
+###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
+  1. Click: `Copy pull secret`
+
+--------------------------------------------------------------------------------
+### Step 02\. SSH to the registry instance & Acquire root
 >   NOTE:
 >   Continuing assumes you are able to use dig and or nslookup to resolve your
 >   registry instance hostname to the public facing elastic ip address and that
@@ -14,42 +19,15 @@
   2. Acquire root: ` sudo -i `
 
 ---------------------------------------------------------------------------------
-### Step 02\. Create Red Hat CoreOS AMI Instance
-###### Navigate: [AWS Console] > [EC2] > [AMIs]
-  1. Select: `rhcos` image
-  2. Click: `Launch`
-  3. Select Instance Type: minimum of `t2.xlarge`
-  4. Click: `Next: Configure Instance Details`
-  5. Set values as per below
+### Step 03\. Stage Pull Secret
+  1. CMD: ` mkdir /root/.docker `
+  2. CMD: ` vi /root/.docker/config.json `
+  3. Paste Pull Secret from clipboard & save/close
 
->   Image Regristy AMI `Configure Instance` Options Table
->
->   |                |                     |
->   |:--------------:|:-------------------:|
->   | Instance Type  | t2.xlarge           |
->   | Network        | {vpc_name}          |
->   | Subnet         | {vpc_name}-public-* |
 
-  6. Add 'Configure Instance' `Advanced Details` User data        
-  - Copy/Paste the following user data        
-  - Substitute 'YOUR\_PUBLIC\_SSH\_KEY' (eg: ssh-rsa string from ~/.ssh/id\_rsa.pub)   
-```
-{"ignition":{"config":{},"security":{"tls":{}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{"users":[{"name":"core","sshAuthorizedKeys":["YOUR_PUBLIC_SSH_KEY"]}]},"storage":{},"systemd":{}}
-```
+---------------------------------------------------------------------------------
+### Step 04\. Stage Pull Secret
 
-  7. Click: `Next: Add Storage`
-  8. Add 'Configure Instance' `Advanced Details` User data        
->   Image Regristy AMI `Add Storage` Options Table
->
->   | Option         | Value (Minimum)     |
->   |:--------------:|:-------------------:|
->   | Device         | /dev/sda1           |
->   | Size           | 30 GiB              |
->   | Tags           | {vpc_name}-public-* |
-
-  9. Click: `Next: Add Tags`
-  9. Click: `Add Tag`
- 10. Add 'Configure Instance' `Advanced Details` User data        
 >   Image Registry AMI `Add Tags` Table
 >
 >   | Key  | Value                    |
@@ -88,3 +66,4 @@
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
+[User-provisioned Infrastructure]:https://cloud.redhat.com/openshift/install/aws/user-provisioned
