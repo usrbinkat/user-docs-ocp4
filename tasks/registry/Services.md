@@ -24,11 +24,25 @@
   2. CMD: ` vi /root/.docker/config.json `
   3. Paste Pull Secret from clipboard & save/close
 
-
 ---------------------------------------------------------------------------------
 ### Step 04\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
   ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
+  2. Run letsencrypt container to acquire certificates
+  - NOTE: Replace `email_address` & `cluster_domain_name` variables
+```
+podman run                                              \
+    --rm                                                \
+    --net=host                                          \
+    --privileged                                        \
+    --volume /etc/letsencrypt:/etc/letsencrypt          \
+    --volume /var/lib/letsencrypt:/var/lib/letsencrypt  \
+  docker.io/certbot/certbot certonly                    \
+    --agree-tos                                         \
+    --standalone                                        \
+    --non-interactive                                   \
+  -m 'email_address' -d 'registry.{cluster_domain_name}'
+```
 
 
 ---------------------------------------------------------------------------------
