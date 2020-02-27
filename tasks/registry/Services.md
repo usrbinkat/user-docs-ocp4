@@ -148,6 +148,10 @@ EOF
 ```
 mkdir /root/bak ; cp -f /root/${CLUSTER_DOMAIN}/install-config.yaml /root/bak/
 ```
+  4. Generate Manifests
+```
+. /root/openshift-install create manifests --dir=/root/${CLUSTER_DOMAIN}/
+```
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
