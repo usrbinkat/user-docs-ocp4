@@ -100,8 +100,47 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 
 ---------------------------------------------------------------------------------
 ### Step 11\. Write `install-config.yaml`
-  1. CMD: `mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}`
-
+  1. Prep directory - CMD: `mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}`
+  1. Write yaml - CMD: 
+```
+cat <<EOF >/root/${CLUSTER_DOMAIN}/install-config.yaml
+piVersion: v1
+baseDomain: domain
+imageContentSources:
+- mirrors:
+  - registry.${CLUSTER_DOMAIN}/ocp/release
+  source: quay.io/openshift-release-dev/ocp-release
+- mirrors:
+  - registry.${CLUSTER_DOMAIN}/ocp/release
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+compute:
+- name: worker
+  replicas: 2
+  platform:
+    aws:
+      type: t2.xlarge
+      zones:
+      - ${AWS_REGION}
+controlPlane:
+  name: master
+  replicas: 3
+  platform:
+    aws:
+      type: t2.xlarge
+      zones:
+      - ${AWS_REGION}
+controlPlane:
+metadata:
+  name: ${CLUSTER_NAME}
+platform:
+  aws:
+    amiID: ami-e9426288 
+    region: ${AWS_REGION}
+pullSecret: '`cat /root/.docker/config.json`'
+sshKey: '`cat /home/core/.ssh/authorized_keys`'
+publish: Internal
+EOF
+```
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
