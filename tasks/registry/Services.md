@@ -85,6 +85,12 @@ oc adm release mirror \
 ```
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
+### Step 09\. Save `oc adm mirror` success output for writing `install-config.yaml`
+---------------------------------------------------------------------------------
+### Step 10\. Pull Openshift Installer
+  1. CMD: `cd /root/`
+  1. CMD: `oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64`
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
 --------------------------------------------------------------------------------
