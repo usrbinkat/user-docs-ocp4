@@ -1,6 +1,6 @@
-# [Task 06](../tasks/security-groups/) - Setup Security Groups
+# [Task 04](../tasks/security-groups/) - Setup Target Groups
 ### Prerequisites:
-  + [Task 05 Setup Load Balancers]
+  + [Task 03 Configure Route53 DNS]
 --------------------------------------------------------------------------------
 ### Step 01\. Configure `Security Groups`
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
@@ -51,10 +51,10 @@
     
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 07 Setup IAM Roles]
+  + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
+[Task 03 Configure Route53 DNS]:../manual/03_Route53DNS.md
 [Task 05 Setup Load Balancers]:../manual/05_LoadBalancers.md
-[Task 07 Setup IAM Roles]:../manual/07_IAMRoles.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
