@@ -40,26 +40,28 @@
 >   
 
   2. Export cluster name
-   ```
-   export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME} 
-   ```
+```
+export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME} 
+```
   3. Export cluster domain
-   ```
-   export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
-   ```
+```
+export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
+```
   4. Export cluster domain name
-   ```
-   export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
-   ```
+```
+export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
+```
   5. Export letsencrypt certificate registry email address
-   ```
-   export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
-   ```
+```
+export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
+```
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
   1. Make letsencrypt directories
-  ` mkdir /etc/letsencrypt /var/lib/letsencrypt `
+```
+mkdir /etc/letsencrypt /var/lib/letsencrypt
+```
   2. Run letsencrypt container to acquire certificates    
   TODO: [Fix http port 80 enablement](https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/issues/2)
 ```
@@ -108,6 +110,7 @@ oc adm release mirror \
     --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
 ```
   + [Example Success Message]    
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 ### Step 09\. Save `oc adm mirror` success output for writing `install-config.yaml`
 ---------------------------------------------------------------------------------
