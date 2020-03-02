@@ -120,6 +120,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
   1. Prep directory - CMD: 
 ```
 mkdir /root/${CLUSTER_DOMAIN} ; cd /root/${CLUSTER_DOMAIN}
+mkdir /root/bak ; ls /root/
 ```
   2. Write yaml - CMD: 
 ```
