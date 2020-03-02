@@ -48,6 +48,10 @@ export AWS_REGION='us-east-1'; echo ${AWS_REGION}
 >   us-east-1, us-east-2, us-west-1, us-west-2    
 >   
 
+  2. Export AWS Region
+```
+export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
+```
   2. Export vpc name
 ```
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
@@ -189,6 +193,11 @@ cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
+```
+sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
+       /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
+```
+  7. Rewrite manifest entries for us-east-1 to 
 ```
 sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
        /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
