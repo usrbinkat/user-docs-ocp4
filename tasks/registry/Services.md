@@ -193,10 +193,13 @@ cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml
 sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
        /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
 ```
-  7. Rewrite manifest entries for us-east-1 to 
+  7. Rewrite manifest entries for us-east-1 to AWS Gov region
 ```
-sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
-       /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
+find  . -type f | xargs sed -i  "s/us-east-1/${AWS_GOV}/g"
+```
+  8. Rewrite manifest value 'infrastructureNAME' with unique tag
+```
+find  . -type f | xargs sed -i  "s/infrastructureName/${CLUSTER_NAME}/g"
 ```
 
 ---------------------------------------------------------------------------------
