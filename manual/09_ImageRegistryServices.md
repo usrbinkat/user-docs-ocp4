@@ -117,7 +117,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 
 ---------------------------------------------------------------------------------
 ### Step 11\. Write `install-config.yaml`
-  1. Prep directory - CMD: 
+  1. Prep directories - CMD: 
 ```
 mkdir /root/${CLUSTER_DOMAIN} /root/bak ; ls /root/
 ```
@@ -140,7 +140,7 @@ compute:
     aws:
       type: t2.xlarge
       zones:
-      - ${AWS_REGION}
+      - ${AWS_REGION}a
 controlPlane:
   name: master
   replicas: 3
@@ -148,7 +148,7 @@ controlPlane:
     aws:
       type: t2.xlarge
       zones:
-      - ${AWS_REGION}
+      - ${AWS_REGION}a
 controlPlane:
 metadata:
   name: ${CLUSTER_NAME}
