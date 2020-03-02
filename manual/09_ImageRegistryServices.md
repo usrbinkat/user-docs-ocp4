@@ -45,12 +45,14 @@
    export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME} 
    ```
   3. Export cluster domain
-  - Example: `export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}`
+  - Example:
    ```
+   export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
    ```
   4. Export cluster domain name
-  - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}`
+  - Example:
    ```
+   export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
    ```
   5. Export letsencrypt certificate registry email address
   - Example:
