@@ -4,6 +4,7 @@
 #### 02\. Second Task Step
 
 # LIST
+    WIP: Inventory of items to build out documentation for
   - cloud variables
   - ssh-keygen
   - `AWS_REGION`

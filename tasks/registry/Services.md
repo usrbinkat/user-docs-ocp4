@@ -163,6 +163,7 @@ mkdir /root/bak ; cp -f /root/${CLUSTER_DOMAIN}/install-config.yaml /root/bak/
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. 
+
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
