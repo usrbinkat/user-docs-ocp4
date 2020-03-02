@@ -114,16 +114,14 @@ oc adm release mirror \
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-### Step 09\. Save `oc adm mirror` success output for writing `install-config.yaml`
----------------------------------------------------------------------------------
-### Step 10\. Pull Openshift Installer
+### Step 09\. Pull Openshift Installer
   1. CMD:    
 ```
 oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to='/root/'
 ```
 
 ---------------------------------------------------------------------------------
-### Step 11\. Write `install-config.yaml`
+### Step 10\. Write `install-config.yaml`
   1. Prep directories - CMD: 
 ```
 mkdir /root/${CLUSTER_DOMAIN} /root/bak ; ls /root/
