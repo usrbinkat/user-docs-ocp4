@@ -28,8 +28,16 @@
 
 ---------------------------------------------------------------------------------
 ### Step 04\. Export required variables
+>   Variables Table:
+>   
+>   | Variable        | Example Value   |
+>   |----------------:|:----------------|
+>   | var_one         | value_one       |
+
   1. Export AWS Region Variable
-  - Example: `export AWS_REGION='us-east-1'; echo ${AWS_REGION}`
+```
+export AWS_REGION='us-east-1'; echo ${AWS_REGION}
+```
 >   Supported Values:
 >
 >   ap-northeast-1, ap-northeast-2, ap-south-1,    
