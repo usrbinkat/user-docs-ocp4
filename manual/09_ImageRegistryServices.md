@@ -124,7 +124,7 @@ mkdir /root/bak ; ls /root/
 ```
   2. Write yaml - CMD: 
 ```
-cat <<EOF >/root/${CLUSTER_DOMAIN}/install-config.yaml
+cat <<EOF >/root/bak/install-config.yaml
 apiVersion: v1
 baseDomain: ${DOMAIN_NAME}
 imageContentSources:
