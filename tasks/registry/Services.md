@@ -40,7 +40,8 @@
 >   
 
   1. Export cluster name
-  - Example: `export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME}`
+  - Example: 
+    export CLUSTER\_NAME='ocp'; echo ${CLUSTER\_NAME}
   1. Export cluster domain
   - Example: `export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}`
   1. Export cluster domain name
