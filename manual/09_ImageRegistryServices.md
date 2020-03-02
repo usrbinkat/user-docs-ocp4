@@ -175,7 +175,10 @@ cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml
  cd /root/ && ./openshift-install create manifests --dir=/root/${CLUSTER_DOMAIN}/
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
-  6. 
+  6. WIP
+```
+vi /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
+```
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
