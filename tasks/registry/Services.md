@@ -46,7 +46,7 @@
   1. Export cluster domain name
   - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}`
   2. Export letsencrypt certificate registry email address
-  - Example: `export CERT_EMAIL='admin@${DOMAIN_NAME}'; echo ${CERT_EMAIL}`
+  - Example: `export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}`
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
@@ -65,7 +65,7 @@ podman run                                              \
     --agree-tos                                         \
     --standalone                                        \
     --non-interactive                                   \
-  -m "${CERT_EMAIL} -d "registry.${CLUSTER_DOMAIN}"
+  -m "${CERT_EMAIL}" -d "registry.${CLUSTER_DOMAIN}"
 ```
 ---------------------------------------------------------------------------------
 ### Step 06\. Test Quay.io image pull
