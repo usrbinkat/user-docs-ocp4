@@ -39,14 +39,14 @@
 >   us-east-1, us-east-2, us-west-1, us-west-2    
 >   
 
-  1. Export cluster name
-  - Example: 
+  2. Export cluster name
+  - Example:    
     export CLUSTER\_NAME='ocp'; echo ${CLUSTER\_NAME}
-  1. Export cluster domain
+  3. Export cluster domain
   - Example: `export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}`
-  1. Export cluster domain name
+  4. Export cluster domain name
   - Example: `export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}`
-  2. Export letsencrypt certificate registry email address
+  5. Export letsencrypt certificate registry email address
   - Example: `export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}`
 
 ---------------------------------------------------------------------------------
