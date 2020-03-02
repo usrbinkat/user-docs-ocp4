@@ -199,7 +199,7 @@ find  . -type f | xargs sed -i  "s/us-east-1/${AWS_GOV}/g"
 ```
   8. Rewrite manifest value 'infrastructureNAME' with unique tag
 ```
-find  . -type f | xargs sed -i  "s/infrastructureName/${CLUSTER_NAME}/g"
+find  . -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
 
 ---------------------------------------------------------------------------------
