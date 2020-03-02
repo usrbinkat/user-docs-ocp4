@@ -190,7 +190,8 @@ cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
-sed "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
+sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
+       /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
 ```
 
 ---------------------------------------------------------------------------------
