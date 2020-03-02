@@ -203,7 +203,7 @@ find  . -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
   9. Remove default ingress configuration
 ```
-rm /root/ocp.ocp4.io/manifests/cluster-ingress-default-ingresscontroller.yaml
+rm /root/${CLUSTER_DOMAIN}/manifests/cluster-ingress-default-ingresscontroller.yaml
 ```
 
 ---------------------------------------------------------------------------------
