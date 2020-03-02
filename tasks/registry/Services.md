@@ -77,6 +77,7 @@ podman run                                              \
     --non-interactive                                   \
   -m "${CERT_EMAIL}" -d "registry.${CLUSTER_DOMAIN}"
 ```
+
 ---------------------------------------------------------------------------------
 ### Step 06\. Test Quay.io image pull
   1. Pull ocp-release container image
@@ -84,6 +85,7 @@ podman run                                              \
 podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
 ```
 
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 ### Step 07\. Build Image Registry Service
   1. Start registry container
