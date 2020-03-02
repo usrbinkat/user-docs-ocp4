@@ -37,7 +37,7 @@
 
   1. Export AWS Region Variable
 ```
-export AWS_REGION='us-east-1'; echo ${AWS_REGION}
+export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
 ```
 >   Supported Values:
 >
@@ -48,10 +48,6 @@ export AWS_REGION='us-east-1'; echo ${AWS_REGION}
 >   us-east-1, us-east-2, us-west-1, us-west-2    
 >   
 
-  2. Export AWS Region
-```
-export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
-```
   2. Export vpc name
 ```
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
@@ -162,7 +158,7 @@ compute:
     aws:
       type: t2.xlarge
       zones:
-      - ${AWS_REGION}a
+      - us-east-1a
 controlPlane:
   name: master
   replicas: 3
@@ -170,14 +166,14 @@ controlPlane:
     aws:
       type: t2.xlarge
       zones:
-      - ${AWS_REGION}a
+      - us-east-1a
 controlPlane:
 metadata:
   name: ${CLUSTER_NAME}
 platform:
   aws:
     amiID: ami-e9426288 
-    region: ${AWS_REGION}
+    region: us-east-1a
 pullSecret: '`cat /root/.docker/config.json`'
 sshKey: '`cat /home/core/.ssh/authorized_keys`'
 publish: Internal
