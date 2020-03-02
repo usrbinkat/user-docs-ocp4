@@ -33,6 +33,7 @@
 >   | Variable        | Example Value   |
 >   |----------------:|:----------------|
 >   | var_one         | value_one       |
+>   | TODO            | value_TODO      |
 
   1. Export AWS Region Variable
 ```
