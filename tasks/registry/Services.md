@@ -195,11 +195,15 @@ sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
 ```
   7. Rewrite manifest entries for us-east-1 to AWS Gov region
 ```
-find  . -type f | xargs sed -i  "s/us-east-1/${AWS_GOV}/g"
+find  . -type f | xargs sed -i  "s/us-east-1/${AWS_REGION}/g"
 ```
   8. Rewrite manifest value 'infrastructureNAME' with unique tag
 ```
 find  . -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
+```
+  9. Remove default ingress configuration
+```
+rm /root/ocp.ocp4.io/manifests/cluster-ingress-default-ingresscontroller.yaml
 ```
 
 ---------------------------------------------------------------------------------
