@@ -268,6 +268,24 @@ cd /root/ && ./openshift-install create ignition-configs --dir=${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
+### Step 14. Setup NGINX Artifact Service
+  1. Create base artifact directory
+```
+mkdir /home/core/html
+```
+  2. Start NGINX container
+```
+podman run \
+    --rm                                           \
+    --name=nginx                                   \
+    --net=host                                     \
+    --disconnect                                   \ 
+    --privileged                                   \
+    --volume /home/core/html:/usr/share/nginx/html \
+  docker.io/library/nginx:latest
+```
+
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
 --------------------------------------------------------------------------------
