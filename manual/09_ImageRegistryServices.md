@@ -166,7 +166,6 @@ controlPlane:
       type: t2.xlarge
       zones:
       - us-east-1a
-controlPlane:
 metadata:
   name: ${CLUSTER_NAME}
 platform:
@@ -184,7 +183,7 @@ cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml
 ```
   4. Generate Manifests
 ```
- cd /root/ && ./openshift-install create manifests --dir=/root/${CLUSTER_DOMAIN}/
+ cd /root/ && ./openshift-install create manifests --dir=/root/${CLUSTER_DOMAIN}
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
