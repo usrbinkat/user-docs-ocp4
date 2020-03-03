@@ -269,7 +269,7 @@ cd /root/ && ./openshift-install create ignition-configs --dir=${CLUSTER_DOMAIN}
 
 ---------------------------------------------------------------------------------
 ### Step 14. Setup NGINX Artifact Service
-  1. Create base artifact directory
+  1. Create base artifact service web root
 ```
 mkdir /home/core/html
 ```
@@ -283,6 +283,14 @@ podman run \
     --privileged                                   \
     --volume /home/core/html:/usr/share/nginx/html \
   docker.io/library/nginx:latest
+```
+  3. Push bootstrap ignition to web root
+```
+cp /root/govlcloud/bootstrap.ign /home/core/html/
+```
+  4. Set Artifact Permissions
+```
+chmod -R 755 /home/core/html/
 ```
 
 ---------------------------------------------------------------------------------
