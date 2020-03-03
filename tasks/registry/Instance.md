@@ -59,6 +59,17 @@
 >   |:----:|:------------------------:|
 >   | Name | {vpc_name}-registry-node |
 
+
+  9. Click: `Next: Configure Security Group`
+  9. Click: `Add Rule`
+  9. Configure with the following values
+>   Image Registry AMI `Add Tags` Table
+>
+>   | Type | Protocol | Port Range | Source   | Description |
+>   |:----:|:--------:|:----------:|:--------:|:-----------:|
+>   | SSH  | TCP      | 22         | Anywhere | SSH         |
+>   | HTTP | TCP      | 80         | Anywhere | ACME        |
+
  11. Click: `Review and Launch`
  12. Click: `Launch`
  13. Select Option: Proceed without a key pair
