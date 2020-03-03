@@ -214,12 +214,7 @@ rm \
 ```
 
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 ### Step 11. Write Secrets Configurations
-```
-awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64
-awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64
-```
   1. Write `openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml`
 ```
 cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
@@ -233,21 +228,35 @@ data:
   aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
 EOF
 ```
-  1. Write 
+  2. Write `openshift/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml`
 ```
+cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-cloud-credentials
+  namespace: openshift-machine-api
+data:
+  aws_access_key_id: `awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64`
+  aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
+EOF
 ```
-  1. Write 
+  3. Write `openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml`
 ```
+cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: installer-cloud-credentials
+  namespace: openshift-image-registry
+data:
+  aws_access_key_id: `awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64`
+  aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
+EOF
 ```
-  1. Write 
-```
-```
-  1. Write 
-```
-```
-  1. Write 
-```
-```
+
+---------------------------------------------------------------------------------
+### Step 11. Write Secrets Configurations
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
