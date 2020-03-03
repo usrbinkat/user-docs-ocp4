@@ -214,6 +214,42 @@ rm \
 ```
 
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+### Step 11. Write Secrets Configurations
+```
+awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64
+awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64
+```
+  1. Write 
+```
+cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloud-credentials
+  namespace: openshift-ingress-operator
+data:
+  aws_access_key_id: `awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64`
+  aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
+EOF
+```
+  1. Write 
+```
+```
+  1. Write 
+```
+```
+  1. Write 
+```
+```
+  1. Write 
+```
+```
+  1. Write 
+```
+```
+
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [10 Create Bootstrap Node]
 --------------------------------------------------------------------------------
