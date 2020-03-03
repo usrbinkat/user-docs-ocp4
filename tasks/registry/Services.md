@@ -258,7 +258,7 @@ EOF
 ---------------------------------------------------------------------------------
 ### Step 12. Backup your ignition config directory
 ```
-cp -rf /root/${CLUSTER_DOMAIN} /bak/${CLUSTER_DOMAIN}
+cp -rf /root/${CLUSTER_DOMAIN} /root/bak/${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
