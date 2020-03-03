@@ -220,7 +220,7 @@ rm \
 awk '/aws_access_key_id/ {print $3}' .aws/credentials | base64
 awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64
 ```
-  1. Write 
+  1. Write `openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml`
 ```
 cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
 apiVersion: v1
