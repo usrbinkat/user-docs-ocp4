@@ -279,7 +279,7 @@ podman run \
     --rm                                           \
     --name=nginx                                   \
     --net=host                                     \
-    --disconnect                                   \ 
+    --disconnect                                   \
     --privileged                                   \
     --volume /home/core/html:/usr/share/nginx/html \
   docker.io/library/nginx:latest
