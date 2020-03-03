@@ -201,9 +201,16 @@ find  . -type f | xargs sed -i  "s/us-east-1/${AWS_REGION}/g"
 ```
 find  . -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
-  9. Remove default ingress configuration
+  9. Purge `publish: Internal` configuration
 ```
-rm /root/${CLUSTER_DOMAIN}/manifests/cluster-ingress-default-ingresscontroller.yaml
+sed -i '/publish: Internal/d' /root/${CLUSTER_DOMAIN}/manifests/*
+```
+ 10. Remove default ingress configuration & non-applicable cloud credential configs
+```
+rm \
+  /root/${CLUSTER_DOMAIN}/openshift/99_cloud-creds-secret.yaml \
+  /root/${CLUSTER_DOMAIN}/openshift/99_role-cloud-creds-secret-reader.yaml \
+  /root/${CLUSTER_DOMAIN}/manifests/cluster-ingress-default-ingresscontroller.yaml
 ```
 
 ---------------------------------------------------------------------------------
