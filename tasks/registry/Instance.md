@@ -43,16 +43,15 @@
 ```
 
   7. Click: `Next: Add Storage`
-  8. Add 'Configure Instance' `Advanced Details` User data        
+  7. Configure with following minimums
 >   Image Regristy AMI `Add Storage` Options Table
 >
 >   | Option         | Value (Minimum)     |
 >   |:--------------:|:-------------------:|
 >   | Device         | /dev/sda1           |
 >   | Size           | 30 GiB              |
->   | Tags           | {vpc_name}-public-* |
 
-  9. Click: `Next: Add Tags`
+  8. Click: `Next: Add Tags`
   9. Click: `Add Tag`
  10. Add 'Configure Instance' `Advanced Details` User data        
 >   Image Registry AMI `Add Tags` Table
