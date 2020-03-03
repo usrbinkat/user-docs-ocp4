@@ -262,7 +262,10 @@ cp -rf /root/${CLUSTER_DOMAIN} /root/bak/${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
-### Step 11. Write Secrets Configurations
+### Step 13. Create Ignition Configurations
+```
+cd /root/ && ./openshift-install create ignition-configs --dir=${CLUSTER_DOMAIN}
+```
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
