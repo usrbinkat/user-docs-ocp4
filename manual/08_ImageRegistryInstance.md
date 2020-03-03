@@ -53,7 +53,6 @@
 
   8. Click: `Next: Add Tags`
   9. Click: `Add Tag`
- 10. Add 'Configure Instance' `Advanced Details` User data        
 >   Image Registry AMI `Add Tags` Table
 >
 >   | Key  | Value                    |
