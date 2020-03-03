@@ -76,7 +76,6 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 mkdir /etc/letsencrypt /var/lib/letsencrypt
 ```
   2. Run letsencrypt container to acquire certificates    
-  TODO: [Fix http port 80 enablement](https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/issues/2)
 ```
 podman run                                              \
     --rm                                                \
