@@ -172,7 +172,7 @@ metadata:
 platform:
   aws:
     amiID: ami-e9426288 
-    region: us-east-1a
+    region: us-east-1
 pullSecret: '`cat /root/.docker/config.json`'
 sshKey: '`cat /home/core/.ssh/authorized_keys`'
 publish: Internal
