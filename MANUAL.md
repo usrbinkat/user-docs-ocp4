@@ -2,19 +2,19 @@
 
 --------------------------------------------------------------------------------
 ### Index:
-[Task 01 Prerequisites]
-[Task 02 Stage Assets]
-[Task 03 Certificates]
-[Task 04 Setup AWS VPC]
-[Task 05 Configure Route53 DNS]
-[Task 06 Setup Target Groups]
-[Task 07 Setup Load Balancers]
-[Task 08 Setup Security Groups]
-[Task 09 Setup IAM Roles]
-[Task 10 Image Registry Instance]
-[Task 11 Image Registry Mirror & Services]
-[Task 12 Build Nodes]
-[Task 13 Deploy]
+  + [Task 01 Prerequisites]
+  + [Task 02 Stage Assets]
+  + [Task 03 Certificates]
+  + [Task 04 Setup AWS VPC]
+  + [Task 05 Configure Route53 DNS]
+  + [Task 06 Setup Target Groups]
+  + [Task 07 Setup Load Balancers]
+  + [Task 08 Setup Security Groups]
+  + [Task 09 Setup IAM Roles]
+  + [Task 10 Image Registry Instance]
+  + [Task 11 Image Registry Mirror & Services]
+  + [Task 12 Build Nodes]
+  + [Task 13 Deploy]
 
 --------------------------------------------------------------------------------
 ### Overview:
