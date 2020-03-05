@@ -21,7 +21,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,.docker} ; cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Write Configuration File
 ```
@@ -38,10 +38,12 @@ EOF
 ### Step 01\. Acquire & Stage Pull Secret
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
-  2. CMD: ` mkdir .docker `
-  3. CMD: ` vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json `
-  4. Paste Pull Secret from clipboard & save/close
-  5. Link for local use: ` ln -s .docker ${HOME}`
+  2. CMD: 
+```
+vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
+```
+  3. Paste Pull Secret from clipboard && save/close
+  4. Link for local use: ` ln -s .docker ${HOME}`
 
 ---------------------------------------------------------------------------------
 ### Step 09\. Pull Openshift Installer
