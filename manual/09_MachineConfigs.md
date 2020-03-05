@@ -68,7 +68,10 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
   7. Write aws credential File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
-
+; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+[default]
+aws_access_key_id = `read -sP "Please paste your AWS Access Key ID: " aws_AAKI && echo ${aws_AAKI}`
+aws_secret_access_key = `read -sP "Please paste your AWS Secret Access Key: " aws_ASAK && echo ${aws_ASAK}`
 EOF
 ```
   8. Write authorized\_key to file
@@ -76,7 +79,7 @@ EOF
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
 cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
-ln -s ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
+ln -f ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
@@ -141,7 +144,7 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 ```
   4. Generate Manifests
 ```
- cd ${HOME}/${CLUSTER_DOMAIN} && ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}
+ cd ${HOME}/${CLUSTER_DOMAIN} && ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
