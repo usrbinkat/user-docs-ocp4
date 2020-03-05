@@ -4,6 +4,6 @@
   + [Air Gapped Supported Organization Issued Certificates]
 
 --------------------------------------------------------------------------------
-[Lets Encrypt Cerficiates]:../tasks/certificates/LetsEncrypt.md    
-[Air Gapped with Self Signed Certificates]:../tasks/certificates/SelfSigned.md
+[Lets Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md    
+[Air Gapped Supported Organization Issued Certificates]:../tasks/certificates/SelfSigned.md
 [Air Gapped Supported Organization Issued Certificates]:../tasks/certificates/OrganizationIssued.md
