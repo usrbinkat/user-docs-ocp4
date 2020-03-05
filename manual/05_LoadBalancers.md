@@ -46,7 +46,10 @@
 
   1. Click: `Create Load Balancer`
   2. Select Type: `Network Load Balancer`
-  3. Complete with the following values format:    
+  2. Click: `Add Listener`
+  2. Click: `Tags` to expand all fields
+  2. Click: `Add Tag`
+  3. Complete all fields with the following values format:    
 > Example shown creating with {az_private}, {vpc_name}, Port: 6443
 >
 >   | Option            | Value                 |
@@ -55,6 +58,7 @@
 >   | Scheme            | internal              |
 >   | Protocol          | TCP                   |
 >   | Port              | 6443                  |
+>   | Port              | 22623                 |
 >   | VPC               | {vpc_name}            |
 >   | AZ: {your_az}     | {your_private_zone}   |
 >
@@ -77,20 +81,6 @@
   7. Click: `Next: Register Targets`
   8. Click: `Next: Review`
   9. Click: `Create`
-
----------------------------------------------------------------------------------
-### Step 03\. Add Internal Load Balancer `Listener` 
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab `Listeners`
-  1. Click: `Add listener`
-  2. Complete with the following values:
-> Example:
->   
->   | Protocol | Port   |
->   |---------:|:-------|
->   | TCP      | 22623  |
->
-
-  3. Click: `Save`
 
 ---------------------------------------------------------------------------------
 ### Step 04\. Add Internal Listener `DNS Name Record(s)`
