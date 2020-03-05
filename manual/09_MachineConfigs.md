@@ -21,16 +21,16 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Write Configuration File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/${CLUSTER_NAME}.env
-export VPC_NAME='cluster'; echo ${VPC_NAME} 
-export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME} 
-export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
-export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
-export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
+export DOMAIN_NAME="${DOMAIN_NAME}"
+export CLUSTER_NAME="${CLUSTER_NAME}"
+export VPC_NAME="${VPC_NAME}"
+export CERT_EMAIL="admin@${DOMAIN_NAME}"
+export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"
 EOF
 ```
 
