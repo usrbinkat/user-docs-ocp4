@@ -28,6 +28,7 @@ cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
 ```
+TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 >   Supported Values:
 >
 >   ap-northeast-1, ap-northeast-2, ap-south-1,    
