@@ -40,4 +40,5 @@ podman run                                                           \
     --non-interactive                                                \
   -m "${CERT_EMAIL}" -d "registry.${CLUSTER_DOMAIN}"
 ```
-
+TODO: Complete Section
+TODO: Align all certificate asset naming convention & local & registry host paths

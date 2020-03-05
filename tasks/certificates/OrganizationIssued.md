@@ -6,3 +6,4 @@ key : in path
 bundle : in path
 
 TODO: complete section
+TODO: Align descriptions with unified certificate asset naming convention and path placement
