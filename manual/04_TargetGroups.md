@@ -7,7 +7,8 @@
 ######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` do the following:
 
   1. Click: `Create Security Group`
-  2. Complete with an allow all rule in the following value format:
+  2. Click Tab: `Inbound`
+  3. Complete with an allow all rule in the following value format:
 > Record Record Name & Port Sets:
 >    
 >   |                  |  `{vpc_name}-master-sg` | `{vpc_name}-worker-sg`  |
@@ -20,7 +21,21 @@
 >   | Rule Description | allow ALL from ANYWHERE | allow ALL from ANYWHERE |
 >
 
-  3. Click: `Create`
+  4. Click Tab: `Outbound`
+  5. Complete with an allow all rule in the following value format:
+> Record Record Name & Port Sets:
+>    
+>   |                  |  `{vpc_name}-master-sg` | `{vpc_name}-worker-sg`  |
+>   |------------------|------------------------:|:------------------------|
+>   | Name             | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
+>   | Description      | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
+>   | VPC              | {your_vpc}              | {your_vpc}              |
+>   | Rule Type        | All TCP                 | All TCP                 |
+>   | Rule Source      | Anywhere                | Anywhere                |
+>   | Rule Description | allow ALL from ANYWHERE | allow ALL from ANYWHERE |
+>
+
+  6. Click: `Create`
 ###### Verify: You should now have 2 new Security Groups for both of `{vpc_name}-master-sg` & `{vpc_name}-worker-sg`
 
 --------------------------------------------------------------------------------
