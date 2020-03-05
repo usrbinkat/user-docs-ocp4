@@ -39,7 +39,7 @@ EOF
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
   2. CMD: ` mkdir .docker `
-  3. CMD: ` vi .docker/config.json `
+  3. CMD: ` vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json `
   4. Paste Pull Secret from clipboard & save/close
   5. Link for local use: ` ln -s .docker ${HOME}`
 
