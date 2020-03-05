@@ -1,4 +1,4 @@
-# [Task 05](../tasks/loadbalancer/) - Setup Load Balancers
+# [Task 07](../tasks/loadbalancer/) - Setup Load Balancers
 ### Prerequisite:
   + [Task 04 Setup Target Groups]
 ---------------------------------------------------------------------------------

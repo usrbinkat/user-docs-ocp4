@@ -1,3 +1,7 @@
+# [Task 02](../tasks/artifacts/) - Create/Stage Secret & Configuration Assets
+### Prerequisite:
+  + [01 Prerequisites]
+--------------------------------------------------------------------------------
 ### Step 00\. Prepare Working Environment
   1. Export vpc name
 ```

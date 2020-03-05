@@ -1,4 +1,4 @@
-# [Task 02](../tasks/vpc/) - Setup AWS VPC
+# [Task 04](../tasks/vpc/) - Setup AWS VPC
 ### Prerequisite:
   + [01 Prerequisites]
 --------------------------------------------------------------------------------

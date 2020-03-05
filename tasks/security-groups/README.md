@@ -1,4 +1,4 @@
-# [Task 06](../tasks/security-groups/) - Setup Security Groups
+# [Task 08](../tasks/security-groups/) - Setup Security Groups
 ### Prerequisites:
   + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------

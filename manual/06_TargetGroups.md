@@ -1,4 +1,4 @@
-# [Task 04](../tasks/target-groups/) - Setup Target Groups
+# [Task 06](../tasks/target-groups/) - Setup Target Groups
 ### Prerequisites:
   + [Task 03 Configure Route53 DNS]
 --------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# [Task 03](../task/route53/) - Configure Route53 DNS
+# [Task 05](../task/route53/) - Configure Route53 DNS
 ### Prerequisites:
   + [02 Setup AWS VPC]
 --------------------------------------------------------------------------------
