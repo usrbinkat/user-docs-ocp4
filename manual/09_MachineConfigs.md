@@ -23,7 +23,20 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
 mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,.docker} ; cd ${HOME}/${CLUSTER_DOMAIN}
 ```
-  7. Write Configuration File
+  7. Define target AWS Region
+```
+export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
+```
+>   Supported Values:
+>
+>   ap-northeast-1, ap-northeast-2, ap-south-1,    
+>   ap-southeast-1, ap-southeast-2, ca-central-1,    
+>   eu-central-1, eu-north-1, eu-west-1,    
+>   eu-west-2, eu-west-3, sa-east-1,    
+>   us-east-1, us-east-2, us-west-1, us-west-2    
+>   
+
+  8. Write Configuration File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/${CLUSTER_NAME}.env
 export DOMAIN_NAME="${DOMAIN_NAME}"
@@ -49,10 +62,16 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 ```
 
 ---------------------------------------------------------------------------------
-### Step 09\. Pull Openshift Installer
+### Step 09\. Acquire Latest Openshift Installer
   1. CMD:    
 ```
-oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to='/root/'
+oc adm release extract --command=openshift-install            \
+  quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 \
+    --to=${HOME}/${CLUSTER_DOMAIN}/
+```
+  2. Pull ocp-release container image
+```
+podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
 ```
 
 ---------------------------------------------------------------------------------
