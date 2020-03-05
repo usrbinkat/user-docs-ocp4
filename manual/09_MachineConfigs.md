@@ -146,7 +146,7 @@ sshKey: '`cat ssh/authorized_keys`'
 publish: Internal
 EOF
 ```
-TODO: remediate hard coded `amiID`
+TODO: remediate hard coded `amiID`    
   3. Stage install-config.yaml file - CMD: 
 ```
 cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN}/data/install-config.yaml
