@@ -74,6 +74,9 @@ aws_access_key_id = `read -sP "Please paste your AWS Access Key ID: " aws_AAKI &
 aws_secret_access_key = `read -sP "Please paste your AWS Secret Access Key: " aws_ASAK && echo ${aws_ASAK}`
 EOF
 ```
+```
+ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
+```
   8. Write authorized\_key to file
 ```
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
