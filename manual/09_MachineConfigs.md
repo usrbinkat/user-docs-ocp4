@@ -185,7 +185,7 @@ rm \
 ### Step 11. Write Secrets Configurations
   1. Write `openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml`
 ```
-cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -196,7 +196,7 @@ data:
   aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
 EOF
 ```
-  2. Write `openshift/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml`
+  2. Write `openshift/data/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml`
 ```
 cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
 apiVersion: v1
@@ -209,9 +209,9 @@ data:
   aws_secret_access_key: `awk '/aws_secret_access_key/ {print $3}' .aws/credentials | base64`
 EOF
 ```
-  3. Write `openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml`
+  3. Write `data/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml`
 ```
-cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
