@@ -70,8 +70,8 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 [default]
-aws_access_key_id = `read -sP "Please paste your AWS Access Key ID: " aws_AAKI && echo ${aws_AAKI}`
-aws_secret_access_key = `read -sP "Please paste your AWS Secret Access Key: " aws_ASAK && echo ${aws_ASAK}`
+aws_access_key_id = `read -sp "Please paste your AWS Access Key ID: " aws_AAKI && echo ${aws_AAKI}`
+aws_secret_access_key = `read -sp "Please paste your AWS Secret Access Key: " aws_ASAK && echo ${aws_ASAK}`
 EOF
 ```
 ```
