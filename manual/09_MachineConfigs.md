@@ -76,6 +76,7 @@ EOF
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
 cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
+ln -s ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
