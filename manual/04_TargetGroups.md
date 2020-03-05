@@ -1,76 +1,42 @@
-# [Task 04](../tasks/security-groups/) - Setup Target Groups
+# [Task 04](../tasks/target-groups/) - Setup Target Groups & Load Balancers
 ### Prerequisites:
-  + [Task 05 Setup Load Balancers]
+  + [Task 03 Configure Route53 DNS]
 --------------------------------------------------------------------------------
-### Step 01\. Configure `Security Groups`
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
-######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` do the following:
-
-  1. Click: `Create Security Group`
-  2. Click Tab: `Inbound`
-  3. Complete with an allow all rule in the following value format:
+### Step 01\. Configure `Target Groups`
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
+######  > For each of the 3 record name & port sets do the following:
 > Record Record Name & Port Sets:
 >    
->   |                  |  `{vpc_name}-master-sg` | `{vpc_name}-worker-sg`  |
->   |------------------|------------------------:|:------------------------|
->   | Name             | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
->   | Description      | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
->   | VPC              | {your_vpc}              | {your_vpc}              |
->   | Rule Type        | All TCP                 | All TCP                 |
->   | Rule Source      | Anywhere                | Anywhere                |
->   | Rule Description | allow ALL from ANYWHERE | allow ALL from ANYWHERE |
+>   | Record Name     | Port  |
+>   |-----------------|-------|
+>   | {vpc_name}-aext |  6443 |
+>   | {vpc_name}-aint |  6443 |
+>   | {vpc_name}-sint | 22623 |
 >
 
-  4. Click Tab: `Outbound`
-  5. Complete with an allow all rule in the following value format:
-> Record Record Name & Port Sets:
+  1. Click: `Create Target Group`
+  2. Complete with the following values format:
+> Example shown with vpc_name-aint / 6443
 >    
->   |                  |  `{vpc_name}-master-sg` | `{vpc_name}-worker-sg`  |
->   |------------------|------------------------:|:------------------------|
->   | Name             | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
->   | Description      | {vpc_name}-master-sg    | {vpc_name}-worker-sg    |
->   | VPC              | {your_vpc}              | {your_vpc}              |
->   | Rule Type        | All TCP                 | All TCP                 |
->   | Rule Source      | Anywhere                | Anywhere                |
->   | Rule Description | allow ALL from ANYWHERE | allow ALL from ANYWHERE |
+>   | Option            | Value                 |
+>   |-------------------|-----------------------|
+>   | Target Group Name | `{vpc_name}-aint`     |
+>   | Target Type       | IP                    |
+>   | Protocol          | TCP                   |
+>   | Port              | `6443`                |
+>   | VPC               | {match your VPC Name} |
 >
 
-  6. Click: `Create`
-###### Verify: You should now have 2 new Security Groups for both of `{vpc_name}-master-sg` & `{vpc_name}-worker-sg`
-
---------------------------------------------------------------------------------
-### Step 02\. Add Target Group `Tags`
-######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` create the coresponding tag:
-> Security Group Tags
->    
->   | Security Group       | Key                     | Value                |
->   |----------------------|------------------------:|:---------------------|
->   | {vpc_name}-master-sg | Name                    | {vpc_name}-master-sg |
->   | {vpc_name}-worker-sg | Name                    | {vpc_name}-worker-sg | 
-
-###### Navigate: [AWS Console] > [EC2] > [Security Groups] > `{vpc_name}-master-sg` > Lower Panel > Tags
-
-  1. Click: `Add/Edit Tags`
-  2. Click: `Create Tag`
-  3. Complete per the Security Group Tags table
-  3. Click: `Save`
-
-###### Navigate: [AWS Console] > [EC2] > [Security Groups] > `{vpc_name}-worker-sg` > Lower Panel > Tags
-
-  1. Click: `Add/Edit Tags`
-  2. Click: `Create Tag`
-  3. Complete per the Security Group Tags table
-  3. Click: `Save`
-
-###### Verify: Both Secrity groups should be tagged per the Security Group Tags table
+  3. Click: `Create`
+###### Verify: You should now have 3 new Target Groups for ` *-aint *-aent *-sint `
     
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 07 Setup IAM Roles]
+  + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
+[Task 03 Configure Route53 DNS]:../manual/03_Route53DNS.md
 [Task 05 Setup Load Balancers]:../manual/05_LoadBalancers.md
-[Task 07 Setup IAM Roles]:../manual/07_IAMRoles.md
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
-[Security Groups]:https://console.amazonaws-us-gov.com/ec2/v2/home#SecurityGroups
+[Load Balancers]:https://console.amazonaws-us-gov.com/ec2/v2/home#LoadBalancers

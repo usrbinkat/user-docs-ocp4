@@ -1,12 +1,12 @@
 # [Task 04](../tasks/security-groups/) - Setup Target Groups
 ### Prerequisites:
-  + [Task 03]
+  + [Task 05 Setup Load Balancers]
 --------------------------------------------------------------------------------
-### Step 01\. Configure `Target Groups`
-###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Target Groups]
+### Step 01\. Configure `Security Groups`
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Network & Security > [Security Groups]
 ######  > For both `{vpc_name}-master-sg` & `{vpc_name}-worker-sg` do the following:
 
-  1. Click: `Create Target Group`
+  1. Click: `Create Security Group`
   2. Click Tab: `Inbound`
   3. Complete with an allow all rule in the following value format:
 > Record Record Name & Port Sets:
