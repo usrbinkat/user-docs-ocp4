@@ -21,7 +21,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssh,ssl,data,.aws,.docker} 
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,.ssh,.aws,.docker} 
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
@@ -64,10 +64,10 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 
   8. Write authorized\_key to file
 ```
-ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
-cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
-chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
-ln -f ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
+ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}
+cat ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
+chmod 600 ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
+ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
 ---------------------------------------------------------------------------------
 ### Step 09\. Write AWS Credentials File
@@ -155,30 +155,29 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 ```
  cd ${HOME}/${CLUSTER_DOMAIN} && ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data
 ```
-  5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
 sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
-       /root/${CLUSTER_DOMAIN}/manifests/cluster-infrastructure-02-config.yml
+       ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
 ```
   7. Rewrite manifest entries for us-east-1 to AWS Gov region
 ```
-find  . -type f | xargs sed -i  "s/us-east-1/${AWS_REGION}/g"
+find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/us-east-1/${AWS_REGION}/g"
 ```
   8. Rewrite manifest value 'infrastructureNAME' with unique tag
 ```
-find  . -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
+find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
   9. Purge `publish: Internal` configuration
 ```
-sed -i '/publish: Internal/d' /root/${CLUSTER_DOMAIN}/manifests/*
+sed -i '/publish: Internal/d' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/*
 ```
  10. Remove default ingress configuration & non-applicable cloud credential configs
 ```
 rm \
-  /root/${CLUSTER_DOMAIN}/openshift/99_cloud-creds-secret.yaml \
-  /root/${CLUSTER_DOMAIN}/openshift/99_role-cloud-creds-secret-reader.yaml \
-  /root/${CLUSTER_DOMAIN}/manifests/cluster-ingress-default-ingresscontroller.yaml
+  ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_cloud-creds-secret.yaml \
+  ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_role-cloud-creds-secret-reader.yaml \
+  ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-ingress-default-ingresscontroller.yaml
 ```
 
 ---------------------------------------------------------------------------------
