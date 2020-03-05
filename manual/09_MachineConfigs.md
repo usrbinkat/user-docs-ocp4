@@ -129,10 +129,11 @@ platform:
     amiID: ami-e9426288 
     region: us-east-1
 pullSecret: '`cat .docker/config.json`'
-sshKey: '`cat authorized_keys`'
+sshKey: '`cat ssh/authorized_keys`'
 publish: Internal
 EOF
 ```
+TODO: remediate hard coded `amiID`
   3. Stage install-config.yaml file - CMD: 
 ```
 cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN}/data/install-config.yaml
