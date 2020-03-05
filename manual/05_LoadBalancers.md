@@ -51,7 +51,7 @@
 >
 >   | Option            | Value                 |
 >   |------------------:|:----------------------|
->   | Name              | {vpc_name}-aint       |
+>   | Name              | {vpc_name}-int        |
 >   | Scheme            | internal              |
 >   | Protocol          | TCP                   |
 >   | Port              | 6443                  |
