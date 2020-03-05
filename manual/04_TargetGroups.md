@@ -1,4 +1,4 @@
-# [Task 04](../tasks/target-groups/) - Setup Target Groups & Load Balancers
+# [Task 04](../tasks/target-groups/) - Setup Target Groups
 ### Prerequisites:
   + [Task 03 Configure Route53 DNS]
 --------------------------------------------------------------------------------
@@ -29,7 +29,7 @@
 
   3. Click: `Create`
 ###### Verify: You should now have 3 new Target Groups for ` *-aint *-aent *-sint `
-    
+TODO: add ownerName tags    
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 05 Setup Load Balancers]

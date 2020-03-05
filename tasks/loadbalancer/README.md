@@ -19,9 +19,10 @@
 >   | VPC               | {vpc_name}            |
 >   | AZ: {your_az}     | {your_public_zone}    |
 >
->   | Tags: Key                        | Value  |
->   |---------------------------------:|:-------|
->   | kubernetes.io/cluster/{vpc_name} | shared |
+>   | Tags: Key                        | Value       |
+>   |---------------------------------:|:------------|
+>   | kubernetes.io/cluster/{vpc_name} | shared      |
+>   | ownerName                        | {user_name} |
 >
 
   4. Continue click: `Next: Configure Security Settings`
@@ -57,9 +58,10 @@
 >   | VPC               | {vpc_name}            |
 >   | AZ: {your_az}     | {your_private_zone}   |
 >
->   | Tags: Key                        | Value  |
->   |---------------------------------:|:-------|
->   | kubernetes.io/cluster/{vpc_name} | shared |
+>   | Tags: Key                        | Value       |
+>   |---------------------------------:|:------------|
+>   | kubernetes.io/cluster/{vpc_name} | shared      |
+>   | ownerName                        | {user_name} |
 >
 
   4. Continue click: `Next: Configure Security Settings`
