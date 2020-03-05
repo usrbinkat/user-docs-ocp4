@@ -73,8 +73,8 @@ EOF
 ```
   8. Write authorized\_key to file
 ```
-ssh-keygen -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_NAME}
-cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_NAME}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
+ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
+cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 ```
 ---------------------------------------------------------------------------------
