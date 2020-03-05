@@ -62,27 +62,33 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 ```
 
-###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
-  5. Click: `Copy pull secret`
-  6. CMD: 
-  7. Write aws credential File
-```
-cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
-; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
-[default]
-aws_access_key_id = `read -sp "Please paste your AWS Access Key ID: " aws_AAKI && echo ${aws_AAKI}`
-aws_secret_access_key = `read -sp "Please paste your AWS Secret Access Key: " aws_ASAK && echo ${aws_ASAK}`
-EOF
-```
-```
-ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
-```
   8. Write authorized\_key to file
 ```
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}
 cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 ln -f ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
+```
+---------------------------------------------------------------------------------
+### Step 09\. Write AWS Credentials File
+>   An AWS Commercial Account is required for deployment   
+
+  1. Write aws commercial credential template
+```
+cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
+; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+[default]
+aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
+aws_secret_access_key = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+EOF
+```
+  2. Replace values for `aws_access_key_id` & `aws_secret_access_key` && save/close
+```
+vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
+```
+  3. Link to $HOME
+```
+ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
