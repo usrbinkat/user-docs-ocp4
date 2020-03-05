@@ -87,12 +87,12 @@
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Load Balancers] > {vpc_name}-int > Lower Tab `Description`
   1. Copy `DNS Name value` 
 
-###### Navigate: [AWS Console] > [Route 53] > Domain Name `ocp.{domain_name}` > `api-int.ocp.{domain_name}`
-  2. Paste {vpc\_name}-int `DNS Name value` into api-int.ocp.{domain\_name} > CNAME > Value field
+###### Navigate: [AWS Console] > [Route 53] > Domain Name `{cluster_domain}.{domain_name}` > `api-int.{cluster_name}.{domain_name}`
+  2. Paste {vpc\_name}-int `DNS Name value` into api-int.{cluster\_name}.{domain\_name} > CNAME > Value field
   3. Click: `Save Record Set`
 
-###### Navigate: [AWS Console] > [Route 53] > Domain Name ocp.{domain_name} > api.ocp.{domain_name}
-  4. Paste {vpc\_name}-int 'DNS Name' value into api.ocp.{domain\_name} > CNAME > Value field
+###### Navigate: [AWS Console] > [Route 53] > Domain Name {cluster_domain} > api.{cluster_domain}
+  4. Paste {vpc\_name}-int 'DNS Name' value into api.{cluster\_domain} > CNAME > Value field
   5. Click: `Save Record Set`
 
 ---------------------------------------------------------------------------------
@@ -104,12 +104,12 @@
   2. Create the following records values:
 > Example:
 >   
->   | Record Type       | Name                   | Value                       |
->   |------------------:|:----------------------:|-----------------------------|
->   | CNAME             | ` *.apps.ocp `         | (Paste) `DNS Name Value`    |
+>   | Record Type       | Name                      | Value                       |
+>   |------------------:|:-------------------------:|-----------------------------|
+>   | CNAME             | ` *.apps.{cluster_name} ` | (Paste) `DNS Name Value`    |
 >
 
-  3. Confirm Resolution: `dig fake.apps.ocp.{domain_name}`
+  3. Confirm Resolution: `dig fake.apps.{cluster_domain}`
   - Should resolve to your AWS `DNS Name` value from LB `{vpc_name}-ext`
 
 ---------------------------------------------------------------------------------
