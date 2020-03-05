@@ -232,7 +232,7 @@ EOF
 ---------------------------------------------------------------------------------
 ### Step 12. Backup your ignition config directory
 ```
-cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/
+cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%m%d%H%M')-data
 ```
 
 ---------------------------------------------------------------------------------
