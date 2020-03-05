@@ -62,12 +62,14 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 ```
 
 ---------------------------------------------------------------------------------
-### Step 09\. Acquire Latest Openshift Installer
-  1. CMD:    
+### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
+  1. Pull oc + kubectl CMD:    
 ```
-oc adm release extract --command=openshift-install            \
-  quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 \
-    --to=${HOME}/${CLUSTER_DOMAIN}/
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.1.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
+```
+  2. CMD:    
+```
+oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
 ```
   2. Pull ocp-release container image
 ```
