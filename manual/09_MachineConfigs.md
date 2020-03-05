@@ -178,13 +178,14 @@ rm \
   ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_cloud-creds-secret.yaml \
   ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_role-cloud-creds-secret-reader.yaml \
   ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-ingress-default-ingresscontroller.yaml
+  
 ```
 
 ---------------------------------------------------------------------------------
 ### Step 11. Write Secrets Configurations
   1. Write `openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml`
 ```
-cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -197,7 +198,7 @@ EOF
 ```
   2. Write `openshift/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml`
 ```
-cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -210,7 +211,7 @@ EOF
 ```
   3. Write `openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml`
 ```
-cat <<EOF > /root/${CLUSTER_DOMAIN}/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-image-registry_installer-cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -225,7 +226,7 @@ EOF
 ---------------------------------------------------------------------------------
 ### Step 12. Backup your ignition config directory
 ```
-cp -rf /root/${CLUSTER_DOMAIN} /root/bak/${CLUSTER_DOMAIN}
+cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/
 ```
 
 ---------------------------------------------------------------------------------
