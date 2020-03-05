@@ -65,8 +65,14 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
   8. Write authorized\_key to file
 ```
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}
+```
+```
 cat ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
+```
+```
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
+```
+```
 ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
 ---------------------------------------------------------------------------------
