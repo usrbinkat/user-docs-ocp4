@@ -80,7 +80,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ### Step 10\. Write `install-config.yaml`
   2. Write yaml - CMD: 
 ```
-cat <<EOF >/root/bak/install-config.yaml
+cat <<EOF >/${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml
 apiVersion: v1
 baseDomain: ${DOMAIN_NAME}
 imageContentSources:
@@ -119,11 +119,11 @@ EOF
 ```
   3. Stage install-config.yaml file - CMD: 
 ```
-cp -f /root/bak/install-config.yaml /root/${CLUSTER_DOMAIN}/install-config.yaml 
+cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN}/data/install-config.yaml
 ```
   4. Generate Manifests
 ```
- cd /root/ && ./openshift-install create manifests --dir=/root/${CLUSTER_DOMAIN}
+ cd ${HOME}/${CLUSTER_DOMAIN} && ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}
 ```
   5. Provide Commercial AWS Access Key ID & Secret Access Key when prompted
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
