@@ -1,10 +1,6 @@
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Provision ACME Lets Encrypt SSL Certificates
-  1. Make letsencrypt directories
-```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/ssl ; cd ${HOME}/${CLUSTER_DOMAIN}/ssl
-```
   2. Run letsencrypt container to acquire certificates    
 ```
 podman run                                                           \
