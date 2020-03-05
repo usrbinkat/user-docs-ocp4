@@ -21,7 +21,8 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,.docker} ; cd ${HOME}/${CLUSTER_DOMAIN}
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssh,ssl,data,.aws,.docker} 
+cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
 ```
@@ -48,7 +49,7 @@ EOF
 ```
 
 ---------------------------------------------------------------------------------
-### Step 01\. Acquire & Stage Pull Secret
+### Step 01\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
   2. CMD: 
@@ -61,6 +62,21 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 ```
 
+###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
+  5. Click: `Copy pull secret`
+  6. CMD: 
+  7. Write aws credential File
+```
+cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
+
+EOF
+```
+  8. Write authorized\_key to file
+```
+ssh-keygen -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_NAME}
+cat ~/.ssh/id_rsa_${CLUSTER_NAME}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/authorized_keys
+chmod 600 ${HOME}/${CLUSTER_DOMAIN}/authorized_keys
+```
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
@@ -112,8 +128,8 @@ platform:
   aws:
     amiID: ami-e9426288 
     region: us-east-1
-pullSecret: '`cat /root/.docker/config.json`'
-sshKey: '`cat /home/core/.ssh/authorized_keys`'
+pullSecret: '`cat .docker/config.json`'
+sshKey: '`cat authorized_keys`'
 publish: Internal
 EOF
 ```
