@@ -5,6 +5,7 @@
 
 # LIST
     WIP: Inventory of items to build out documentation for
+  - cloud Stakeholder Name (owner)
   - cloud variables
   - ssh-keygen
   - `AWS_REGION`

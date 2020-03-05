@@ -51,6 +51,6 @@
 --------------------------------------------------------------------------------
 [01 Prerequisites]:/manual/01_Prerequisites.md
 [03 Configure Route53 DNS]:../manual/03_Route53DNS.md
-[AWS Console]:https://console.amazonaws-us-gov.com/console/home?region=us-gov-west-1#
-[VPC Service]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1
-[Subnets]:https://console.amazonaws-us-gov.com/vpc/home?region=us-gov-west-1#subnets:
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home
+[VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
+[Subnets]:https://console.amazonaws-us-gov.com/vpc/home#subnets:
