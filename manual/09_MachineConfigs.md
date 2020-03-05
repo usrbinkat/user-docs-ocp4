@@ -43,7 +43,10 @@ EOF
 vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
-  4. Link for local use: ` ln -s .docker ${HOME}`
+  4. Link for local use:
+```
+ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
+```
 
 ---------------------------------------------------------------------------------
 ### Step 09\. Pull Openshift Installer
