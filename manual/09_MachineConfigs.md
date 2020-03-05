@@ -74,8 +74,8 @@ EOF
   8. Write authorized\_key to file
 ```
 ssh-keygen -f ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_NAME}
-cat ~/.ssh/id_rsa_${CLUSTER_NAME}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/authorized_keys
-chmod 600 ${HOME}/${CLUSTER_DOMAIN}/authorized_keys
+cat ${HOME}/${CLUSTER_DOMAIN}/ssh/id_rsa_${CLUSTER_NAME}.pub | tee -a ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
+chmod 600 ${HOME}/${CLUSTER_DOMAIN}/ssh/authorized_keys
 ```
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
