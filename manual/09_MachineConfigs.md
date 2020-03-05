@@ -1,29 +1,25 @@
 ### Step 00\. Prep Working Environment
-  1. Prep directories - CMD: 
-```
-mkdir ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
-```
-  2. Export vpc name
+  1. Export vpc name
 ```
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
 ```
-  3. Export cluster name
+  2. Export cluster name
 ```
 export CLUSTER_NAME='ocp'; echo ${CLUSTER_NAME} 
 ```
-  4. Export cluster domain
+  3. Export cluster domain
 ```
 export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
 ```
-  5. Export cluster domain name
+  4. Export cluster domain name
 ```
 export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 ```
-  6. Export letsencrypt certificate registry email address
+  5. Export letsencrypt certificate registry email address
 ```
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
-  7. Write Configuration File
+  6. Write Configuration File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/${CLUSTER_NAME}.env
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
@@ -32,6 +28,10 @@ export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
 export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 EOF
+```
+  7. Prep directories - CMD: 
+```
+mkdir ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
