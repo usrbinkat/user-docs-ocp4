@@ -1,4 +1,4 @@
-### Step 00\. Prep Working Environment
+### Step 00\. Prepare Working Environment
   1. Export vpc name
 ```
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
@@ -21,7 +21,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,.ssh,.aws,.docker} 
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,images,.ssh,.aws,.docker} 
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
