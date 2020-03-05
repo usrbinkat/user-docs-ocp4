@@ -232,6 +232,6 @@ cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/
 ---------------------------------------------------------------------------------
 ### Step 13. Create Ignition Configurations
 ```
-cd /root/ && ./openshift-install create ignition-configs --dir=${CLUSTER_DOMAIN}
+ ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
 ```
 
