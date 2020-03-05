@@ -3,6 +3,11 @@
   + [01 Prerequisites]
 --------------------------------------------------------------------------------
 ### Step 01\. Create VPC
+TODO: create EIP
+TODO: add EIP owner tag {stake holder / ownerName}
+TODO: add EIP owner tag {projectName}
+TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses
+### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
   2. Configure with the following value types:
@@ -31,6 +36,7 @@
 >   |:--------------------------------|----------------------------------:|
 >   |Name                             | {vpc_name}-public-us-gov-west-1a  |
 >   |kubernetes.io/cluster/{vpc_name} | owned                             |
+TODO: add owner tag {stake holder / ownerName}
 
   3. Click `Save`
   4. Navigate: Private Subnet > Tags
@@ -42,6 +48,7 @@
 >   |:--------------------------------|----------------------------------:|
 >   |Name                             | {vpc_name}-private-us-gov-west-1a |
 >   |kubernetes.io/cluster/{vpc_name} | owned                             |
+TODO: add owner tag {stake holder / ownerName}
 
   7. Click `Save`
   
@@ -53,4 +60,4 @@
 [03 Configure Route53 DNS]:../manual/03_Route53DNS.md
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
-[Subnets]:https://console.amazonaws-us-gov.com/vpc/home#subnets:
+[Subnets]:https://console.amazonaws-us-gov.com/vpc/home#subnets

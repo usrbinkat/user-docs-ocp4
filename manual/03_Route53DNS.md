@@ -10,7 +10,7 @@
 >
 >   | Key          | Value               |
 >   |:-------------|--------------------:|
->   | Domain Name  | `ocp.{domain_name}` |
+>   | Domain Name  | `{cluster_domain}`  |
 >   | Type         | Private Hosted Zone |
 >   | VPC ID       | `{your_new_vpc}`    |
 
@@ -18,18 +18,18 @@
 
 --------------------------------------------------------------------------------
 ### Step 02\. Create master etcd node `SRV Records`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
 >   Example:
 >
->   | Key   | Value                               |
->   |-------|-------------------------------------|
->   | Name  | `_etcd-server-ssl._tcp`             |
->   | Type  | `SRV - Service Locator`             |
->   | Value |  0 10 2380 etcd-0.ocp.{domain_name} |
->   |       |  0 10 2380 etcd-1.ocp.{domain_name} |
->   |       |  0 10 2380 etcd-2.ocp.{domain_name} |
+>   | Key   | Value                             |
+>   |-------|-----------------------------------|
+>   | Name  | `_etcd-server-ssl._tcp`           |
+>   | Type  | `SRV - Service Locator`           |
+>   | Value |  0 10 2380 etcd-0.{domain_domain} |
+>   |       |  0 10 2380 etcd-1.{domain_domain} |
+>   |       |  0 10 2380 etcd-2.{domain_domain} |
 
    `Value` Field:                          
 ```
