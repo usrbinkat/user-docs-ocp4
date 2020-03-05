@@ -19,7 +19,11 @@ export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 ```
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
-  6. Write Configuration File
+  6. Prep directories - CMD: 
+```
+mkdir ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
+```
+  7. Write Configuration File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/${CLUSTER_NAME}.env
 export VPC_NAME='cluster'; echo ${VPC_NAME} 
@@ -28,10 +32,6 @@ export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
 export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 EOF
-```
-  7. Prep directories - CMD: 
-```
-mkdir ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data} ; cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
