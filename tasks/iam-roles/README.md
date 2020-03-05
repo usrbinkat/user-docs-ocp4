@@ -3,7 +3,7 @@
   + [06 Setup Security Groups]
 --------------------------------------------------------------------------------
 ### Step 01\. Create IAM Policies `master`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
+###### Navigate: [AWS Console] > Security, Identity & Compliance > [IAM] > [Policies]
   1. Click: `Create Policies`
   2. Select "json" Tab 
   3. Erase default content
@@ -30,7 +30,7 @@
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Create IAM Policy `worker`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Policies]
+###### Navigate: [AWS Console] > Security, Identity & Compliance > [IAM] > [Policies]
   1. Click: `Create Policy`
   2. Select "json" Tab 
   3. Erase default content
@@ -52,7 +52,7 @@
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Create IAM Roles `worker` & `master`
-###### Navigate: [AWS Console] > [EC2] > Security, Identity & Compliance > [IAM] > [Roles]
+###### Navigate: [AWS Console] > Security, Identity & Compliance > [IAM] > [Roles]
 ###### - For both profiles `{vpc_name}-master-profile` & `{vpc_name}-worker-profile` tag per the following
   1. Click: `Create Role`
   2. Select "EC2" under heading "Choose a use case" 
@@ -75,7 +75,7 @@
         
 --------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
-###### Navigate: [AWS Console] > [EC2] > [IAM] > [Users] > Lower Pannel > Permissions
+###### Navigate: [AWS Console] > [IAM] > [Users] > Lower Pannel > Permissions
 ###### - For each of the 3 IAM User Roles in the `IAM User Role Index` below, do the following:
 
   1. Filter for your aws administrator user name & click on user
