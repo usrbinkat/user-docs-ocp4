@@ -1,4 +1,4 @@
-# [Task 11](../tasks/registry) - Setup Image Registry Artifacts & Services | Lets Encrypt Method
+# [Task 11](../tasks/registry) - Setup Image Registry Services & Publish Artifacts
 ### Prerequisite:
   + [08 Build Image Registy Instance]
 --------------------------------------------------------------------------------
