@@ -18,9 +18,9 @@ openssl req \
   -subj  "/CN=${CLUSTER_DOMAIN}" \
   -addext "subjectAltName=DNS:registry.{CLUSTER_DOMAIN},DNS:{DOMAIN_NAME},IP:10.0.1.1" 
 ```
-TODO: correct brittle hard coded IP address
-TODO: Describe creation of certificate bundle
-TODO: Link to stage for certificate use in install-config.yaml
+TODO: correct brittle hard coded IP address    
+TODO: Describe creation of certificate bundle    
+TODO: Link to stage for certificate use in install-config.yaml    
 ```
 
 ```

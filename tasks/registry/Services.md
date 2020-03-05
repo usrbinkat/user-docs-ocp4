@@ -70,27 +70,6 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
 
 ---------------------------------------------------------------------------------
-### Step 05\. Provision ACME Lets Encrypt SSL Certificates
-  1. Make letsencrypt directories
-```
-mkdir /etc/letsencrypt /var/lib/letsencrypt
-```
-  2. Run letsencrypt container to acquire certificates    
-```
-podman run                                              \
-    --rm                                                \
-    --net=host                                          \
-    --privileged                                        \
-    --volume /etc/letsencrypt:/etc/letsencrypt          \
-    --volume /var/lib/letsencrypt:/var/lib/letsencrypt  \
-  docker.io/certbot/certbot certonly                    \
-    --agree-tos                                         \
-    --standalone                                        \
-    --non-interactive                                   \
-  -m "${CERT_EMAIL}" -d "registry.${CLUSTER_DOMAIN}"
-```
-
----------------------------------------------------------------------------------
 ### Step 06\. Test Quay.io image pull
   1. Pull ocp-release container image
 ```
@@ -103,14 +82,14 @@ podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
   1. Start registry container
 ```
 podman run \
-  -d                                                                                              \
-  --net=host                                                                                      \
-  --name registry                                                                                 \
-  --restart=always                                                                                \
-  --volume /etc/letsencrypt:/etc/letsencrypt                                                      \
-  -e REGISTRY_HTTP_ADDR=0.0.0.0:443                                                               \
-  -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/fullchain.pem \
-  -e REGISTRY_HTTP_TLS_KEY=/etc/letsencrypt/live/registry.${CLUSTER_DOMAIN}/privkey.pem           \
+  --name registry                                                                       \
+  --detach                                                                              \
+  --net=host                                                                            \
+  --restart=always                                                                      \
+  --env REGISTRY_HTTP_ADDR=0.0.0.0:443                                                  \
+  --env REGISTRY_HTTP_TLS_KEY=/root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.key         \
+  --env REGISTRY_HTTP_TLS_CERTIFICATE=/root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.pem \
+  --volume /root/${CLUSTER_DOMAIN}/ssl:/root/${CLUSTER_DOMAIN}/ssl                      \
 docker.io/library/registry:2
 ```
 
