@@ -3,9 +3,9 @@
   + [Task 02 Stage Assets]     
 --------------------------------------------------------------------------------
 # Choose Certificate Aquisition Option
-  + [Lets Encrypt Certificates]
-  + [Air Gapped Supported - Self Signed Certificates]
   + [Air Gapped Supported - Organization Issued Certificates]
+  + [Air Gapped Supported - Self Signed Certificates]
+  + [Lets Encrypt Certificates]
 
 --------------------------------------------------------------------------------
 [Lets Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md    
