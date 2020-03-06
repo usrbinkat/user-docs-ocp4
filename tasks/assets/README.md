@@ -168,13 +168,13 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 ```
   5. Reassign cluster random name to VPC\_NAME
 ```
-export idRand=$(awk -F'[-]' '/infrastructureName/{print $2}')
+export idRand=$(awk -F'[-]' '/infrastructureName/{print $2}' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml)
 ```
 ```
-sed -i "s/${CLUSTER_NAME}-hcgg9/${VPC_NAME}/g" ./data/manifests/cluster-infrastructure-02-config.yml
+sed -i "s/${CLUSTER_NAME}-hcgg9/${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
 ```
 ```
-find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g"
+find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data
 ```
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
