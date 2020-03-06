@@ -56,6 +56,9 @@ TODO: add owner tag {stake holder / ownerName}
 ### Next Steps:
   + [Task 05 Configure Route53 DNS]
 --------------------------------------------------------------------------------
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home
+[VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
+--------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
