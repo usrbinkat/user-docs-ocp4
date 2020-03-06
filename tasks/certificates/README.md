@@ -1,6 +1,6 @@
 # [Task 03](../tasks/certificates/) - Create/Stage SSL Certificates
 ### Prerequisite:
-  + [02 Prerequisites]
+  + [Task 02 Stage Assets]     
 --------------------------------------------------------------------------------
 # Choose Certificate Aquisition Option
   + [Lets Encrypt Certificates]

@@ -2,8 +2,8 @@
 
 --------------------------------------------------------------------------------
 ### Index:
-  + [Task 01 Prerequisites]
-  + [Task 02 Stage Assets]
+  + [Task 01 Prerequisites]    
+  + [Task 02 Stage Assets]     
   + [Task 03 Certificates]
   + [Task 04 Setup AWS VPC]
   + [Task 05 Configure Route53 DNS]
@@ -22,9 +22,6 @@
 bla bla bla this tells summarizes what we are about to do
 and here we go to continue ...
 ```
----------------------------------------------------------------------------------
-### Next Steps:
-  + [01 Prerequisites]
 --------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md

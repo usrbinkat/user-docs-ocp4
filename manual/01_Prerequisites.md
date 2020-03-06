@@ -1,9 +1,7 @@
 # [Task 01](./) - Review & Confirm Prerequisites
 # Step 00 -- Current Task Name
-#### 01\. First Task Step
-#### 02\. Second Task Step
 
-# LIST
+# TODO Expansion List
     WIP: Inventory of items to build out documentation for
   - cloud Stakeholder Name (owner)
   - cloud variables
@@ -18,7 +16,7 @@
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [02 Setup VPC]
+  + [Task 02 Stage Assets]
 --------------------------------------------------------------------------------
-[02 Setup VPC]:../manual/02_SetupVPC.md
+[Task 02 Stage Assets]:manual/02_StageAssets.md
 
