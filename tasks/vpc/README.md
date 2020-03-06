@@ -3,10 +3,10 @@
   + [Task 03 Certificates]
 --------------------------------------------------------------------------------
 ### Step 01\. Create VPC
-TODO: create EIP
-TODO: add EIP owner tag {stake holder / ownerName}
-TODO: add EIP owner tag {projectName}
-TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses
+TODO: create EIP    
+TODO: add EIP owner tag {stake holder / ownerName}    
+TODO: add EIP owner tag {projectName}    
+TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 ### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
