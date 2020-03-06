@@ -11,6 +11,7 @@
 [Lets Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md    
 [Air Gapped Supported - Self Signed Certificates]:../tasks/certificates/SelfSigned.md
 [Air Gapped Supported - Organization Issued Certificates]:../tasks/certificates/OrganizationIssued.md
+
 --------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
