@@ -122,6 +122,8 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 cat <<EOF >/${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml
 apiVersion: v1
+additionalTrustBundle: |
+`awk '{printf "  %s\n", $0}' < ${HOME}/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt`
 baseDomain: ${DOMAIN_NAME}
 imageContentSources:
 - mirrors:
@@ -155,8 +157,6 @@ platform:
 pullSecret: '`cat .docker/config.json`'
 sshKey: '`cat ssh/authorized_keys`'
 publish: Internal
-additionalTrustBundle: |
-`awk '{printf "  %s\n", $0}' < ${HOME}/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt`
 EOF
 ```
 TODO: remediate hard coded `amiID`    
