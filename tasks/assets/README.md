@@ -156,7 +156,7 @@ pullSecret: '`cat .docker/config.json`'
 sshKey: '`cat ssh/authorized_keys`'
 publish: Internal
 additionalTrustBundle: |
-`awk '{printf "  %s\n", $0}' < ${HOME}/${CLUSTER_DOMAIN}/ssl/${CLUSTER_NAME}.${CLUSTER_DOMAIN}.crt`
+`awk '{printf "  %s\n", $0}' < ${HOME}/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt`
 EOF
 ```
 TODO: remediate hard coded `amiID`    
