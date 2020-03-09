@@ -176,7 +176,7 @@ export idRand=$(awk -F'[-]' '/infrastructureName/{print $2}' ${HOME}/${CLUSTER_D
 sed -i "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
 ```
 ```
-find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data
+find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g"
 ```
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
