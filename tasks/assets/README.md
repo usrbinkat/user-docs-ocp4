@@ -226,7 +226,7 @@ EOF
 ```
   2. Write `openshift/data/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml`
 ```
-cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
+cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_openshift-machine-api_aws-cloud-credentials-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
