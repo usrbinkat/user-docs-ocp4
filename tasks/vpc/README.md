@@ -2,10 +2,26 @@
 ### Prerequisite:
   + [Task 03 Certificates]
 --------------------------------------------------------------------------------
-### Step 01\. Create VPC
-TODO: create EIP    
+### Step 01\. Create Elastic IP
+###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
+  1. Click: `Allocate new address`
+  2. Set IPv4 address pool option: `Amazon pool`
+  3. Click: `Allocate`
+  4. Copy new Elastic IP Addess
+  5. Click: `Close`
+
 TODO: add EIP owner tag {stake holder / ownerName}    
 TODO: add EIP owner tag {projectName}    
+
+###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
+  6. Create new up stream DNS A Record
+>   DNS A Record Table
+>
+>   | Subdomain Name | Type | Value                |
+>   |:--------------:|:----:|:--------------------:|
+>   | registry.ocp   | A    | {elastic_ip_address} |
+
+### Step 01\. Create VPC
 TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 ### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
@@ -57,6 +73,7 @@ TODO: add owner tag {stake holder / ownerName}
   + [Task 05 Configure Route53 DNS]
 
 --------------------------------------------------------------------------------
+[Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
