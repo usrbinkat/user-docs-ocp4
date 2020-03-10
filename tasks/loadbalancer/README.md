@@ -116,14 +116,13 @@
 ### Next Steps:
   + [Task 08 Setup Security Groups]    
     
---------------------------------------------------------------------------------    
     
+--------------------------------------------------------------------------------
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [Route 53]:https://console.amazonaws-us-gov.com/route53/home
 [Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
 [Load Balancers]:https://console.amazonaws-us-gov.com/ec2/v2/home#LoadBalancers
---------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
