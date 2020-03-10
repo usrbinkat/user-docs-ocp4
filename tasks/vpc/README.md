@@ -86,6 +86,7 @@ The ec2 and ELB endpoints are interface and need to be attached to the private s
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
+[Subnets]:https://console.amazonaws-us-gov.com/vpc/home#subnets
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Write Manifest & Ignition]:manual/03_ManifestIgnition.md
