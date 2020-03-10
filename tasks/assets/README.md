@@ -186,8 +186,7 @@ find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g"
 ```
   6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
-sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" \
-       ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
+sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
 ```
   7. Rewrite manifest entries for us-east-1 to AWS Gov region
 ```
