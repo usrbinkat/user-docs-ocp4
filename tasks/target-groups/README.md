@@ -16,7 +16,7 @@
 
   1. Click: `Create Target Group`
   2. Complete with the following values format:
-> Example shown with vpc_name-aint / 6443
+> Example Target Group Table:
 >    
 >   | Option            | Value                 |
 >   |-------------------|-----------------------|
@@ -25,6 +25,12 @@
 >   | Protocol          | TCP                   |
 >   | Port              | `6443`                |
 >   | VPC               | {match your VPC Name} |
+>    
+> Example Health Check Settings
+>
+>   | Option   | Value |
+>   |----------|-------|
+>   | Protocol | TCP   |
 >
 
   3. Click: `Create`
