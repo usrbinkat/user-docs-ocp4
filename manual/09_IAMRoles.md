@@ -177,15 +177,16 @@ TODO: Double check Verify step
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 10 Image Registry Instance]
+  + [Task 10 Image Registry Instance]    
+    
 --------------------------------------------------------------------------------
+    
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [IAM]:https://console.amazonaws-us-gov.com/iam/home
 [Users]:https://console.amazonaws-us-gov.com/iam/home#/users
 [Roles]:https://console.amazonaws-us-gov.com/iam/home#/roles
 [Policies]:https://console.amazonaws-us-gov.com/iam/home#/policies
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
---------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
