@@ -3,7 +3,7 @@
   + [Task 03 Certificates]
 --------------------------------------------------------------------------------
 ### Step 01\. Create Elastic IP
-###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
+###### Navigate: [AWS Console] > [VPC Service] > [Elastic IPs]
   1. Click: `Allocate new address`
   2. Set IPv4 address pool option: `Amazon pool`
   3. Click: `Allocate`
