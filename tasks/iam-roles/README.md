@@ -71,6 +71,7 @@
   8. Fill in Role Name: eg `{vpc_name}-master-profile`
   9. Click: `Create Role`
     
+TODO: Double check Verify step
 ###### Verify: 'Lower Panel > Permissions > Policy Name > Expand all' should list all 3 new policies
         
 --------------------------------------------------------------------------------
@@ -87,6 +88,8 @@
   7. Provide `Name` value
   8. Click: `Create Policy`
 
+TODO: Double check Verify step
+###### Verify: 'Lower Panel > Permissions > Policy Name > Expand all' should list all 3 new policies
 ---------------------------------------------------------------------------------
 ### IAM User Role Index
     

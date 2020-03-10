@@ -5,7 +5,7 @@
 ### Step 00\. Prepare Working Environment
   1. Export vpc name
 ```
-export VPC_NAME='cluster'; echo ${VPC_NAME} 
+export VPC_NAME='myVpcName'; echo ${VPC_NAME} 
 ```
   2. Export cluster name
 ```
