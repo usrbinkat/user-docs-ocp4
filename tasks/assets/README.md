@@ -119,9 +119,9 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ---------------------------------------------------------------------------------
 ### Step 10\. Create/Acquire SSL Certificates for temporary image mirror
 ###### Options:
-  A. [Generate Self Signed Certificate]
-  B. [Generate Let's Encrypt Certificates]
-  C. [Acquire Organization Issued Certificates]
+  A. [Generate Self Signed Certificate]    
+  B. [Generate Let's Encrypt Certificates]    
+  C. [Acquire Organization Issued Certificates]    
 
 ---------------------------------------------------------------------------------
 ### Step 10\. Write `install-config.yaml`
