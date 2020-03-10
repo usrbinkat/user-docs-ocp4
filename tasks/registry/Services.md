@@ -16,6 +16,23 @@
     `tmux`
 
 ---------------------------------------------------------------------------------
+### Step 07\. scp artifacts
+```
+```
+TODO write scp method & untar / stage all artifacts
+---------------------------------------------------------------------------------
+### Step 07\. source env vars
+```
+```
+TODO write env sourcing method
+---------------------------------------------------------------------------------
+### Step 07\. Load registry & nginx images from file
+```
+podman load -i nginx.tar
+podman load -i registry.tar
+```
+TODO write podman load method
+---------------------------------------------------------------------------------
 ### Step 07\. Build Image Registry Service
   1. Start registry container
 ```
