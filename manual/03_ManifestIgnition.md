@@ -3,6 +3,10 @@
   + [Task 02 Stage Assets]    
 ---------------------------------------------------------------------------------
 ### Step 01\. Write `install-config.yaml`
+  2. Confirm Directory Location - CMD: 
+```
+cd ${HOME}/${CLUSTER_DOMAIN}
+```
   2. Write yaml - CMD: 
 ```
 cat <<EOF >/${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml
