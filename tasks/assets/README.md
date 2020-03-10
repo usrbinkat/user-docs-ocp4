@@ -108,6 +108,7 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
 htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
 ```
+  2. Enter & Confirm user password
 
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
