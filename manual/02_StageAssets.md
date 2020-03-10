@@ -25,7 +25,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,ssl,data,images,.ssh,.aws,.docker} 
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,auth,ssl,data,images,.ssh,.aws,.docker} 
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
@@ -101,6 +101,13 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
+---------------------------------------------------------------------------------
+### Step 09\. Write httpasswd auth file
+  1. Create user/pass - CMD:
+```
+htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd
+```
+
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
