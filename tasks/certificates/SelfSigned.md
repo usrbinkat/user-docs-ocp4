@@ -19,7 +19,7 @@ TODO: Align naming convention and path placement across all certificate handling
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
-###### Resume [Configure Assets] @ [Write install-config.yaml]
+#### Resume [Configure Assets] @ [Write install-config.yaml]
 
 ---------------------------------------------------------------------------------
 [Write install-config.yaml]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
