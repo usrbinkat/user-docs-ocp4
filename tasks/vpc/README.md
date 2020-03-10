@@ -12,6 +12,7 @@
 
 TODO: add EIP owner tag {stake holder / ownerName}    
 TODO: add EIP owner tag {projectName}    
+TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 
 ###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
   6. Create new up stream DNS A Record
@@ -20,8 +21,6 @@ TODO: add EIP owner tag {projectName}
 >   | Subdomain Name | Type | Value                |
 >   |:--------------:|:----:|:--------------------:|
 >   | registry.ocp   | A    | {elastic_ip_address} |
-
-TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 
 ### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
