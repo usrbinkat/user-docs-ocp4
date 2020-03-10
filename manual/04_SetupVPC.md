@@ -10,11 +10,13 @@
   4. Copy new Elastic IP Addess
   5. Click: `Close`
 
-TODO: add EIP owner tag {stake holder / ownerName}    
 TODO: add EIP owner tag {projectName}    
+TODO: add EIP project tag {stake holder / ownerName}    
 TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 
-###### Navigate: [Your Domain Registrar > Your DNS Records Settings]
+--------------------------------------------------------------------------------
+### Step 02\. [OPTIONAL] Configure external DNS resolution
+###### Navigate: [ Your Domain Registrar > Your DNS Records Settings ]
   6. Create new up stream DNS A Record
 >   DNS A Record Table
 >
@@ -22,7 +24,8 @@ TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses
 >   |:--------------:|:----:|:--------------------:|
 >   | registry.ocp   | A    | {elastic_ip_address} |
 
-### Step 01\. Create VPC
+--------------------------------------------------------------------------------
+### Step 03\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
   2. Configure with the following value types:
@@ -40,7 +43,7 @@ TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses
   3. Click `Create VPC` to complete
 
 ---------------------------------------------------------------------------------
-### Step 02\. Configure Tagging on Public & Private Subnets
+### Step 04\. Configure Tagging on Public & Private Subnets
 ###### Navigate: [AWS Console] > [VPC Service] > [Subnets] 
   1. Navigate: Public Subnet > Tags
   2. Click `Add/Edit Tags`
@@ -68,6 +71,7 @@ TODO: add owner tag {stake holder / ownerName}
   7. Click `Save`
   
 ---------------------------------------------------------------------------------
+### Step 05\. Create Internal VPC Endpoints for Air Gapped Environment
 ```
 add VPC endpoints
 When running in an air gapped environment the private VPC will 3 three vpc endpoints for the OCP nodes to bootstrap and function. 
@@ -78,6 +82,7 @@ com.amazonaws.us-gov-west-1.ec2
 
 The ec2 and ELB endpoints are interface and need to be attached to the private subnet. The security groups should be the master and worker groups attached to each.
 ```
+TODO: create section
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 05 Configure Route53 DNS]
