@@ -21,16 +21,7 @@ TODO: Align naming convention and path placement across all certificate handling
 ### Next Steps:
 ###### Resume [Configure Assets] @ [Write install-config.yaml]
 
-```
-```
-```
-```
-```
-```
 ---------------------------------------------------------------------------------
-### Next Steps:
-  + [Task 04 Setup AWS VPC]
---------------------------------------------------------------------------------
 [Write install-config.yaml]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
 [Configure Assets]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
