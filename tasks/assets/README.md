@@ -117,6 +117,23 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 
 ---------------------------------------------------------------------------------
+### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
+  1. Pull & Export registry image
+```
+ podman pull docker.io/library/registry:2
+```
+```
+ podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar registry:2 
+```
+  2. Pull & Export registry image
+```
+ podman pull docker.io/library/nginx:latest
+```
+```
+ podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar nginx:latest
+```
+
+---------------------------------------------------------------------------------
 ### Next Step: Create/Acquire SSL Certificates for temporary image mirror
 ###### Options:
   A. [Generate Self Signed Certificate]    
