@@ -16,6 +16,7 @@ TODO: correct brittle hard coded IP address
 TODO: Describe creation of certificate bundle    
 TODO: Link to stage for certificate use in install-config.yaml    
 TODO: Align naming convention and path placement across all certificate handling instructions
+
 ---------------------------------------------------------------------------------
 ### Next Steps:
 ###### Resume [Configure Assets] @ [Write install-config.yaml]
