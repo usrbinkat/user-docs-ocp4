@@ -1,6 +1,6 @@
 # [Task 04](../tasks/vpc/) - Setup AWS VPC
 ### Prerequisite:
-  + [Task 03 Certificates]
+  + [Task 03 Write Manifest & Ignition]
 --------------------------------------------------------------------------------
 ### Step 01\. Create Elastic IP
 ###### Navigate: [AWS Console] > [VPC Service] > [Elastic IPs]
@@ -78,7 +78,7 @@ TODO: add owner tag {stake holder / ownerName}
 [VPC Service]:https://console.amazonaws-us-gov.com/vpc/home
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
-[Task 03 Certificates]:manual/03_Certificates.md
+[Task 03 Write Manifest & Ignition]:manual/03_ManifestIgnition.md
 [Task 04 Setup AWS VPC]:manual/04_SetupVPC.md
 [Task 05 Configure Route53 DNS]:manual/05_Route53DNS.md
 [Task 06 Setup Target Groups]:manual/06_TargetGroups.md
