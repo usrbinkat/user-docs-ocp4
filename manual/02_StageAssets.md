@@ -25,7 +25,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak,auth,ssl,data,images,.ssh,.aws,.docker} 
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{bak/.docker,auth,ssl,data,images,.ssh,.aws,.docker} 
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
@@ -59,9 +59,13 @@ EOF
   1. Click: `Copy pull secret`
   2. CMD: 
 ```
-vi ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
+vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
+  3. Paste Pull Secret from clipboard && save/close
+```
+jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat auth/htpasswd)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee .docker/config.json
+```
   4. Link for local use:
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
