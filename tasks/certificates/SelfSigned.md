@@ -18,7 +18,8 @@ TODO: Link to stage for certificate use in install-config.yaml
 TODO: Align naming convention and path placement across all certificate handling instructions
 
 ---------------------------------------------------------------------------------
-### Next Steps: Resume [Configure Assets] @ [Write install-config.yaml]
+### Next Steps: 
+  + [Task 03 Write Manifest & Ignition]
 
 ---------------------------------------------------------------------------------
 [Write install-config.yaml]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
