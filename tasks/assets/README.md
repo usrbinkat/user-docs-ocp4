@@ -19,7 +19,7 @@ export DOMAIN_NAME='cluster.com'; echo ${DOMAIN_NAME}
 ```
 export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 ```
-  5. Export letsencrypt certificate registry email address
+  5. Export certificate owner email address
 ```
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
@@ -115,6 +115,13 @@ podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
 ```
 oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
 ```
+
+---------------------------------------------------------------------------------
+### Step 10\. Create/Acquire SSL Certificates for temporary image mirror
+###### Options:
+  A. [Generate Self Signed Certificate]
+  B. [Generate Let's Encrypt Certificates]
+  C. [Acquire Organization Issued Certificates]
 
 ---------------------------------------------------------------------------------
 ### Step 10\. Write `install-config.yaml`
@@ -274,3 +281,6 @@ cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%
 [Task 11 Image Registry Mirror & Services]:manual/11_ImageRegistryServices.md
 [Task 12 Build Nodes]:manual/12_BuildNodes.md
 [Task 13 Deploy]:manual/13_Deploy.md
+[Generate Self Signed Certificate]:../tasks/certificates/SelfSigned.md
+[Generate Let's Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md
+[Acquire Organization Issued Certificates]:../tasks/certificates/OrganizationIssued.md
