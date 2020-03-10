@@ -21,8 +21,8 @@ TODO: add EIP owner tag {projectName}
 >   |:--------------:|:----:|:--------------------:|
 >   | registry.ocp   | A    | {elastic_ip_address} |
 
-### Step 01\. Create VPC
 TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
+
 ### Step 01\. Create VPC
 ###### Navigate: [AWS Console] > [VPC Service] > Start VPC Wizard
   1. Select VPC with Public and Private subnets
