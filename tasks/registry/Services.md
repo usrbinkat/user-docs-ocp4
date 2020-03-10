@@ -16,7 +16,6 @@
     `tmux`
 
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 ### Step 07\. Build Image Registry Service
   1. Start registry container
 ```
@@ -31,6 +30,29 @@ podman run \
   --volume /root/${CLUSTER_DOMAIN}/ssl:/root/${CLUSTER_DOMAIN}/ssl                      \
 docker.io/library/registry:2
 ```
+TODO: need to merge registry startup flags
+```
+podman run --name mirror-registry -p 5000:5000 \
+  -v ~/registry1/data:/var/lib/registry:z \
+  -v ~/registry1/auth:/auth:z \
+  -e "REGISTRY_AUTH=htpasswd" \
+  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+  -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
+  -v ~/registry1/certs:/certs:z \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/examle.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/example.key \
+  -d docker.io/library/registry:2
+```
+
+---------------------------------------------------------------------------------
+### Step 07\. Mirror artifacts
+```
+./oc adm release mirror --from=quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEASE} --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
+```
+```
+oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.0-rc.3* registry.ocp.example.com:5000/ocp-4.3
+```
+TODO: BROKEN VARS need to resolve hard coded copy paste items
 
 ---------------------------------------------------------------------------------
 ### Step 08\. Load images into mirror
