@@ -104,8 +104,9 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ---------------------------------------------------------------------------------
 ### Step 09\. Write httpasswd auth file
   1. Create user/pass - CMD:
+  - substitute {yourUserName} for your username (eg: regadmin)
 ```
-htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd
+htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
 ```
 
 ---------------------------------------------------------------------------------
