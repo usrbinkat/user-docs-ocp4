@@ -54,6 +54,15 @@ EOF
 ```
 
 ---------------------------------------------------------------------------------
+### Step 09\. Write httpasswd auth file
+  1. Create user/pass - CMD:
+  - substitute {yourUserName} for your username (eg: regadmin)
+```
+htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
+```
+  2. Enter & Confirm user password
+
+---------------------------------------------------------------------------------
 ### Step 01\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
@@ -105,15 +114,6 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
----------------------------------------------------------------------------------
-### Step 09\. Write httpasswd auth file
-  1. Create user/pass - CMD:
-  - substitute {yourUserName} for your username (eg: regadmin)
-```
-htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
-```
-  2. Enter & Confirm user password
-
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
