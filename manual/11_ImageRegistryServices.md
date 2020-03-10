@@ -96,6 +96,12 @@ cp ~/registry1/certs/example.crt /etc/pki/ca-trust/source/anchors/ && update-ca-
 ```
 
 ---------------------------------------------------------------------------------
+### Step 08\. Test registry catalog & auth
+```
+curl -u user:pass -k https://10.0.1.94:5000/v2/_catalog
+curl -u user:pass -k https://registry.ocp.example.com:5000/v2/ocp-4.3/tags/list
+```
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 11 Image Registry Mirror & Services]
 --------------------------------------------------------------------------------

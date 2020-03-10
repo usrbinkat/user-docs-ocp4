@@ -69,6 +69,17 @@ TODO: add owner tag {stake holder / ownerName}
   7. Click `Save`
   
 ---------------------------------------------------------------------------------
+```
+add VPC endpoints
+When running in an air gapped environment the private VPC will 3 three vpc endpoints for the OCP nodes to bootstrap and function. 
+
+com.amazonaws.us-gov-west-1.s3 
+com.amazonaws.us-gov-west-1.elasticloadbalancing
+com.amazonaws.us-gov-west-1.ec2
+
+The ec2 and ELB endpoints are interface and need to be attached to the private subnet. The security groups should be the master and worker groups attached to each.
+```
+---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 05 Configure Route53 DNS]
 
