@@ -109,7 +109,7 @@ curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshi
 ```
   2. Pull ocp-release container image
 ```
-podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
+sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
 ```
   3. Pull openshift-install - CMD:    
 ```
@@ -120,17 +120,17 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull & Export registry image
 ```
- podman pull docker.io/library/registry:2
+ sudo podman pull docker.io/library/registry:2
 ```
 ```
- podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar registry:2 
+ sudo podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar registry:2 
 ```
   2. Pull & Export registry image
 ```
- podman pull docker.io/library/nginx:latest
+ sudo podman pull docker.io/library/nginx:latest
 ```
 ```
- podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar nginx:latest
+ sudo podman save -o ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar nginx:latest
 ```
 
 ---------------------------------------------------------------------------------
