@@ -17,6 +17,9 @@ TODO: Describe creation of certificate bundle
 TODO: Link to stage for certificate use in install-config.yaml    
 TODO: Align naming convention and path placement across all certificate handling instructions
 ```
+---------------------------------------------------------------------------------
+### Next Steps:
+###### Resume [Configure Assets] @ [Write install-config.yaml]
 
 ```
 ```
@@ -27,6 +30,8 @@ TODO: Align naming convention and path placement across all certificate handling
 ### Next Steps:
   + [Task 04 Setup AWS VPC]
 --------------------------------------------------------------------------------
+[Write install-config.yaml]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
+[Configure Assets]:https://dccscr.dsop.io/levelup-automation/infrastucture/user-docs-ocp4/-/blob/aws-gov-disconnected/manual/02_StageAssets.md#step-10-write-install-configyaml
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
