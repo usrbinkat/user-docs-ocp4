@@ -129,7 +129,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 
 ---------------------------------------------------------------------------------
-### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
+### Step 09\. Acquire Nginx:latest & Registry:2 Image Files
   1. Pull & Export registry image
 ```
  sudo podman pull docker.io/library/registry:2
