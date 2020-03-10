@@ -76,17 +76,16 @@ TODO: Double check Verify step
         
 --------------------------------------------------------------------------------
 ### Step 04\. Create IAM User Role
-###### Navigate: [AWS Console] > [IAM] > [Users] > Lower Pannel > Permissions
+###### Navigate: [AWS Console] > [IAM] > [Users] > {Your Username} > Lower Pannel > Permissions
 ###### - For each of the 3 IAM User Roles in the `IAM User Role Index` below, do the following:
 
-  1. Filter for your aws administrator user name & click on user
-  2. Click: `Add inline policy`
-  3. Click: `JSON` Tab
-  4. Erase default content
-  5. Fill in with associated JSON content
-  6. Click: `Create Policy`
-  7. Provide `Name` value
-  8. Click: `Create Policy`
+  1. Click: `Add inline policy`
+  2. Click: `JSON` Tab
+  3. Erase default content
+  4. Fill in with associated JSON content
+  5. Click: `Create Policy`
+  6. Provide `Name` value
+  7. Click: `Create Policy`
 
 TODO: Double check Verify step
 ###### Verify: 'Lower Panel > Permissions > Policy Name > Expand all' should list all 3 new policies
