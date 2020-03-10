@@ -28,7 +28,7 @@
 >
 
   3. Click: `Create`
-###### Verify: You should now have 3 new Target Groups for ` *-aint *-aent *-sint `
+###### Verify: You should now have 3 new Target Groups for ` *-aext *-aint *-sint `
 TODO: add ownerName tags    
 ---------------------------------------------------------------------------------
 ### Next Steps:
