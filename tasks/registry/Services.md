@@ -32,7 +32,7 @@ docker.io/library/registry:2
 ```
 TODO: need to merge registry startup flags
 ```
-podman run --name mirror-registry -p 5000:5000 \
+podman run --name registry -p 5000:5000 \
   -v ~/registry1/data:/var/lib/registry:z \
   -v ~/registry1/auth:/auth:z \
   -e "REGISTRY_AUTH=htpasswd" \
@@ -45,23 +45,21 @@ podman run --name mirror-registry -p 5000:5000 \
 ```
 
 ---------------------------------------------------------------------------------
-### Step 07\. Mirror artifacts
-```
-./oc adm release mirror --from=quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEASE} --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
-```
-```
-oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.0-rc.3* registry.ocp.example.com:5000/ocp-4.3
-```
-TODO: BROKEN VARS need to resolve hard coded copy paste items
-
----------------------------------------------------------------------------------
 ### Step 08\. Load images into mirror
+TODO: BROKEN VARS need to resolve hard coded copy paste example items
+
   1. Pull ocp-release container image
+```
+oc adm release mirror --from=quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEASE} --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
+```
 ```
 oc adm release mirror \
     --from=quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64          \
     --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
     --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
+```
+```
+oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.0-rc.3* registry.ocp.example.com:5000/ocp-4.3
 ```
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
@@ -89,6 +87,12 @@ cp /root/govlcloud/bootstrap.ign /home/core/html/
   4. Set Artifact Permissions
 ```
 chmod -R 755 /home/core/html/
+```
+
+---------------------------------------------------------------------------------
+### Step 08\. Load & Update CA
+```
+cp ~/registry1/certs/example.crt /etc/pki/ca-trust/source/anchors/ && update-ca-trust
 ```
 
 ---------------------------------------------------------------------------------
