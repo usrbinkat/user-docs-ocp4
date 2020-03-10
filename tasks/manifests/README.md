@@ -44,7 +44,7 @@ platform:
     amiID: ami-e9426288 
     region: us-east-1
 pullSecret: '`cat .docker/config.json`'
-sshKey: '`cat ssh/authorized_keys`'
+sshKey: "`cat ssh/authorized_keys`"
 publish: Internal
 EOF
 ```
