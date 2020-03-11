@@ -124,11 +124,15 @@ curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshi
 TODO: solve for hard coded version numbering
   2. Pull ocp-release container image
 ```
-sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
+sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64
 ```
   3. Pull openshift-install - CMD:    
 ```
-oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
+oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
+```
+  z. alt workaround:
+```
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz sudo tar xzvf - --directory /usr/local/bin/ openshift-install
 ```
 
 ---------------------------------------------------------------------------------
