@@ -67,7 +67,7 @@ TODO: test registry flags
 ---------------------------------------------------------------------------------
 ### Step 08\. Load & Update CA
 ```
-cp /root/ssl/${CLUSTER_DOMAIN}.pem /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
+cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.pem /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
 ```
 
 ---------------------------------------------------------------------------------
