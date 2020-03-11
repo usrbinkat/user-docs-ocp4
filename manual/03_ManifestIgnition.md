@@ -79,7 +79,7 @@ find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/us-east-1/${AWS
 find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
 TODO: Break off `disconnected` vs `air gapped` steps .. the following .9 .10
-only intended for disconnected, not air gapped env
+only intended for disconnected, not air gapped env    
   9. Purge `publish: Internal` configuration
 ```
 sed -i '/publish: Internal/d' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/*
