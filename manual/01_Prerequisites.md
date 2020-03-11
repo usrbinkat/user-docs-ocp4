@@ -13,6 +13,10 @@
   - `CLUSTER_DOMAIN`
   - AWS Access Key ID      (commercial)
   - AWS Secret Access Key  (commercial)
+# Package Requirements List
+  - jq
+  - htpasswd
+  - podman
 
 ---------------------------------------------------------------------------------
 C1DTODO:
