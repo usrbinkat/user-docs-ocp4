@@ -136,9 +136,12 @@ EOF
 ```
 
 ---------------------------------------------------------------------------------
-### Step 12. Backup your ignition config directory
+### Step 12. Backup your ignition config directory & move kubectl auth to bak/
 ```
 cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%m%d%H%M')-data
+```
+```
+mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
 
 ---------------------------------------------------------------------------------
