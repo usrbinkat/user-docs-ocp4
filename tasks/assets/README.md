@@ -121,6 +121,7 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
 ```
+TODO: solve for hard coded version numbering
   2. Pull ocp-release container image
 ```
 sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64
