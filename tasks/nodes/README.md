@@ -19,7 +19,6 @@ blablabla
 [User-provisioned Infrastructure]:https://cloud.redhat.com/openshift/install/aws/user-provisioned
 [Red Hat OpenShift Cluster Manager]:https://cloud.redhat.com/openshift/
 [Example Success Message]:../tasks/registry/lib/install-config/oc_adm_success_example.txt
---------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
