@@ -56,7 +56,7 @@ podman run \
   --env    REGISTRY_AUTH_HTPASSWD_PATH=/root/auth/htpasswd               \
   --volume ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd:/root/auth/htpasswd:z \
   --env    REGISTRY_HTTP_TLS_KEY=/root/ssl/${CLUSTER_DOMAIN}.key         \
-  --env    REGISTRY_HTTP_TLS_CERTIFICATE=/root/ssl/${CLUSTER_DOMAIN}.pem \
+  --env    REGISTRY_HTTP_TLS_CERTIFICATE=/root/ssl/${CLUSTER_DOMAIN}.crt \
   --volume ${HOME}/${CLUSTER_DOMAIN}/ssl:/root/ssl                       \
   --env    "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"                 \
   --volume ${HOME}/${CLUSTER_DOMAIN}/registry:/var/lib/registry:z        \
@@ -67,7 +67,7 @@ TODO: test registry flags
 ---------------------------------------------------------------------------------
 ### Step 08\. Load & Update CA
 ```
-cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.pem /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
+cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
 ```
 
 ---------------------------------------------------------------------------------
