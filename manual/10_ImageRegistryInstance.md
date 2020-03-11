@@ -2,6 +2,15 @@
 ### Prerequisite:
   + [Task 09 Setup IAM Roles]
 ---------------------------------------------------------------------------------
+TODO: build method to manually import RHCOS image as AMI
+```
+Workaround:
+  1. navigate to ami's
+  2. in filter box, select public images
+  3. filter for AMI Name
+  4. search for name ami-0d231993dddc5cd2e
+  5. add
+```
 ### Step 02\. Create Red Hat CoreOS AMI Instance
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
