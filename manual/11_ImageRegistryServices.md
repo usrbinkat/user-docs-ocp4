@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [Task 10 Image Registry Instance]
 --------------------------------------------------------------------------------
-### Step 02\. SSH to the registry instance & stage assets
+### Step 01\. SSH to the registry instance & stage assets
   1. Test SSH to the registry instance
   - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
   - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
@@ -36,13 +36,40 @@ source ./*/environment && cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 
 ---------------------------------------------------------------------------------
-### Step 07\. Load registry & nginx images from file
+### Step 02\. Load registry & nginx images from file
 ```
 podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar
 podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar
 ```
 ---------------------------------------------------------------------------------
-### Step 07\. Build Image Registry Service
+### Step 03. Setup NGINX Artifact Service
+  1. Create base artifact service web root
+```
+chmod -R 755 ${HOME}/${CLUSTER_DOMAIN}/data
+```
+  2. Start NGINX container
+```
+podman run \
+  --name=nginx                                                     \
+  --rm                                                             \
+  --detach                                                         \
+  --net=host                                                       \
+  --privileged                                                     \
+  --volume /home/core/html:/usr/share/nginx/html                   \
+  --volume ${HOME}/${CLUSTER_DOMAIN}/data:/usr/share/nginx/html:z  \
+docker.io/library/nginx:latest
+```
+  3. Push bootstrap ignition to web root
+```
+cp /root/govlcloud/bootstrap.ign /home/core/html/
+```
+  4. Set Artifact Permissions
+```
+chmod -R 755 /home/core/html/
+```
+
+---------------------------------------------------------------------------------
+### Step 04\. Build Image Registry Service
   1. Start registry container
 ```
 podman run \
@@ -65,13 +92,13 @@ docker.io/library/registry:2
 TODO: test registry flags
 
 ---------------------------------------------------------------------------------
-### Step 08\. Load & Update CA
+### Step 05\. Load & Update CA
 ```
 cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
 ```
 
 ---------------------------------------------------------------------------------
-### Step 08\. Load images into retistry mirror
+### Step 06\. Load images into retistry mirror
 TODO: BROKEN VARS need to resolve hard coded copy paste example items
 
   1. Pull ocp-release container image
@@ -89,34 +116,7 @@ oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift
 ```
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-### Step 14. Setup NGINX Artifact Service
-  1. Create base artifact service web root
-```
-mkdir /home/core/html
-```
-  2. Start NGINX container
-```
-podman run \
-    --rm                                           \
-    --name=nginx                                   \
-    --net=host                                     \
-    --detach                                       \
-    --privileged                                   \
-    --volume /home/core/html:/usr/share/nginx/html \
-  docker.io/library/nginx:latest
-```
-  3. Push bootstrap ignition to web root
-```
-cp /root/govlcloud/bootstrap.ign /home/core/html/
-```
-  4. Set Artifact Permissions
-```
-chmod -R 755 /home/core/html/
-```
-
----------------------------------------------------------------------------------
-### Step 08\. Test registry catalog & auth
+### Step 07\. Test registry catalog & auth
 ```
 curl -u user:pass -k https://10.0.1.94:5000/v2/_catalog
 curl -u user:pass -k https://registry.ocp.example.com:5000/v2/ocp-4.3/tags/list
