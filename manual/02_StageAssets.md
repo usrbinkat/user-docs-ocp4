@@ -130,10 +130,12 @@ sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64
 ```
 oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
 ```
+TODO: solve for auth error even when pull secret is valid    
   z. alt workaround:
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz sudo tar xzvf - --directory /usr/local/bin/ openshift-install
 ```
+TODO: verify mirror vs quay binary release cadence
 
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Nginx:latest & Registry:2 Image Files
