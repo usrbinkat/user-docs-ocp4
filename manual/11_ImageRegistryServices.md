@@ -2,15 +2,37 @@
 ### Prerequisite:
   + [Task 10 Image Registry Instance]
 --------------------------------------------------------------------------------
-### Step 02\. SSH to the registry instance & Acquire root
->   NOTE:
->   Continuing assumes you are able to use dig and or nslookup to resolve your
->   registry instance hostname to the public facing elastic ip address and that
->   ssh to that address works from your local machine as well.
-
-  1. SSH to the registry instance
+### Step 02\. SSH to the registry instance & stage assets
+  1. Test SSH to the registry instance
   - Example1: ` ssh -i ~/.ssh/id_rsa_cluster core@registry.ocp.cluster.com `
   - Example2: ` ssh -i ~/.ssh/id_rsa_cluster core@57.200.96.1000 `
+  2. exit - CMD:
+```
+exit
+```
+  3. tar artifacts
+```
+tar -C ${HOME} -Jcvf /tmp/${CLUSTER_DOMAIN}.tar.xz ${CLUSTER_DOMAIN}
+```
+  4. scp artifact bundle - CMD:
+```
+scp -i ssh/id_rsa_${CLUSTER_DOMAIN} /tmp/${CLUSTER_DOMAIN}.tar.xz core@registry.${CLUSTER_DOMAIN}:~
+```
+  5. Acquire root
+```
+sudo -i
+```
+  6. Acquire root
+```
+tar -xvf $(ls /home/core/*.tar.xz) -C ./ 
+```
+
+--------------------------------------------------------------------------------
+### Step 02\. SSH to the registry instance & Acquire root
+
+  1. SSH to the registry instance
+  - Example1: ` ssh -i ~/.ssh/id_rsa_${CLUSTER_DOMAIN} core@registry.${CLUSTER_DOMAIN} `
+  - Example2: ` ssh -i ~/.ssh/id_rsa_${CLUSTER_DOMAIN} core@57.200.96.1000 `
   2. Acquire root: ` sudo -i `
   3. Start tmux session for safety
     `tmux`
