@@ -3,7 +3,22 @@
   + [Task 11 Image Registry Mirror & Services]
 ---------------------------------------------------------------------------------
 
-blablabla    
+
+### Step 01\. Seek the oracle of wisdom
+###### Navigate > Rob's desk
+  01. request for removal of headphones
+  02. Inquire after that which you seek
+```
+aka: go ask Rob
+```
+
+### Step 01\. Utter the spell which shall not be named to conjure the magnificent success
+  03. Roll up sleves
+  04. Unsheath thine wand (which has chosen thou the wizard)
+  05. Speak in a loud thunerous voice:
+```
+blablabla
+```
 
 ---------------------------------------------------------------------------------
 ### Next Steps:
