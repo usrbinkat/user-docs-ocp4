@@ -79,7 +79,7 @@
 [Task 04 Setup AWS VPC]:manual/04_SetupVPC.md
 [Task 05 Configure Route53 DNS]:manual/05_Route53DNS.md
 [Task 06 Setup Target Groups]:manual/06_TargetGroups.md
-[Task 07 Setup Load Balancers]:manual/07_LoadBalancers.md
+[Task 07 Setup Load Balancers]:manual/07_LoadBalancer.md
 [Task 08 Setup Security Groups]:manual/08_SecurityGroups.md
 [Task 09 Setup IAM Roles]:manual/09_IAMRoles.md
 [Task 10 Image Registry Instance]:manual/10_ImageRegistryInstance.md
