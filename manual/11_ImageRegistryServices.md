@@ -59,13 +59,19 @@ podman run \
   --env    REGISTRY_HTTP_TLS_CERTIFICATE=/root/ssl/${CLUSTER_DOMAIN}.pem \
   --volume ${HOME}/${CLUSTER_DOMAIN}/ssl:/root/ssl                       \
   --env    "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"                 \
-  --volume ${HOME}/${CLUSTER_DOMAIN}/ssl:/var/lib/registry:z             \
+  --volume ${HOME}/${CLUSTER_DOMAIN}/registry:/var/lib/registry:z        \
 docker.io/library/registry:2
 ```
 TODO: test registry flags
 
 ---------------------------------------------------------------------------------
-### Step 08\. Load images into mirror
+### Step 08\. Load & Update CA
+```
+cp /root/ssl/${CLUSTER_DOMAIN}.pem /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
+```
+
+---------------------------------------------------------------------------------
+### Step 08\. Load images into retistry mirror
 TODO: BROKEN VARS need to resolve hard coded copy paste example items
 
   1. Pull ocp-release container image
@@ -107,12 +113,6 @@ cp /root/govlcloud/bootstrap.ign /home/core/html/
   4. Set Artifact Permissions
 ```
 chmod -R 755 /home/core/html/
-```
-
----------------------------------------------------------------------------------
-### Step 08\. Load & Update CA
-```
-cp ~/registry1/certs/example.crt /etc/pki/ca-trust/source/anchors/ && update-ca-trust
 ```
 
 ---------------------------------------------------------------------------------
