@@ -120,7 +120,7 @@ curl -u user:pass -k https://registry.ocp.example.com:5000/v2/ocp-4.3/tags/list
 ```
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 11 Image Registry Mirror & Services]
+  + [Task 13 Deploy]
 --------------------------------------------------------------------------------
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
