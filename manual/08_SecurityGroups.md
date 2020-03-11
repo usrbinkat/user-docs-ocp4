@@ -66,8 +66,8 @@
     
 ---------------------------------------------------------------------------------
 ### Next Steps:
-  + [Task 09 Setup IAM Roles]
-
+  + [Task 09 Setup IAM Roles]    
+    
 --------------------------------------------------------------------------------
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
