@@ -92,6 +92,8 @@ TODO: test registry flags
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Load & Update CA
+>    For Self Signed & Organization Provided CA
+
 ```
 cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt /etc/pki/ca-trust/source/anchors/${CLUSTER_DOMAIN}.crt && update-ca-trust
 ```
