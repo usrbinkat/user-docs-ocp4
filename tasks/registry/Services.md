@@ -80,12 +80,12 @@ oc adm release mirror --from=quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEA
 ```
 ```
 oc adm release mirror \
-    --from=quay.io/openshift-release-dev/ocp-release:4.3.0-rc.3-x86_64          \
+    --from=quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64          \
     --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
-    --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.0-rc.3-x86_64
+    --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.5-x86_64
 ```
 ```
-oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.0-rc.3* registry.ocp.example.com:5000/ocp-4.3
+oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.5* registry.${CLUSTER_DOMAIN}:5000/ocp-4.3
 ```
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
