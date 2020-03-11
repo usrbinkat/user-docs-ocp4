@@ -62,6 +62,8 @@ htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
 ```
   2. Enter & Confirm user password
 
+TODO: Integrate htpasswd values into prereqs/environment vars
+
 ---------------------------------------------------------------------------------
 ### Step 01\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
@@ -117,7 +119,7 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
 ```
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.1.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
 ```
   2. Pull ocp-release container image
 ```
