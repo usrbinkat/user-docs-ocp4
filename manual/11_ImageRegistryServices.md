@@ -35,31 +35,11 @@ tmux
 source ./*/environment && cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 
---------------------------------------------------------------------------------
-### Step 02\. SSH to the registry instance & Acquire root
-
-  1. SSH to the registry instance
-  - Example1: ` ssh -i ~/.ssh/id_rsa_${CLUSTER_DOMAIN} core@registry.${CLUSTER_DOMAIN} `
-  - Example2: ` ssh -i ~/.ssh/id_rsa_${CLUSTER_DOMAIN} core@57.200.96.1000 `
-  2. Acquire root: ` sudo -i `
-  3. Start tmux session for safety
-    `tmux`
-
----------------------------------------------------------------------------------
-### Step 07\. scp artifacts
-```
-```
-TODO write scp method & untar / stage all artifacts
----------------------------------------------------------------------------------
-### Step 07\. source env vars
-```
-```
-TODO write env sourcing method
 ---------------------------------------------------------------------------------
 ### Step 07\. Load registry & nginx images from file
 ```
-podman load -i nginx.tar
-podman load -i registry.tar
+podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar
+podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar
 ```
 TODO write podman load method
 ---------------------------------------------------------------------------------
@@ -67,25 +47,26 @@ TODO write podman load method
   1. Start registry container
 ```
 podman run \
-  --name registry                                                                       \
-  --detach                                                                              \
-  --net=host                                                                            \
-  --restart=always                                                                      \
-  --env REGISTRY_HTTP_ADDR=0.0.0.0:443                                                  \
-  --env REGISTRY_HTTP_TLS_KEY=/root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.key         \
-  --env REGISTRY_HTTP_TLS_CERTIFICATE=/root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.pem \
-  --volume /root/${CLUSTER_DOMAIN}/ssl:/root/${CLUSTER_DOMAIN}/ssl                      \
+  --name registry                                                        \
+  --detach                                                               \
+  --net=host                                                             \
+  --restart=always                                                       \
+  --env "REGISTRY_AUTH=htpasswd"                                         \
+  --env REGISTRY_AUTH_HTPASSWD_PATH=/root/auth/htpasswd                  \
+  --volume ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd:/root/auth/htpasswd:z \
+  --env REGISTRY_HTTP_TLS_KEY=/root/ssl/${CLUSTER_DOMAIN}.key            \
+  --env REGISTRY_HTTP_TLS_CERTIFICATE=/root/ssl/${CLUSTER_DOMAIN}.pem    \
+  --volume /root/${CLUSTER_DOMAIN}/ssl:/root/ssl                         \
+  --env "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"                    \
+  --env REGISTRY_HTTP_ADDR=0.0.0.0:443                                   \
 docker.io/library/registry:2
 ```
 TODO: need to merge registry startup flags
 ```
 podman run --name registry -p 5000:5000 \
   -v ~/registry1/data:/var/lib/registry:z \
-  -v ~/registry1/auth:/auth:z \
-  -e "REGISTRY_AUTH=htpasswd" \
-  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
-  -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
   -v ~/registry1/certs:/certs:z \
+
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/examle.crt \
   -e REGISTRY_HTTP_TLS_KEY=/certs/example.key \
   -d docker.io/library/registry:2
