@@ -44,7 +44,7 @@ TODO: @jhultz need to solution path to resolve region discrepencies, raise issue
 
   8. Write Configuration File
 ```
-cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/${CLUSTER_NAME}.env
+cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/environment
 export DOMAIN_NAME="${DOMAIN_NAME}"
 export CLUSTER_NAME="${CLUSTER_NAME}"
 export VPC_NAME="${VPC_NAME}"

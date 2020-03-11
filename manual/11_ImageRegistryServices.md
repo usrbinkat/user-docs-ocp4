@@ -22,9 +22,17 @@ scp -i ssh/id_rsa_${CLUSTER_DOMAIN} /tmp/${CLUSTER_DOMAIN}.tar.xz core@registry.
 ```
 sudo -i
 ```
-  6. Acquire root
+  6. Extract tar archive
 ```
 tar -xvf $(ls /home/core/*.tar.xz) -C ./ 
+```
+  6. Start tmux session for safety
+```
+tmux
+```
+  6. Source environment
+```
+source ./*/environment
 ```
 
 --------------------------------------------------------------------------------
