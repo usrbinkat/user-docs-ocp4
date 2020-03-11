@@ -55,7 +55,6 @@ podman run \
   --detach                                                         \
   --net=host                                                       \
   --privileged                                                     \
-  --volume /home/core/html:/usr/share/nginx/html                   \
   --volume ${HOME}/${CLUSTER_DOMAIN}/data:/usr/share/nginx/html:z  \
 docker.io/library/nginx:latest
 ```
