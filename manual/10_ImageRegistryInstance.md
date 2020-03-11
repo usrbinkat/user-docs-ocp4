@@ -83,7 +83,6 @@
 [Instances]:https://console.amazonaws-us-gov.com/ec2/home#Instances
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
---------------------------------------------------------------------------------
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
