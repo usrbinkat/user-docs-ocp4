@@ -26,13 +26,13 @@ sudo -i
 ```
 tar -xvf $(ls /home/core/*.tar.xz) -C ./ 
 ```
-  6. Start tmux session for safety
+  7. Start tmux session for safety
 ```
 tmux
 ```
-  6. Source environment
+  8. Source environment & change to artifact directory
 ```
-source ./*/environment
+source ./*/environment && cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 
 --------------------------------------------------------------------------------
