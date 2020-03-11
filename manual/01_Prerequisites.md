@@ -1,6 +1,12 @@
 # [Task 01](./) - Review & Confirm Prerequisites
 # Step 00 -- Current Task Name
 
+# OS Recommendation (initial work space)
+  - RHEL 8+
+# Package Requirements List
+  - jq
+  - htpasswd
+  - podman
 # TODO Expansion List
     WIP: Inventory of items to build out documentation for
   - cloud Stakeholder Name (owner)
@@ -13,10 +19,6 @@
   - `CLUSTER_DOMAIN`
   - AWS Access Key ID      (commercial)
   - AWS Secret Access Key  (commercial)
-# Package Requirements List
-  - jq
-  - htpasswd
-  - podman
 
 ---------------------------------------------------------------------------------
 C1DTODO:
