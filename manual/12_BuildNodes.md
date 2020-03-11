@@ -12,7 +12,7 @@
 aka: go ask Rob
 ```
 
-### Step 01\. Utter the spell which shall not be named to conjure the magnificent success
+### Step 02\. Utter the spell which shall not be named to conjure the magnificent success
   03. Roll up sleves
   04. Unsheath thine wand (which has chosen thou the wizard)
   05. Speak in a loud thunerous voice:
