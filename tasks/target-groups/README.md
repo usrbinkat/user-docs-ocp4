@@ -40,6 +40,9 @@ TODO: add ownerName tags
 ### Next Steps:
   + [Task 07 Setup Load Balancers]
 --------------------------------------------------------------------------------
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home
+[EC2]:https://console.amazonaws-us-gov.com/ec2/home
+[Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
