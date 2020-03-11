@@ -25,7 +25,7 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Prep directories - CMD: 
 ```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,images,registry,bak/.docker,.ssh,.aws,.docker} 
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,mirror,images,registry,bak/.docker,.ssh,.aws,.docker} 
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
   7. Define target AWS Region
