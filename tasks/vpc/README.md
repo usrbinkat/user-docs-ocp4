@@ -10,9 +10,9 @@
   4. Copy new Elastic IP Addess
   5. Click: `Close`
 
+TODO: Evaluate & explain logic for 2 EIP requirement
 TODO: add EIP owner tag {projectName}    
 TODO: add EIP project tag {stake holder / ownerName}    
-TODO: https://console.amazonaws-us-gov.com/vpc/home#Addresses    
 
 --------------------------------------------------------------------------------
 ### Step 02\. [OPTIONAL] Configure external DNS resolution
