@@ -1,7 +1,6 @@
 # [Task 10](../tasks/registry) - Build Image Registry Instance
 ### Prerequisite:
   + [Task 09 Setup IAM Roles]
---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 ### Step 02\. Create Red Hat CoreOS AMI Instance
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
