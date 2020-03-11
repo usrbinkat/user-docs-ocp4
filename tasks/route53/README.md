@@ -41,7 +41,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 03\. Create  api-int `CNAME Record`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
   1. Click 'Create Record Set'
   2. Fill in with the following values:
 >   Example:
@@ -56,7 +56,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 04\. Create  api `CNAME Record`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
   1. Click `Create Record Set`
   2. Fill in with the following values:
 >   Example:
@@ -71,7 +71,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 05\. Create wildcard  *.apps `CNAME Record`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
   1. Click `Create Record Set`
   2. Fill in with the following values:
 >   Example:
@@ -86,7 +86,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 06\. Create etcd Master Node `A Records`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
 ###### For each of the records {etcd-0,etcd-1,etcd-2} do the following:
   1. Click `Create Record Set`
   2. Fill in with the following values:
@@ -103,7 +103,7 @@
 
 --------------------------------------------------------------------------------
 ### Step 07\. Create registry `A Record`
-###### Navigate: [AWS Console] > [Route 53] > {domain_name}
+###### Navigate: [AWS Console] > [Route 53] > {cluster_domain}
   1. Click `Create Record Set`
   2. Fill in with the following values:
 >   Example:
