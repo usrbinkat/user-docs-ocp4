@@ -41,7 +41,6 @@ source ./*/environment && cd ${HOME}/${CLUSTER_DOMAIN}
 podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-nginxlatest-image.tar
 podman load -i ${HOME}/${CLUSTER_DOMAIN}/images/docker-registry2-image.tar
 ```
-TODO write podman load method
 ---------------------------------------------------------------------------------
 ### Step 07\. Build Image Registry Service
   1. Start registry container
