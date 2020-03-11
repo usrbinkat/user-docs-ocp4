@@ -6,7 +6,7 @@
 ### Step 01\. Utter the spell which shall not be named to conjure magnificent success
   01. Roll up sleeves
   02. Unsheath thine wand (which has chosen thou the wizard)
-  03. Speak in loud thunerous voice:
+  03. Speak in loud thunderous voice:
 ```
 blablabla
 ```
