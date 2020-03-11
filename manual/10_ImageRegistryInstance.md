@@ -89,6 +89,7 @@ Workaround:
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
 [AMIs]:https://console.amazonaws-us-gov.com/ec2/home#Images
 [Instances]:https://console.amazonaws-us-gov.com/ec2/home#Instances
+[Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
