@@ -4,7 +4,7 @@
 # OS Recommendation (initial work space)
   - RHEL 8+
 # Package Requirements List
-  - jq
+  - jq (v1.6+)
   - htpasswd
   - podman
 # TODO Expansion List
