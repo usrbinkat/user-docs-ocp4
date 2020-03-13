@@ -75,7 +75,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
 ```
-jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat auth/htpasswd)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee .docker/config.json
+jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
   4. Link for local use:
 ```
