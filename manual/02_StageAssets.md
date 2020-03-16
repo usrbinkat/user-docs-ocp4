@@ -79,7 +79,7 @@ jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat ${HOME
 ```
   4. Link for local use:
 ```
-ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
+ln -s ${HOME}/${CLUSTER_DOMAIN}/bak/.docker ${HOME}/.docker
 ```
 
   8. Write authorized\_key to file
