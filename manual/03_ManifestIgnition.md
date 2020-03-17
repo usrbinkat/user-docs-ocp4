@@ -54,7 +54,7 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 ```
   4. Generate Manifests
 ```
- cd ${HOME}/${CLUSTER_DOMAIN} && ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data
+./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
 ```
   5. Reassign cluster random name to VPC\_NAME
 ```
