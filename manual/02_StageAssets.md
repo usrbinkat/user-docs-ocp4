@@ -122,7 +122,6 @@ ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
 ```
-TODO: solve for hard coded version numbering
   2. Pull openshift-install - CMD:    
 >   On RHCOS
 ```
@@ -133,7 +132,9 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | sudo tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
 ```
+    
 TODO: verify mirror vs quay binary release cadence
+TODO: solve for hard coded version numbering
 
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Nginx:latest & Registry:2 Image Files
