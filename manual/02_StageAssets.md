@@ -113,9 +113,6 @@ aws_secret_access_key = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 EOF
 ```
   2. Replace values for `aws_access_key_id` & `aws_secret_access_key` && save/close
-```
-vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
-```
   3. Link to $HOME
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
