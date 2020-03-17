@@ -100,7 +100,7 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 >   NOTE:
 >   - An AWS Commercial Account is required for deployment   
 >   - The AWS User requires the [AdministratorAccess policy] or the [Required AWS Permissions]    
->   [Permissions Check Code Base]
+>   - [Permissions Check Code Base]
 
   1. Write aws commercial credential template
 ```
