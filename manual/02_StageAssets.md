@@ -115,7 +115,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
   3. Link to $HOME
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
-```
+```    
 ---------------------------------------------------------------------------------
 ### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
@@ -131,7 +131,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 >   On Linux
 ```
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz sudo tar xzvf - --directory /usr/local/bin/ openshift-install
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | sudo tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
 ```
 TODO: verify mirror vs quay binary release cadence
 
