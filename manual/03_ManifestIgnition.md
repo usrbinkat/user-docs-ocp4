@@ -164,7 +164,8 @@ mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 
 --------------------------------------------------------------------------------
 ###### Verify Assets:    
-  Compare to [Verify Index] contents
+  Compare to [Verify Index] contents    
+
 --------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 04 Setup AWS VPC]
