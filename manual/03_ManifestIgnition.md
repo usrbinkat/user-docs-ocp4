@@ -141,13 +141,19 @@ EOF
 cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%m%d%H%M')-data
 ```
 ```
-mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
+rm ${HOME}/${CLUSTER_DOMAIN}/bak/data/.openshift_install_state.json
 ```
 
 ---------------------------------------------------------------------------------
 ### Step 13. Create Ignition Configurations
+  1. Generate Ignition Configurations
 ```
  ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
+```
+
+  2. Move auth directory out of future nginx web root path
+```
+mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
 
 --------------------------------------------------------------------------------
