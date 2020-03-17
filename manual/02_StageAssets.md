@@ -24,6 +24,7 @@ export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
   6. Define target AWS Region
+TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 ```
 export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
 ```
@@ -35,7 +36,6 @@ export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION}
 >   eu-west-2, eu-west-3, sa-east-1,    
 >   us-east-1, us-east-2, us-west-1, us-west-2    
 >   
-TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 
   7. Prep directories - CMD: 
 ```
