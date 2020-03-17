@@ -1,9 +1,11 @@
-kmorgan@carrier cluster.dsop.dev$ tree . -a
+$ tree . -a
 .
+├── auth
+│   └── htpasswd
 ├── .aws
 │   └── credentials
 ├── bak
-│   ├── data
+│   ├── 202003162212-data
 │   │   ├── manifests
 │   │   │   ├── 04-openshift-machine-config-operator.yaml
 │   │   │   ├── cluster-config.yaml
@@ -31,7 +33,8 @@ kmorgan@carrier cluster.dsop.dev$ tree . -a
 │   │   │   ├── kube-cloud-config.yaml
 │   │   │   ├── kube-system-configmap-root-ca.yaml
 │   │   │   ├── machine-config-server-tls-secret.yaml
-│   │   │   └── openshift-config-secret-pull-secret.yaml
+│   │   │   ├── openshift-config-secret-pull-secret.yaml
+│   │   │   └── user-ca-bundle-config.yaml
 │   │   ├── openshift
 │   │   │   ├── 99_kubeadmin-password-secret.yaml
 │   │   │   ├── 99_openshift-cluster-api_master-machines-0.yaml
@@ -40,16 +43,21 @@ kmorgan@carrier cluster.dsop.dev$ tree . -a
 │   │   │   ├── 99_openshift-cluster-api_master-user-data-secret.yaml
 │   │   │   ├── 99_openshift-cluster-api_worker-machineset-0.yaml
 │   │   │   ├── 99_openshift-cluster-api_worker-user-data-secret.yaml
+│   │   │   ├── 99_openshift-image-registry_installer-cloud-credentials-secret.yaml
+│   │   │   ├── 99_openshift-ingress-operator_cloud-credentials-secret.yaml
+│   │   │   ├── 99_openshift-machine-api_aws-cloud-credentials-secret.yaml
 │   │   │   ├── 99_openshift-machineconfig_99-master-ssh.yaml
-│   │   │   └── 99_openshift-machineconfig_99-worker-ssh.yaml
+│   │   │   ├── 99_openshift-machineconfig_99-worker-ssh.yaml
+│   │   │   └── openshift-install-manifests.yaml
 │   │   ├── .openshift_install.log
 │   │   └── .openshift_install_state.json
-│   └── install-config.yaml
-├── cluster.env
-├── data
 │   ├── auth
 │   │   ├── kubeadmin-password
 │   │   └── kubeconfig
+│   ├── .docker
+│   │   └── config.json
+│   └── install-config.yaml
+├── data
 │   ├── bootstrap.ign
 │   ├── master.ign
 │   ├── metadata.json
@@ -58,13 +66,17 @@ kmorgan@carrier cluster.dsop.dev$ tree . -a
 │   └── worker.ign
 ├── .docker
 │   └── config.json
+├── environment
+├── images
+├── mirror
 ├── openshift-install
-├── ssh
+├── registry
+├── .ssh
 │   ├── authorized_keys
-│   ├── id_rsa_cluster.dsop.dev
-│   └── id_rsa_cluster.dsop.dev.pub
+│   ├── id_rsa_cluster.ministack.dev
+│   └── id_rsa_cluster.ministack.dev.pub
 └── ssl
-    ├── cluster.dsop.dev.crt
-    └── cluster.dsop.dev.key
+    ├── cluster.ministack.dev.crt
+    └── cluster.ministack.dev.key
 
-10 directories, 56 files
+15 directories, 63 files

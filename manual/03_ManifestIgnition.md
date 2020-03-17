@@ -163,6 +163,9 @@ mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
 
 --------------------------------------------------------------------------------
+### Verify Assets:
+Compare to [Verify Index] contents
+--------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 04 Setup AWS VPC]
 --------------------------------------------------------------------------------
@@ -182,4 +185,4 @@ mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 [Generate Self Signed Certificate]:../tasks/certificates/SelfSigned.md
 [Generate Let's Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md
 [Acquire Organization Issued Certificates]:../tasks/certificates/OrganizationIssued.md
-
+[Verify Index]:tasks/assets/index.txt
