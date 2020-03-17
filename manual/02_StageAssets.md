@@ -23,7 +23,7 @@ export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 ```
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
-  6. Define target AWS Region
+  6. Define target AWS Region    
 TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 ```
 export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
