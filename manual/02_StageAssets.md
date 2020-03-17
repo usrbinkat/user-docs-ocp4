@@ -105,7 +105,7 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 
   1. Write aws commercial credential template
 ```
-cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
+cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials && vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 [default]
 aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
