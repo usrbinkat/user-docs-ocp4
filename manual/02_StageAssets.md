@@ -23,14 +23,13 @@ export CLUSTER_DOMAIN="${CLUSTER_NAME}.${DOMAIN_NAME}"; echo ${CLUSTER_DOMAIN}
 ```
 export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
-  6. Prep directories - CMD: 
-```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,mirror,images,registry,bak/.docker,.ssh,.aws,.docker} 
-cd ${HOME}/${CLUSTER_DOMAIN}
-```
-  7. Define target AWS Region
+  6. Define target AWS Region
 ```
 export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
+```
+  7. Prep directories - CMD: 
+```
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,mirror,images,registry,bak/.docker,.ssh,.aws,.docker} && cd ${HOME}/${CLUSTER_DOMAIN}
 ```
 TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 >   Supported Values:
