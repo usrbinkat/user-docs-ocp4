@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [Task 01 Prerequisites]    
 --------------------------------------------------------------------------------
-### Step 00\. Prepare Working Environment
+### Step 01\. Prepare Working Environment
   1. Export vpc name
 ```
 export VPC_NAME='myVpcName'; echo ${VPC_NAME} 
@@ -55,7 +55,7 @@ EOF
 ```
 
 ---------------------------------------------------------------------------------
-### Step 09\. Write httpasswd auth file
+### Step 02\. Write httpasswd auth file
   1. Create user/pass - CMD:
   - substitute {yourUserName} for an arbitrary username (eg: regadmin)
 ```
@@ -66,7 +66,7 @@ htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
 TODO: Integrate htpasswd values into prereqs/environment vars
 
 ---------------------------------------------------------------------------------
-### Step 01\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
+### Step 03\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
   2. CMD: 
@@ -82,7 +82,7 @@ jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat ${HOME
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
 ```
 
-  8. Write authorized\_key to file
+  5. Write authorized\_key to file
 ```
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}
 ```
@@ -96,7 +96,7 @@ chmod 600 ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
 ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
 ---------------------------------------------------------------------------------
-### Step 09\. Write AWS Credentials File
+### Step 04\. Write AWS Credentials File
 >   NOTE:
 >   - An AWS Commercial Account is required for deployment   
 >   - The AWS User requires the [AdministratorAccess policy] or the [Required AWS Permissions]    
@@ -120,7 +120,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```    
 ---------------------------------------------------------------------------------
-### Step 09\. Acquire Binaries {openshift-installer,kubectl,oc}
+### Step 05\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
@@ -140,7 +140,7 @@ TODO: verify mirror vs quay binary release cadence
 TODO: solve for hard coded version numbering
 
 ---------------------------------------------------------------------------------
-### Step 09\. Acquire Nginx:latest & Registry:2 Image Files
+### Step 06\. Acquire Nginx:latest & Registry:2 Image Files
   1. Pull & Export registry image
 ```
  sudo podman pull docker.io/library/registry:2
