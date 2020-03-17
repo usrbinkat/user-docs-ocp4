@@ -99,7 +99,7 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ### Step 09\. Write AWS Credentials File
 >   NOTE:
 >   - An AWS Commercial Account is required for deployment   
->   - The AWS Account User requires either the [AdministratorAccess] policy or the documented [Required AWS Permissions]
+>   - The AWS User Account requires the [AdministratorAccess policy] or the [Required AWS Permissions]
 
   1. Write aws commercial credential template
 ```
@@ -182,5 +182,5 @@ TODO: solve for hard coded version numbering
 [Generate Self Signed Certificate]:../tasks/certificates/SelfSigned.md
 [Generate Let's Encrypt Certificates]:../tasks/certificates/LetsEncrypt.md
 [Acquire Organization Issued Certificates]:../tasks/certificates/OrganizationIssued.md
-[AdministratorAccess]:https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AdministratorAccess$serviceLevelSummary
+[AdministratorAccess policy]:https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AdministratorAccess$serviceLevelSummary
 [Required AWS Permissions]:https://docs.openshift.com/container-platform/4.3/installing/installing_aws/installing-aws-account.html#installation-aws-permissions_installing-aws-account
