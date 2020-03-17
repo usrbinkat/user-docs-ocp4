@@ -163,7 +163,7 @@ mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
 
 --------------------------------------------------------------------------------
-###### Verify Assets:    
+### Verify Assets:    
   Compare to [Verify Index] contents    
 
 --------------------------------------------------------------------------------
