@@ -3,7 +3,7 @@
   + [Task 02 Stage Assets]    
 ---------------------------------------------------------------------------------
 ### Step 01\. Write `install-config.yaml`
-  2. Confirm Directory Location - CMD: 
+  1. CD to base working directory - CMD: 
 ```
 cd ${HOME}/${CLUSTER_DOMAIN}
 ```
@@ -52,11 +52,16 @@ EOF
 ```
 cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN}/data/install-config.yaml
 ```
-  4. Generate Manifests
+    
+---------------------------------------------------------------------------------
+### Step 02\. Generate Manifests from install-config.yaml
+  1. Generate base Manifest templates
 ```
 ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
 ```
-  5. Reassign cluster random name to VPC\_NAME
+---------------------------------------------------------------------------------
+### Step 03\. Edit/Prepare Manifests for AWS Gov
+  1. Reassign cluster random name to VPC\_NAME
 ```
 export idRand=$(awk -F'[-]' '/infrastructureName/{print $2}' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml)
 ```
@@ -66,25 +71,26 @@ sed -i "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/dat
 ```
 find . -type f | xargs sed -i  "s/${CLUSTER_NAME}-${idRand}/${VPC_NAME}/g"
 ```
-  6. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
+  2. Rewrite cluster-infrastructure-02-config.yml ` infrastructureName: ` line
 ```
 sed -i "s/\(^  infrastructureName:\)\(.*\)/\1 ${VPC_NAME}/g" ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-infrastructure-02-config.yml
 ```
-  7. Rewrite manifest entries for us-east-1 to AWS Gov region
+  3. Rewrite manifest entries for us-east-1 to AWS Gov region
 ```
 find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/us-east-1/${AWS_REGION}/g"
 ```
-  8. Rewrite manifest value 'infrastructureNAME' with unique tag
+  4. Rewrite manifest value 'infrastructureNAME' with unique tag
 ```
 find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
-TODO: Break off `disconnected` vs `air gapped` steps .. the following .9 .10
-only intended for disconnected, not air gapped env    
-  9. Purge `publish: Internal` configuration
+---------------------------------------------------------------------------------
+
+TODO: Break off `disconnected` vs `air gapped` steps .. the following only intended for disconnected, not air gapped env?    
+  0. Purge `publish: Internal` configuration
 ```
 sed -i '/publish: Internal/d' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/*
 ```
- 10. Remove default ingress configuration & non-applicable cloud credential configs
+  0. Remove default ingress configuration & non-applicable cloud credential configs
 ```
 rm \
   ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_cloud-creds-secret.yaml \
