@@ -101,8 +101,6 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 >   - The AWS User requires the [AdministratorAccess policy] or the [Required AWS Permissions]    
 >   - [Permissions Check Code Base]
 
-
-
 ###### Navigate: [AWS Console] > Top Username Dropdown > My Security Credentials >  [AWS IAM Credentials] > Access Keys
 
   1. Write aws commercial credential template
