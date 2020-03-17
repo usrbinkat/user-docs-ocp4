@@ -27,11 +27,6 @@ export CERT_EMAIL="admin@${DOMAIN_NAME}"; echo ${CERT_EMAIL}
 ```
 export AWS_REGION='us-gov-west-1'; echo ${AWS_REGION} 
 ```
-  7. Prep directories - CMD: 
-```
-mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,mirror,images,registry,bak/.docker,.ssh,.aws,.docker} && cd ${HOME}/${CLUSTER_DOMAIN}
-```
-TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 >   Supported Values:
 >
 >   ap-northeast-1, ap-northeast-2, ap-south-1,    
@@ -40,7 +35,12 @@ TODO: @jhultz need to solution path to resolve region discrepencies, raise issue
 >   eu-west-2, eu-west-3, sa-east-1,    
 >   us-east-1, us-east-2, us-west-1, us-west-2    
 >   
+TODO: @jhultz need to solution path to resolve region discrepencies, raise issue w/ BU & track on this repo or fix
 
+  7. Prep directories - CMD: 
+```
+mkdir -p ${HOME}/${CLUSTER_DOMAIN}/{auth,ssl,data,mirror,images,registry,bak/.docker,.ssh,.aws,.docker} && cd ${HOME}/${CLUSTER_DOMAIN}
+```
   8. Write Configuration File
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/environment
