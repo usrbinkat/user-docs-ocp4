@@ -101,6 +101,10 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 >   - The AWS User requires the [AdministratorAccess policy] or the [Required AWS Permissions]    
 >   - [Permissions Check Code Base]
 
+
+
+###### Navigate: [AWS Console] > Top Username Dropdown > My Security Credentials >  [AWS IAM Credentials] > Access Keys
+
   1. Write aws commercial credential template
 ```
 cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
@@ -185,4 +189,6 @@ TODO: solve for hard coded version numbering
 [AdministratorAccess policy]:https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AdministratorAccess$serviceLevelSummary
 [Required AWS Permissions]:https://docs.openshift.com/container-platform/4.3/installing/installing_aws/installing-aws-account.html#installation-aws-permissions_installing-aws-account
 [Permissions Check Code Base]:https://github.com/usrbinkat/installer/blob/master/pkg/asset/installconfig/aws/permissions.go
+[AWS IAM Credentials]:https://console.amazonaws-us-gov.com/iam/home#/security_credentials
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home
 
