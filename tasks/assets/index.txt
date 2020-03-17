@@ -54,8 +54,6 @@ $ tree . -a
 │   ├── auth
 │   │   ├── kubeadmin-password
 │   │   └── kubeconfig
-│   ├── .docker
-│   │   └── config.json
 │   └── install-config.yaml
 ├── data
 │   ├── bootstrap.ign
