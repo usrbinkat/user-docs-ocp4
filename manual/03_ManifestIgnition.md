@@ -100,7 +100,7 @@ rm \
 ```
 
 ---------------------------------------------------------------------------------
-### Step 11. Write Secrets Configurations
+### Step 04. Write Secrets Configurations
   1. Write `openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml`
 ```
 cat <<EOF > ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_openshift-ingress-operator_cloud-credentials-secret.yaml
@@ -142,7 +142,7 @@ EOF
 ```
 
 ---------------------------------------------------------------------------------
-### Step 12. Backup your ignition config directory & move kubectl auth to bak/
+### Step 05. Backup your ignition config directory & move kubectl auth to bak/
 ```
 cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%m%d%H%M')-data
 ```
@@ -151,7 +151,7 @@ rm ${HOME}/${CLUSTER_DOMAIN}/bak/data/.openshift_install_state.json
 ```
 
 ---------------------------------------------------------------------------------
-### Step 13. Create Ignition Configurations
+### Step 06. Create Ignition Configurations
   1. Generate Ignition Configurations
 ```
  ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
