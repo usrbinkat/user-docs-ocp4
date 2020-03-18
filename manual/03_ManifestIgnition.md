@@ -48,6 +48,16 @@ sshKey: "`cat .ssh/authorized_keys`"
 publish: Internal
 EOF
 ```
+TODO: modify pullSecret import, requires base64 encoded secret
+```
+imageContentSources:
+- mirrors:
+  - registry.ocp.quantamkube.com:5000/ocp-4.3
+    source: quay.io/openshift-release-dev/ocp-release
+- mirrors:
+  - registry.ocp.quantamkube.com:5000/ocp-4.3
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+```
   3. Stage install-config.yaml file - CMD: 
 ```
 cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN}/data/install-config.yaml
@@ -83,19 +93,11 @@ find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/us-east-1/${AWS
 ```
 find  ${HOME}/${CLUSTER_DOMAIN}/data/ -type f | xargs sed -i  "s/infrastructureName/${VPC_NAME}/g"
 ```
----------------------------------------------------------------------------------
-
-TODO: Break off `disconnected` vs `air gapped` steps .. the following only intended for disconnected, not air gapped env?    
-  0. Purge `publish: Internal` configuration
-```
-sed -i '/publish: Internal/d' ${HOME}/${CLUSTER_DOMAIN}/data/manifests/*
-```
-  0. Remove default ingress configuration & non-applicable cloud credential configs
+  5. Remove default ingress configuration & non-applicable cloud credential configs
 ```
 rm \
   ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_cloud-creds-secret.yaml \
-  ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_role-cloud-creds-secret-reader.yaml \
-  ${HOME}/${CLUSTER_DOMAIN}/data/manifests/cluster-ingress-default-ingresscontroller.yaml
+  ${HOME}/${CLUSTER_DOMAIN}/data/openshift/99_role-cloud-creds-secret-reader.yaml
   
 ```
 

@@ -76,6 +76,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
 jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
+TODO: base64 encode secret eg; `echo -n 'user:pass' | base64 -w0`
   4. Link for local use:
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
