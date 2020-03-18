@@ -62,6 +62,7 @@ htpasswd -Bcb ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd ${VPC_NAME} ${VPC_NAME}
   2. Enter & Confirm user password
 
 TODO: Integrate htpasswd values into prereqs/environment vars
+TODO: Evaluate use of `openssl passwd` command to eliminate htpasswd dependency
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
@@ -104,7 +105,7 @@ ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 
   1. Write aws commercial credential template
 ```
-cat <<EOF >${HOME}/${CLUSTER_DOMAIN}/.aws/credentials && vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
+cat <<EOF >>${HOME}/${CLUSTER_DOMAIN}/.aws/credentials && vi ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials
 ; https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 [default]
 aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
@@ -112,10 +113,7 @@ aws_secret_access_key = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 EOF
 ```
   2. Replace values for `aws_access_key_id` & `aws_secret_access_key` && save/close
-  3. Link to $HOME
-```
-ln -sf ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
-```    
+
 ---------------------------------------------------------------------------------
 ### Step 05\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
