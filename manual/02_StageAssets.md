@@ -55,10 +55,9 @@ EOF
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Write httpasswd auth file
-  1. Create user/pass - CMD:
-  - substitute {yourUserName} for an arbitrary username (eg: regadmin)
+  1. Create temp image registry user/pass - CMD:
 ```
-htpasswd -Bc ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd {yourUserName}
+htpasswd -Bcb ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd ${VPC_NAME} ${VPC_NAME}
 ```
   2. Enter & Confirm user password
 
@@ -115,7 +114,7 @@ EOF
   2. Replace values for `aws_access_key_id` & `aws_secret_access_key` && save/close
   3. Link to $HOME
 ```
-ln -s ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
+ln -sf ${HOME}/${CLUSTER_DOMAIN}/.aws ${HOME}/
 ```    
 ---------------------------------------------------------------------------------
 ### Step 05\. Acquire Binaries {openshift-installer,kubectl,oc}
