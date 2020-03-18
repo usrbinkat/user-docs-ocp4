@@ -149,7 +149,7 @@ EOF
 cp -rf ${HOME}/${CLUSTER_DOMAIN}/data ${HOME}/${CLUSTER_DOMAIN}/bak/$(date '+%Y%m%d%H%M')-data
 ```
 ```
-rm ${HOME}/${CLUSTER_DOMAIN}/bak/data/.openshift_install_state.json
+rm ${HOME}/${CLUSTER_DOMAIN}/bak/*-data/.openshift_install_state.json
 ```
 
 ---------------------------------------------------------------------------------
