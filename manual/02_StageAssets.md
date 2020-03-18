@@ -118,7 +118,7 @@ EOF
 ### Step 05\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
 ```
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | tar xzvf - --directory /usr/local/bin/ kubectl oc
 ```
   2. Pull openshift-install - CMD:    
 >   On RHCOS
