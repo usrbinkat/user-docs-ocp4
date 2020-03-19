@@ -2,16 +2,15 @@ $ tree . -a
 .
 ├── auth
 │   └── htpasswd
-├── .aws
-│   └── credentials
 ├── bak
-│   ├── 202003162212-data
+│   ├── 202003190515-data
 │   │   ├── manifests
 │   │   │   ├── 04-openshift-machine-config-operator.yaml
 │   │   │   ├── cluster-config.yaml
 │   │   │   ├── cluster-dns-02-config.yml
 │   │   │   ├── cluster-infrastructure-02-config.yml
 │   │   │   ├── cluster-ingress-02-config.yml
+│   │   │   ├── cluster-ingress-default-ingresscontroller.yaml
 │   │   │   ├── cluster-network-01-crd.yml
 │   │   │   ├── cluster-network-02-config.yml
 │   │   │   ├── cluster-proxy-01-config.yaml
@@ -35,22 +34,20 @@ $ tree . -a
 │   │   │   ├── machine-config-server-tls-secret.yaml
 │   │   │   ├── openshift-config-secret-pull-secret.yaml
 │   │   │   └── user-ca-bundle-config.yaml
-│   │   ├── openshift
-│   │   │   ├── 99_kubeadmin-password-secret.yaml
-│   │   │   ├── 99_openshift-cluster-api_master-machines-0.yaml
-│   │   │   ├── 99_openshift-cluster-api_master-machines-1.yaml
-│   │   │   ├── 99_openshift-cluster-api_master-machines-2.yaml
-│   │   │   ├── 99_openshift-cluster-api_master-user-data-secret.yaml
-│   │   │   ├── 99_openshift-cluster-api_worker-machineset-0.yaml
-│   │   │   ├── 99_openshift-cluster-api_worker-user-data-secret.yaml
-│   │   │   ├── 99_openshift-image-registry_installer-cloud-credentials-secret.yaml
-│   │   │   ├── 99_openshift-ingress-operator_cloud-credentials-secret.yaml
-│   │   │   ├── 99_openshift-machine-api_aws-cloud-credentials-secret.yaml
-│   │   │   ├── 99_openshift-machineconfig_99-master-ssh.yaml
-│   │   │   ├── 99_openshift-machineconfig_99-worker-ssh.yaml
-│   │   │   └── openshift-install-manifests.yaml
-│   │   ├── .openshift_install.log
-│   │   └── .openshift_install_state.json
+│   │   └── openshift
+│   │       ├── 99_kubeadmin-password-secret.yaml
+│   │       ├── 99_openshift-cluster-api_master-machines-0.yaml
+│   │       ├── 99_openshift-cluster-api_master-machines-1.yaml
+│   │       ├── 99_openshift-cluster-api_master-machines-2.yaml
+│   │       ├── 99_openshift-cluster-api_master-user-data-secret.yaml
+│   │       ├── 99_openshift-cluster-api_worker-machineset-0.yaml
+│   │       ├── 99_openshift-cluster-api_worker-user-data-secret.yaml
+│   │       ├── 99_openshift-image-registry_installer-cloud-credentials-secret.yaml
+│   │       ├── 99_openshift-ingress-operator_cloud-credentials-secret.yaml
+│   │       ├── 99_openshift-machine-api_aws-cloud-credentials-secret.yaml
+│   │       ├── 99_openshift-machineconfig_99-master-ssh.yaml
+│   │       ├── 99_openshift-machineconfig_99-worker-ssh.yaml
+│   │       └── openshift-install-manifests.yaml
 │   ├── auth
 │   │   ├── kubeadmin-password
 │   │   └── kubeconfig
@@ -59,22 +56,16 @@ $ tree . -a
 │   ├── bootstrap.ign
 │   ├── master.ign
 │   ├── metadata.json
-│   ├── .openshift_install.log
-│   ├── .openshift_install_state.json
 │   └── worker.ign
-├── .docker
-│   └── config.json
 ├── environment
 ├── images
+│   ├── docker-nginxlatest-image.tar
+│   └── docker-registry2-image.tar
 ├── mirror
 ├── openshift-install
 ├── registry
-├── .ssh
-│   ├── authorized_keys
-│   ├── id_rsa_cluster.ministack.dev
-│   └── id_rsa_cluster.ministack.dev.pub
 └── ssl
-    ├── cluster.ministack.dev.crt
-    └── cluster.ministack.dev.key
+    ├── cluster.dsop.dev.crt
+    └── cluster.dsop.dev.key
 
-15 directories, 63 files
+11 directories, 57 files
