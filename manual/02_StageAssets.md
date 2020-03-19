@@ -59,9 +59,6 @@ EOF
 ```
 htpasswd -Bcb ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd ${VPC_NAME} ${VPC_NAME}
 ```
-  2. Enter & Confirm user password
-
-TODO: Integrate htpasswd values into prereqs/environment vars
 TODO: Evaluate use of `openssl passwd` command to eliminate htpasswd dependency
 
 ---------------------------------------------------------------------------------
