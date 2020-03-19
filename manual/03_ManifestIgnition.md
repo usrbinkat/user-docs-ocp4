@@ -56,9 +56,14 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 ---------------------------------------------------------------------------------
 ### Step 02\. Generate Manifests from install-config.yaml
   1. Generate base Manifest templates
+>   NOTE: include 'sudo' even when running as root, unknown bug worth investigating
+
 ```
 ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
 ```
+
+TODO: Investigate need for usage of "sudo" even when running as root
+
 ---------------------------------------------------------------------------------
 ### Step 03\. Edit/Prepare Manifests for AWS Gov
   1. Reassign cluster random name to VPC\_NAME
@@ -145,17 +150,15 @@ rm ${HOME}/${CLUSTER_DOMAIN}/bak/*-data/.openshift_install_state.json
 ---------------------------------------------------------------------------------
 ### Step 06. Create Ignition Configurations
   1. Generate Ignition Configurations
->   NOTE: include 'sudo' even when running as root, unknown bug worth investigating
 
 ```
-sudo ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
+./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
 ```
 
   2. Move auth directory out of future nginx web root path
 ```
 mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
-TODO: Investigate need for usage of "sudo" even when running as root
 
 --------------------------------------------------------------------------------
 ### Verify Assets:    
