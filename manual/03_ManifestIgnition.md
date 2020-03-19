@@ -62,8 +62,8 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 sudo -E ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
 ```
 
-TODO: Investigate need for usage of "sudo" even when running as root
-TODO: resolve bug side effect causing `openshift-install` to search for aws creds in /root/.aws/credentials
+TODO: Investigate need for usage of "sudo" even when running as root    
+TODO: resolve bug side effect causing `openshift-install` to search for aws creds in /root/.aws/credentials    
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Edit/Prepare Manifests for AWS Gov
