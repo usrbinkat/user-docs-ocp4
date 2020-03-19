@@ -59,7 +59,7 @@ cp -f ${HOME}/${CLUSTER_DOMAIN}/bak/install-config.yaml ${HOME}/${CLUSTER_DOMAIN
 >   NOTE: include 'sudo' even when running as root, unknown bug worth investigating
 
 ```
-./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
+sudo -E ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/data && sudo chown -R $USER:$USER data
 ```
 
 TODO: Investigate need for usage of "sudo" even when running as root
