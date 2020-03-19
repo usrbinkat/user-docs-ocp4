@@ -145,14 +145,17 @@ rm ${HOME}/${CLUSTER_DOMAIN}/bak/*-data/.openshift_install_state.json
 ---------------------------------------------------------------------------------
 ### Step 06. Create Ignition Configurations
   1. Generate Ignition Configurations
+>   NOTE: include 'sudo' even when running as root, unknown bug worth investigating
+
 ```
- ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
+sudo ./openshift-install create ignition-configs --dir=${HOME}/${CLUSTER_DOMAIN}/data
 ```
 
   2. Move auth directory out of future nginx web root path
 ```
 mv ${HOME}/${CLUSTER_DOMAIN}/data/auth ${HOME}/${CLUSTER_DOMAIN}/bak/auth
 ```
+TODO: Investigate need for usage of "sudo" even when running as root
 
 --------------------------------------------------------------------------------
 ### Verify Assets:    
