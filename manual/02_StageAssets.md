@@ -71,7 +71,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
 ```
-jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(echo '`cat auth/htpasswd`' | base64 -w0)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
+jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(echo -n ${VPC_NAME}:${VPC_NAME} | base64 -w0)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
 TODO: base64 encode secret eg; `echo -n 'user:pass' | base64 -w0`
   4. Link for local use:
