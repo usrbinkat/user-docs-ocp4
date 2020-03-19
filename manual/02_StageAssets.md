@@ -64,19 +64,15 @@ printf ${VPC_NAME}:$(openssl passwd -5 ${VPC_NAME}) ${HOME}/${CLUSTER_DOMAIN}/au
 ### Step 03\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
 ###### Navigate: [Red Hat OpenShift Cluster Manager] > Install > AWS > [User-provisioned Infrastructure]
   1. Click: `Copy pull secret`
-  2. CMD: 
+  2. Open docker/config.json file for edit - CMD: 
 ```
 vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
+  4. Append config.json pull secret with local registry pull secret
 ```
 jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(echo -n ${VPC_NAME}:${VPC_NAME} | base64 -w0)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
-  4. Link for local use:
-```
-ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
-```
-
   5. Write authorized\_key to file
 ```
 ssh-keygen -C "core@${CLUSTER_DOMAIN}" -f ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}
@@ -87,6 +83,11 @@ cat ${HOME}/${CLUSTER_DOMAIN}/.ssh/id_rsa_${CLUSTER_DOMAIN}.pub | tee -a ${HOME}
 ```
 chmod 600 ${HOME}/${CLUSTER_DOMAIN}/.ssh/authorized_keys
 ```
+  6. OPTIONAL: Link docker pull secrets for local use:
+```
+ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
+```
+  7. OPTIONAL: Link ssh keys for local use:
 ```
 ln -f .ssh/id_rsa_${CLUSTER_DOMAIN}* ${HOME}/.ssh/
 ```
