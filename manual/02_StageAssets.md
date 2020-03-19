@@ -129,7 +129,6 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | sudo tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
 ```
-TODO: verify mirror vs quay binary release cadence
 TODO: solve for hard coded version numbering
 
 ---------------------------------------------------------------------------------
