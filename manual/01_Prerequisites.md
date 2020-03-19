@@ -5,7 +5,6 @@
   - RHEL 8+
 # Package Requirements List
   - jq (v1.6+)
-  - htpasswd
   - podman
 # TODO Expansion List
     WIP: Inventory of items to build out documentation for
