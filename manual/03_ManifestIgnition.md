@@ -63,6 +63,7 @@ sudo -E ./openshift-install create manifests --dir=${HOME}/${CLUSTER_DOMAIN}/dat
 ```
 
 TODO: Investigate need for usage of "sudo" even when running as root
+TODO: resolve bug side effect causing `openshift-install` to search for aws creds in /root/.aws/credentials
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Edit/Prepare Manifests for AWS Gov
