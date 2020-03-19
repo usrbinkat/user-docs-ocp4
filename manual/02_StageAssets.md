@@ -71,7 +71,7 @@ vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
   3. Paste Pull Secret from clipboard && save/close
 ```
-jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(cat ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
+jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(echo '`cat auth/htpasswd`' | base64 -w0)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
 TODO: base64 encode secret eg; `echo -n 'user:pass' | base64 -w0`
   4. Link for local use:
@@ -120,15 +120,16 @@ curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshi
 ```
   2. Pull openshift-install - CMD:    
 >   On RHCOS
+
 ```
 sudo podman pull quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64
 oc adm release extract --command=openshift-install quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64 --to=${HOME}/${CLUSTER_DOMAIN}/
 ```
 >   On Linux
+
 ```
 curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | sudo tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
 ```
-    
 TODO: verify mirror vs quay binary release cadence
 TODO: solve for hard coded version numbering
 
