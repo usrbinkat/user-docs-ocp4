@@ -16,10 +16,10 @@ additionalTrustBundle: |
 baseDomain: ${DOMAIN_NAME}
 imageContentSources:
 - mirrors:
-  - registry.${CLUSTER_DOMAIN}/ocp/release
+  - registry.${CLUSTER_DOMAIN}:5000/ocp-4.3
   source: quay.io/openshift-release-dev/ocp-release
 - mirrors:
-  - registry.${CLUSTER_DOMAIN}/ocp/release
+  - registry.${CLUSTER_DOMAIN}:5000/ocp-4.3
   source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
 compute:
 - name: worker
@@ -47,16 +47,6 @@ pullSecret: '`cat .docker/config.json`'
 sshKey: "`cat .ssh/authorized_keys`"
 publish: Internal
 EOF
-```
-TODO: modify pullSecret import, requires base64 encoded secret
-```
-imageContentSources:
-- mirrors:
-  - registry.ocp.quantamkube.com:5000/ocp-4.3
-    source: quay.io/openshift-release-dev/ocp-release
-- mirrors:
-  - registry.ocp.quantamkube.com:5000/ocp-4.3
-  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
 ```
   3. Stage install-config.yaml file - CMD: 
 ```

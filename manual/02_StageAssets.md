@@ -57,9 +57,8 @@ EOF
 ### Step 02\. Write httpasswd auth file
   1. Create temp image registry user/pass - CMD:
 ```
-htpasswd -Bcb ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd ${VPC_NAME} ${VPC_NAME}
+printf ${VPC_NAME}:$(openssl passwd -5 ${VPC_NAME}) ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd
 ```
-TODO: Evaluate use of `openssl passwd` command to eliminate htpasswd dependency
 
 ---------------------------------------------------------------------------------
 ### Step 03\. Acquire & Stage Pull Secret & AWS Secrets & SSH Public Key
@@ -73,7 +72,6 @@ vi ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json
 ```
 jq -e ".auths += {\"registry.${CLUSTER_DOMAIN}:5000\": {\"auth\": \"$(echo -n ${VPC_NAME}:${VPC_NAME} | base64 -w0)\", \"email\": "env.CERT_EMAIL"}}" ${HOME}/${CLUSTER_DOMAIN}/bak/.docker/config.json | jq -c | tee ${HOME}/${CLUSTER_DOMAIN}/.docker/config.json
 ```
-TODO: base64 encode secret eg; `echo -n 'user:pass' | base64 -w0`
   4. Link for local use:
 ```
 ln -s ${HOME}/${CLUSTER_DOMAIN}/.docker ${HOME}/.docker
