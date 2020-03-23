@@ -109,23 +109,13 @@ TODO: BROKEN VARS need to resolve hard coded copy paste example items
 oc adm release mirror --from=quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64 --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
 ```
 ```
-oc image mirror \
-  --from-dir=/root/cluster.dsop.dev/mirror file://openshift/release:4.3.5* \
-
-oc adm release mirror \
-    --from=quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64          \
-    --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
-    --to-release-image=registry.${CLUSTER_DOMAIN}/ocp/release:4.3.5-x86_64
-```
-```
-oc image mirror -a /tmp/pull-secret.json --dir=/tmp/mirror-file file://openshift/release:4.3.5* registry.${CLUSTER_DOMAIN}:5000/ocp-4.3
+oc image mirror -a .docker/config.json --dir=/root/cluster.dsop.dev/mirror file://openshift/release:4.3.5* registry.cluster.dsop.dev/ocp-4.3
 ```
   + [Example Success Message]    
 ---------------------------------------------------------------------------------
 ### Step 07\. Test registry catalog & auth
 ```
-curl -u user:pass -k https://10.0.1.94:5000/v2/_catalog
-curl -u user:pass -k https://registry.ocp.example.com:5000/v2/ocp-4.3/tags/list
+curl -u ${VPC_NAME}:${VPC_NAME} -k https://registry.${CLUSTER_DOMAIN}/v2/_catalog
 ```
 ---------------------------------------------------------------------------------
 ### Next Steps:
