@@ -110,12 +110,20 @@ aws_secret_access_key = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 EOF
 ```
   2. Replace values for `aws_access_key_id` & `aws_secret_access_key` && save/close
+  3. Link for local use
+```
+  mkdir ~/.aws ; ln ${HOME}/${CLUSTER_DOMAIN}/.aws/credentials ${HOME}/.aws/credentials
+```
+  4. Link for local root user use
+```
+  sudo mkdir /root/.aws ; sudo ln .aws/credentials /root/.aws/credentials
+```
 
 ---------------------------------------------------------------------------------
 ### Step 05\. Acquire Binaries {openshift-installer,kubectl,oc}
   1. Pull oc + kubectl CMD:    
 ```
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | tar xzvf - --directory /usr/local/bin/ kubectl oc
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.5.tar.gz | sudo tar xzvf - --directory /usr/local/bin/ kubectl oc
 ```
   2. Pull openshift-install - CMD:    
 >   On RHCOS

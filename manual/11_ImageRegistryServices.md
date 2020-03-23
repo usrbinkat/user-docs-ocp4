@@ -18,6 +18,10 @@ tar -C ${HOME} -Jcvf /tmp/${CLUSTER_DOMAIN}.tar.xz ${CLUSTER_DOMAIN}
 ```
 scp -i ssh/id_rsa_${CLUSTER_DOMAIN} /tmp/${CLUSTER_DOMAIN}.tar.xz core@registry.${CLUSTER_DOMAIN}:~
 ```
+  5. SSH Back to Registry Node
+```
+ssh core@{REGISTRY_NODE_IP}
+```
   5. Acquire root
 ```
 sudo -i
@@ -58,13 +62,9 @@ podman run \
   --volume ${HOME}/${CLUSTER_DOMAIN}/data:/usr/share/nginx/html:z  \
 docker.io/library/nginx:latest
 ```
-  3. Push bootstrap ignition to web root
+  3. Test curl bootstrap.ign json block
 ```
-cp /root/govlcloud/bootstrap.ign /home/core/html/
-```
-  4. Set Artifact Permissions
-```
-chmod -R 755 /home/core/html/
+curl localhost:80/bootstrap.ign
 ```
 
 ---------------------------------------------------------------------------------
