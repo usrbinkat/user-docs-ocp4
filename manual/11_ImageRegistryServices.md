@@ -102,7 +102,6 @@ cp /root/${CLUSTER_DOMAIN}/ssl/${CLUSTER_DOMAIN}.crt /etc/pki/ca-trust/source/an
 
 ---------------------------------------------------------------------------------
 ### Step 06\. Load images into retistry mirror
-TODO: BROKEN VARS need to resolve hard coded copy paste example items
 
   1. Pull ocp-release container image
 ```
