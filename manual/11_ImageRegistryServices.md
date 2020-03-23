@@ -75,7 +75,9 @@ podman run \
   --name registry                                                        \
   --detach                                                               \
   --net=host                                                             \
+  --privileged                                                           \
   --restart=always                                                       \
+  --publish 443:443                                                      \
   --publish 5000:5000                                                    \
   --env    REGISTRY_HTTP_ADDR=0.0.0.0:443                                \
   --env    "REGISTRY_AUTH=htpasswd"                                      \
@@ -104,9 +106,12 @@ TODO: BROKEN VARS need to resolve hard coded copy paste example items
 
   1. Pull ocp-release container image
 ```
-oc adm release mirror --from=quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEASE} --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
+oc adm release mirror --from=quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64 --to-dir=${HOME}/${CLUSTER_DOMAIN}/mirror
 ```
 ```
+oc image mirror \
+  --from-dir=/root/cluster.dsop.dev/mirror file://openshift/release:4.3.5* \
+
 oc adm release mirror \
     --from=quay.io/openshift-release-dev/ocp-release:4.3.5-x86_64          \
     --to=registry.${CLUSTER_DOMAIN}/ocp/release                                 \
