@@ -3,6 +3,8 @@
   + [Task 12 Build Bootstrap Node]
 ---------------------------------------------------------------------------------
 ### Step 01\. Create Master RHCOS Instances
+  - For each of 3 master nodes in {master-1, master-2, master-3} do the following:
+
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
   2. Click: `Launch`
@@ -112,5 +114,5 @@
 [Task 09 Setup IAM Roles]:manual/09_IAMRoles.md
 [Task 10 Image Registry Instance]:manual/10_ImageRegistryInstance.md
 [Task 11 Image Registry Mirror & Services]:manual/11_ImageRegistryServices.md
-[Task 12 Build Nodes]:manual/12_BuildBootstrap.md
-[Task 13 Deploy]:manual/13_Deploy.md
+[Task 12 Build Bootstrap Node]:manual/12_BuildBootstrap.md
+[Task 13 Build Master Nodes]:manual/13_BuildMasters.md
