@@ -57,7 +57,7 @@ EOF
 ### Step 02\. Write httpasswd auth file
   1. Create temp image registry user/pass - CMD:
 ```
-printf ${VPC_NAME}:$(openssl passwd -5 ${VPC_NAME}) ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd
+printf ${VPC_NAME}:$(openssl passwd -5 ${VPC_NAME}) > ${HOME}/${CLUSTER_DOMAIN}/auth/htpasswd
 ```
 
 ---------------------------------------------------------------------------------
