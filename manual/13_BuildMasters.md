@@ -1,6 +1,6 @@
-# [Task 12](../tasks/nodes/) - Build Bootstrap Node
+# [Task 13](../tasks/nodes/) - Build Master Nodes
 ### Prerequisite:
-  + [Task 11 Image Registry Mirror & Services]
+  + [Task 12 Build Bootstrap Node]
 ---------------------------------------------------------------------------------
 ### Step 01\. Create Bootstrap RHCOS Instance
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
@@ -22,11 +22,11 @@
   - Copy/Paste the following user data        
   - Substitute '{CLUSTER\_DOMAIN}' for your cluster domain name (eg: cluster.openshift.com)
 ```
-{"ignition":{"config":{"append":[{"source":"http://registry.{CLUSTER_DOMAIN}/bootstrap.ign","verification":{}}]},"security":{},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{},"storage":{},"systemd":{}}
+{"ignition":{"config":{"append":[{"source":"http://registry.{CLUSTER_DOMAIN}/master.ign","verification":{}}]},"security":{},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{},"storage":{},"systemd":{}}
 ```
 
   7. Click: `Next: Add Storage`
-  7. Configure with following minimums
+  8. Configure with following minimums
 >   Image Regristy AMI `Add Storage` Options Table
 >
 >   | Option         | Value (Minimum)     |
@@ -34,24 +34,24 @@
 >   | Device         | /dev/sda1           |
 >   | Size           | 30 GiB              |
 
-  8. Click: `Next: Add Tags`
-  9. Click: `Add Tag`
+  9. Click: `Next: Add Tags`
+ 10. Click: `Add Tag`
 >   Image Registry AMI `Add Tags` Table
+>   - (where `n` is master node number {1,2,3})
 >
 >   | Key                              | Value                     |
 >   |:--------------------------------:|:-------------------------:|
->   | Name                             | {vpc_name}-bootstrap-node |
+>   | Name                             | {vpc_name}-master-{n}     |
 >   | kubernetes.io/cluster/{vpc_name} | owned                     |
 
-
-  9. Click: `Select an Existing Security Group`
-  9. Click: `Existing Security Group`
-  9. Select: `{vpc_name}-master-sg`
- 11. Click: `Review and Launch`
- 12. Click: `Launch`
- 13. Select Option: Proceed without a key pair
- 13. Select acknowledge & continue check box
- 12. Click: `Launch Instances`
+ 11. Click: `Select an Existing Security Group`
+ 12. Click: `Existing Security Group`
+ 13. Select: `{vpc_name}-master-sg`
+ 14. Click: `Review and Launch`
+ 15. Click: `Launch`
+ 16. Select Option: Proceed without a key pair
+ 17. Select acknowledge & continue check box
+ 18. Click: `Launch Instances`
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Add Node to Target Groups
@@ -78,10 +78,10 @@
 >    
 >   | Option  | Value                       |
 >   |---------|-----------------------------|
->   | Network | {vpc_subnet}          |
->   | IP      | {bootstrap_node_ip    |
+>   | Network | {vpc_subnet}                |
+>   | IP      | {master_node_ip}            |
 >   | Port    | (default target group port) |
->   | VPC     | {match your VPC Name} |
+>   | VPC     | {match your VPC Name}       |
 >    
 
   7. Click: `Add to list` 
@@ -112,5 +112,5 @@
 [Task 09 Setup IAM Roles]:manual/09_IAMRoles.md
 [Task 10 Image Registry Instance]:manual/10_ImageRegistryInstance.md
 [Task 11 Image Registry Mirror & Services]:manual/11_ImageRegistryServices.md
-[Task 12 Build Nodes]:manual/12_BuildNodes.md
+[Task 12 Build Nodes]:manual/12_BuildBootstrap.md
 [Task 13 Deploy]:manual/13_Deploy.md
