@@ -16,7 +16,7 @@ tar -C ${HOME} -Jcvf /tmp/${CLUSTER_DOMAIN}.tar.xz ${CLUSTER_DOMAIN}
 ```
   4. scp artifact bundle - CMD:
 ```
-scp -i ssh/id_rsa_${CLUSTER_DOMAIN} /tmp/${CLUSTER_DOMAIN}.tar.xz core@registry.${CLUSTER_DOMAIN}:~
+scp -i .ssh/id_rsa_${CLUSTER_DOMAIN} /tmp/${CLUSTER_DOMAIN}.tar.xz core@registry.${CLUSTER_DOMAIN}:~
 ```
   5. SSH Back to Registry Node
 ```
