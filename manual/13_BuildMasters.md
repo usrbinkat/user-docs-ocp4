@@ -3,7 +3,7 @@
   + [Task 12 Build Bootstrap Node]
 ---------------------------------------------------------------------------------
 ### Step 01\. Create Master RHCOS Instances
-  - For each of 3 master nodes in {master-1, master-2, master-3} do the following:
+  - For each of 3 master nodes in `{ master-1, master-2, master-3 }` do the following:
 
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
