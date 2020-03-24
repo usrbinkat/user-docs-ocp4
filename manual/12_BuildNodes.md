@@ -2,24 +2,94 @@
 ### Prerequisite:
   + [Task 11 Image Registry Mirror & Services]
 ---------------------------------------------------------------------------------
+### Step 01\. Create Bootstrap RHCOS Instance
+###### Navigate: [AWS Console] > [EC2] > [AMIs]
+  1. Select: `rhcos` image
+  2. Click: `Launch`
+  3. Select Instance Type: minimum of `t2.xlarge`
+  4. Click: `Next: Configure Instance Details`
+  5. Set values as per below
 
-### Step 01\. Utter the spell which shall not be named to conjure magnificent success
-  01. Roll up sleeves
-  02. Unsheath thine wand (which has chosen thou the wizard)
-  03. Speak in loud thunderous voice:
+>   Image Regristy AMI `Configure Instance` Options Table
+>
+>   |                |                      |
+>   |:--------------:|:--------------------:|
+>   | Instance Type  | t2.xlarge            |
+>   | Network        | {vpc_name}           |
+>   | Subnet         | {vpc_name}-private-* |
+
+  6. Add 'Configure Instance' `Advanced Details` User data        
+  - Copy/Paste the following user data        
+  - Substitute '{CLUSTER\_DOMAIN}' for your cluster domain name (eg: cluster.openshift.com)
 ```
-blablabla
+{"ignition":{"config":{"append":[{"source":"http://registry.{CLUSTER_DOMAIN}/bootstrap.ign","verification":{}}]},"security":{},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{},"storage":{},"systemd":{}}
 ```
 
-### Step 02\. Seek the oracle of wisdom
-###### Navigate: Rob's desk > face of Rob
-  01. wave frantically
-  02. request for removal of headphones
-  03. Inquire after that which you seek
-```
-aka: go ask Rob
-```
+  7. Click: `Next: Add Storage`
+  7. Configure with following minimums
+>   Image Regristy AMI `Add Storage` Options Table
+>
+>   | Option         | Value (Minimum)     |
+>   |:--------------:|:-------------------:|
+>   | Device         | /dev/sda1           |
+>   | Size           | 30 GiB              |
 
+  8. Click: `Next: Add Tags`
+  9. Click: `Add Tag`
+>   Image Registry AMI `Add Tags` Table
+>
+>   | Key                              | Value                     |
+>   |:--------------------------------:|:-------------------------:|
+>   | Name                             | {vpc_name}-bootstrap-node |
+>   | kubernetes.io/cluster/{vpc_name} | owned                     |
+
+
+  9. Click: `Next: Configure Security Group`
+  9. Click: `Existing Security Group`
+  9. Select: `master`
+  9. Tags:
+>   Image Registry AMI `Add Tags` Table
+>
+>   | Type | Protocol | Port Range | Source   | Description |
+>   |:----:|:--------:|:----------:|:--------:|:-----------:|
+>   | SSH  | TCP      | 22         | Anywhere | SSH         |
+>   | HTTP | TCP      | 80         | Anywhere | ACME        |
+
+ 11. Click: `Review and Launch`
+ 12. Click: `Launch`
+ 13. Select Option: Proceed without a key pair
+
+---------------------------------------------------------------------------------
+### Step 02\. Update registry-node Route53 DNS Record
+###### Navigate: [AWS Console] > [EC2] > [Instances] > {vpc_name}-registry-node > Lower Panel > Description
+ 01. Copy 'Private IP'
+
+###### Navigate: [AWS Console] > [VPC] > [Route 53 DNS] > {your_domain_name}
+ 02. Select A Record for registry.{cluster\_domain\_name}
+ 03. Update Record with the registry node Private IP
+
+---------------------------------------------------------------------------------
+### Step 02\. Create second EIP for registry-node & associate to node
+###### Navigate: [AWS Console] > [VPC Service] > [Elastic IPs]
+  1. Click: `Allocate new address`
+  2. Set IPv4 address pool option: `Amazon pool`
+  3. Click: `Allocate`
+  5. Click: `Close`
+TODO: add EIP owner tag {projectName}    
+TODO: add EIP project tag {stake holder / ownerName}    
+
+###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
+ 14. Select the new registry-node EIP
+ 15. Click: `Actions` menu
+ 16. Select: `Associate address`
+ 17. Select: Instance menu option for your instance `{vpc_name}-registry-node`
+ 18. Select: Private IP menu option for your `{vpc_name}-registry-node` instance ip
+ 19. Click: `Associate`
+
+
+---------------------------------------------------------------------------------
+### Step 02\. [OPTIONAL] Associate registry-node EIP to up stream DNS records
+TODO: define method
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 13 Deploy]
@@ -28,12 +98,9 @@ aka: go ask Rob
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
 [AMIs]:https://console.amazonaws-us-gov.com/ec2/home#Images
 [Instances]:https://console.amazonaws-us-gov.com/ec2/home#Instances
-[AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
+[AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
-[User-provisioned Infrastructure]:https://cloud.redhat.com/openshift/install/aws/user-provisioned
-[Red Hat OpenShift Cluster Manager]:https://cloud.redhat.com/openshift/
-[Example Success Message]:../tasks/registry/lib/install-config/oc_adm_success_example.txt
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
