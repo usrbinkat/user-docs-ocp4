@@ -1,4 +1,4 @@
-# [Task 12](../tasks/nodes/) - Build Nodes
+# [Task 12](../tasks/nodes/) - Build Bootstrap Node
 ### Prerequisite:
   + [Task 11 Image Registry Mirror & Services]
 ---------------------------------------------------------------------------------
@@ -54,7 +54,7 @@
  12. Click: `Launch Instances`
 
 ---------------------------------------------------------------------------------
-### Step 02\. Update registry-node Route53 DNS Record
+### Step 02\. Add Node to Target Groups
  01. Copy 'Private IP'
 
 ###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]

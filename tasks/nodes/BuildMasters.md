@@ -1,10 +1,28 @@
-# [Task 13](../tasks/deploy/) - Deploy OCP
+# [Task 12](../tasks/nodes/) - Build Nodes
 ### Prerequisite:
-  + [Task 12 Build Nodes]
+  + [Task 11 Image Registry Mirror & Services]
 ---------------------------------------------------------------------------------
 
-blablabla    
+### Step 01\. Utter the spell which shall not be named to conjure magnificent success
+  01. Roll up sleeves
+  02. Unsheath thine wand (which has chosen thou the wizard)
+  03. Speak in loud thunderous voice:
+```
+blablabla
+```
 
+### Step 02\. Seek the oracle of wisdom
+###### Navigate: Rob's desk > face of Rob
+  01. wave frantically
+  02. request for removal of headphones
+  03. Inquire after that which you seek
+```
+aka: go ask Rob
+```
+
+---------------------------------------------------------------------------------
+### Next Steps:
+  + [Task 13 Deploy]
 --------------------------------------------------------------------------------
 [EC2]:https://console.amazonaws-us-gov.com/ec2/home
 [VPC]:https://console.amazonaws-us-gov.com/vpc/home
