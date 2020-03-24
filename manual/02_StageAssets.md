@@ -135,7 +135,7 @@ oc adm release extract --command=openshift-install quay.io/openshift-release-dev
 >   On Linux
 
 ```
-curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | sudo tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz | tar xzvf - --directory ${HOME}/${CLUSTER_DOMAIN}/ openshift-install
 ```
 TODO: solve for hard coded version numbering
 
