@@ -2,7 +2,7 @@
 ### Prerequisite:
   + [Task 12 Build Bootstrap Node]
 ---------------------------------------------------------------------------------
-### Step 01\. Create Bootstrap RHCOS Instance
+### Step 01\. Create Master RHCOS Instances
 ###### Navigate: [AWS Console] > [EC2] > [AMIs]
   1. Select: `rhcos` image
   2. Click: `Launch`
@@ -10,7 +10,7 @@
   4. Click: `Next: Configure Instance Details`
   5. Set values as per below
 
->   Bootstrap Node AMI `Configure Instance` Options Table
+>   Master Nodes AMI `Configure Instance` Options Table
 >
 >   |                |                      |
 >   |:--------------:|:--------------------:|
