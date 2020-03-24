@@ -10,7 +10,7 @@
   4. Click: `Next: Configure Instance Details`
   5. Set values as per below
 
->   Image Regristy AMI `Configure Instance` Options Table
+>   Bootstrap Node AMI `Configure Instance` Options Table
 >
 >   |                |                      |
 >   |:--------------:|:--------------------:|
@@ -44,20 +44,14 @@
 >   | kubernetes.io/cluster/{vpc_name} | owned                     |
 
 
-  9. Click: `Next: Configure Security Group`
+  9. Click: `Select an Existing Security Group`
   9. Click: `Existing Security Group`
-  9. Select: `master`
-  9. Tags:
->   Image Registry AMI `Add Tags` Table
->
->   | Type | Protocol | Port Range | Source   | Description |
->   |:----:|:--------:|:----------:|:--------:|:-----------:|
->   | SSH  | TCP      | 22         | Anywhere | SSH         |
->   | HTTP | TCP      | 80         | Anywhere | ACME        |
-
+  9. Select: `{vpc_name}-master-sg`
  11. Click: `Review and Launch`
  12. Click: `Launch`
  13. Select Option: Proceed without a key pair
+ 13. Select acknowledge & continue check box
+ 12. Click: `Launch Instances`
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Update registry-node Route53 DNS Record
