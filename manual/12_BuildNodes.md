@@ -55,35 +55,40 @@
 
 ---------------------------------------------------------------------------------
 ### Step 02\. Update registry-node Route53 DNS Record
-###### Navigate: [AWS Console] > [EC2] > [Instances] > {vpc_name}-registry-node > Lower Panel > Description
  01. Copy 'Private IP'
 
-###### Navigate: [AWS Console] > [VPC] > [Route 53 DNS] > {your_domain_name}
- 02. Select A Record for registry.{cluster\_domain\_name}
- 03. Update Record with the registry node Private IP
+###### Navigate: [AWS Console] > [EC2] > Left Panel > Load Balancing > [Target Groups]
+######  > For each of the 3 record name & port sets do the following:
+> Record Record Name & Port Sets:
+>    
+>   | Record Name     | Port  |
+>   |-----------------|-------|
+>   | {vpc_name}-aext |  6443 |
+>   | {vpc_name}-aint |  6443 |
+>   | {vpc_name}-sint | 22623 |
+>
 
----------------------------------------------------------------------------------
-### Step 02\. Create second EIP for registry-node & associate to node
-###### Navigate: [AWS Console] > [VPC Service] > [Elastic IPs]
-  1. Click: `Allocate new address`
-  2. Set IPv4 address pool option: `Amazon pool`
-  3. Click: `Allocate`
-  5. Click: `Close`
-TODO: add EIP owner tag {projectName}    
-TODO: add EIP project tag {stake holder / ownerName}    
+  1. Click: `add filter` and filter by your {vpc\_name}
+  2. Select a Target Group
+  3. Navigate: Lower Pannel > Targets
+  4. Click: `edit` 
+  5. Click: Top Bar ` + ` plus symbol to register new targets
+  6. Complete with the following values format:
+> Example Register Targets Table:
+>    
+>   | Option  | Value                       |
+>   |---------|-----------------------------|
+>   | Network | {vpc_subnet}          |
+>   | IP      | {bootstrap_node_ip    |
+>   | Port    | (default target group port) |
+>   | VPC     | {match your VPC Name} |
+>    
 
-###### Navigate: [AWS Console] > [VPC] > [Elastic IPs]
- 14. Select the new registry-node EIP
- 15. Click: `Actions` menu
- 16. Select: `Associate address`
- 17. Select: Instance menu option for your instance `{vpc_name}-registry-node`
- 18. Select: Private IP menu option for your `{vpc_name}-registry-node` instance ip
- 19. Click: `Associate`
+  7. Click: `Add to list` 
+  8. Click: `Register` 
+  9. Click: ` < ` left arrow symbol to return to target group menu
+ 10. Repeat for all 3 target groups
 
-
----------------------------------------------------------------------------------
-### Step 02\. [OPTIONAL] Associate registry-node EIP to up stream DNS records
-TODO: define method
 ---------------------------------------------------------------------------------
 ### Next Steps:
   + [Task 13 Deploy]
@@ -95,6 +100,7 @@ TODO: define method
 [Elastic IPs]:https://console.amazonaws-us-gov.com/vpc/home#Addresses
 [AWS Console]:https://console.amazonaws-us-gov.com/console/home
 [Route 53 DNS]:https://console.amazonaws-us-gov.com/route53/home
+[Target Groups]:https://console.amazonaws-us-gov.com/ec2/home#TargetGroups
 [Task 01 Prerequisites]:manual/01_Prerequisites.md
 [Task 02 Stage Assets]:manual/02_StageAssets.md
 [Task 03 Certificates]:manual/03_Certificates.md
